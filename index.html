@@ -20,954 +20,1766 @@
                         'google-green': '#34a853',
                         'google-yellow': '#fbbc05',
                         'google-red': '#ea4335',
-                        'microsoft-blue': '#0078d4',
-                        'meta-blue': '#1877f2',
-                        'openai-green': '#10a37f',
                     },
                     fontFamily: {
                         'inter': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 1.2s ease-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'float': 'float 4s ease-in-out infinite',
-                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                    },
-                    backdropBlur: {
-                        'xs': '2px',
                     }
                 }
             }
         }
     </script>
     
-    <!-- Enhanced CSS with Professional Animations -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        * {
-            scroll-behavior: smooth;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-10px) rotate(1deg); }
-            66% { transform: translateY(-5px) rotate(-1deg); }
-        }
-        
-        @keyframes pulseSoft {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(66, 133, 244, 0.3); }
-            to { box-shadow: 0 0 30px rgba(66, 133, 244, 0.6); }
-        }
-        
-        /* Premium Gradient Backgrounds */
-        .hero-gradient {
-            background: linear-gradient(135deg, 
-                #667eea 0%, 
-                #764ba2 25%, 
-                #f093fb 50%, 
-                #f5576c 75%, 
-                #4facfe 100%);
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Glass Morphism Effects */
-        .glass-card {
-            backdrop-filter: blur(16px) saturate(180%);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.125);
-        }
-        
-        .glass-nav {
-            backdrop-filter: blur(20px) saturate(180%);
-            background: rgba(255, 255, 255, 0.85);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Premium Hover Effects */
-        .hover-lift {
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-12px) rotateX(5deg);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .hover-glow:hover {
-            box-shadow: 0 0 40px rgba(66, 133, 244, 0.4);
-            transform: scale(1.02);
-        }
-        
-        /* Typing Animation */
-        .typing-cursor {
-            border-right: 3px solid #4285f4;
-            animation: blink 1.2s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { border-color: #4285f4; }
-            51%, 100% { border-color: transparent; }
-        }
-        
-        /* Section Reveal Animation */
-        .section-reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .section-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Enhanced Button Styles */
-        .btn-primary {
-            background: linear-gradient(135deg, #4285f4, #34a853);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #3367d6, #2d8f47);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        /* Skills Grid Enhancement */
-        .skill-card {
-            background: linear-gradient(145deg, #ffffff, #f8fafc);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Project Card Enhancements */
-        .project-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Parallax Effect */
-        .parallax {
-            transform: translateZ(0);
-            will-change: transform;
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #4285f4, #34a853);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #3367d6, #2d8f47);
-        }
-    </style>
+    <!-- Premium CSS with Dual Effects -->
+<style>
+  /* Base navigation link styles */
+  .nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Individual colored underlines for each section */
+  .nav-home::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-about::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #10B981, #34D399);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-skills::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8B5CF6, #A78BFA);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-work::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #F59E0B, #FBBF24);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-projects::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6366F1, #818CF8);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-education::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #059669, #10B981);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-certifications::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #DC2626, #EF4444);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  .nav-contact::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+  
+  /* Background hover effects with matching colors */
+  .nav-home:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-about:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-skills:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(167, 139, 250, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-work:hover {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-projects:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(129, 140, 248, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-education:hover {
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.1), rgba(16, 185, 129, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-certifications:hover {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(239, 68, 68, 0.05));
+    transform: translateY(-1px);
+  }
+  
+  .nav-contact:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(59, 130, 246, 0.8));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* Activate underline on hover */
+  .nav-link:hover::after {
+    width: 80%;
+  }
+  
+  /* Active state for current page */
+  .nav-link.active::after {
+    width: 80%;
+  }
+  
+  /* Mobile menu enhancements */
+  .mobile-nav-item {
+    position: relative;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-nav-item:hover {
+    border-left-color: currentColor;
+    transform: translateX(4px);
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Logo hover effect */
+  .font-semibold.text-xl:hover {
+    background: linear-gradient(90deg, #3B82F6, #10B981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+  }
+</style>
+
 </head>
 
-<body class="font-inter bg-gray-50 text-gray-900 overflow-x-hidden">
+<body class="font-inter bg-white text-gray-900">
     
-    <!-- Enhanced Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Enhanced Logo -->
-                <div class="font-bold text-xl text-gray-900 hover:text-google-blue transition-colors duration-300">
-                    <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
-                        Shakeel Ahamed
-                    </span>
-                </div>
-                
-                <!-- Enhanced Navigation Links -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
-                        Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
-                    </a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
-                        About
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
-                    </a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
-                        Skills
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
-                    </a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
-                        Projects
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
-                    </a>
-                    <a href="#certifications" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
-                        Certifications
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
-                    </a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
-                        Contact
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-google-blue transition-colors duration-300">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Enhanced Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden glass-card mx-4 mt-2 rounded-2xl">
-            <div class="px-4 pt-4 pb-4 space-y-2">
-                <a href="#home" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Home</a>
-                <a href="#about" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">About</a>
-                <a href="#skills" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Skills</a>
-                <a href="#projects" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Projects</a>
-                <a href="#certifications" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Certifications</a>
-                <a href="#contact" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Premium Dual-Effect Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="font-semibold text-xl text-gray-900">
+        SA
+      </div>
+      
+      <!-- Navigation Links with Dual Effects -->
+      <div class="hidden md:flex space-x-1">
+        <a href="#home" class="nav-link nav-home relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          Home
+        </a>
+        <a href="#about" class="nav-link nav-about relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          About
+        </a>
+        <a href="#skills" class="nav-link nav-skills relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          Skills
+        </a>
+        <a href="#work" class="nav-link nav-work relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          Experience
+        </a>
+        <a href="#projects" class="nav-link nav-projects relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          Projects
+        </a>
+        <a href="#education" class="nav-link nav-education relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          Education
+        </a>
+        <a href="#certifications" class="nav-link nav-certifications relative px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg transition-all duration-300">
+          Certifications
+        </a>
+        <a href="#contact" class="nav-link nav-contact relative px-4 py-2 text-gray-600 hover:text-white rounded-lg transition-all duration-300">
+          Contact
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Enhanced Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm border-t border-gray-200">
+    <div class="px-4 pt-3 pb-4 space-y-2">
+      <a href="#home" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-blue-50 rounded-lg transition-all">Home</a>
+      <a href="#about" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-green-50 rounded-lg transition-all">About</a>
+      <a href="#skills" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-purple-50 rounded-lg transition-all">Skills</a>
+      <a href="#work" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-orange-50 rounded-lg transition-all">Experience</a>
+      <a href="#projects" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-indigo-50 rounded-lg transition-all">Projects</a>
+      <a href="#education" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-emerald-50 rounded-lg transition-all">Education</a>
+      <a href="#certifications" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-yellow-50 rounded-lg transition-all">Certifications</a>
+      <a href="#contact" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-white hover:bg-blue-600 rounded-lg transition-all">Contact</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Enhanced Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center hero-gradient text-white relative overflow-hidden">
-        <!-- Floating Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-white/10 animate-float" style="animation-delay: 0s;"></div>
-            <div class="absolute top-3/4 right-1/4 w-96 h-96 rounded-full bg-white/5 animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-1/4 left-1/3 w-48 h-48 rounded-full bg-white/15 animate-float" style="animation-delay: 4s;"></div>
-        </div>
-        
-        <div class="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Enhanced Profile Photo -->
-            <div class="mb-12 animate-float">
-                <div class="w-40 h-40 rounded-full mx-auto glass-card flex items-center justify-center shadow-2xl hover-glow">
-                    <span class="text-5xl font-bold">SA</span>
-                </div>
-            </div>
+    <!-- Clean Hero Section -->
+    <section id="home" class="pt-16 min-h-screen flex items-center justify-center bg-white">
+        <div class="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Enhanced Name and Title -->
-            <h1 class="text-6xl md:text-8xl font-display font-bold mb-6 animate-fade-in">
-                <span class="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                    Shakeel Ahamed
-                </span>
+            <!-- Profile Photo -->
+<div class="mb-8">
+    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 shadow-lg border-4 border-white">
+        <img src="http://localhost:4321/images/shakeel-ahamed.png" alt="Shakeel Ahamed" class="w-full h-full object-cover" />
+    </div>
+</div>
+
+            
+            <!-- Name and Title -->
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Shakeel Ahamed
             </h1>
             
-            <h2 class="text-3xl md:text-4xl font-light mb-12 animate-fade-in opacity-90">
-                Data Analyst | Data Scientist
+            <h2 class="text-2xl md:text-3xl font-medium text-gray-600 mb-8">
+                Data Analyst & Data Scientist
             </h2>
             
-            <!-- Enhanced Typing Animation -->
-            <p id="typing-text" class="text-xl md:text-2xl mb-16 typing-cursor min-h-[3rem] font-medium">
-                <!-- Animated text will appear here -->
+            <!-- Description -->
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Interested in discussing data analytics opportunities or collaboration? I'd love to hear from you.
             </p>
             
-            <!-- Enhanced CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up">
-                <a href="#projects" class="btn-primary px-10 py-4 rounded-full font-semibold text-lg">
-                    View My Work
-                </a>
-                <a href="#contact" class="btn-secondary px-10 py-4 rounded-full font-semibold text-lg">
-                    Get In Touch
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="border border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                    View Projects
+                
+                <a href="#contact" class="bg-google-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    Download Resume
                 </a>
             </div>
+            
         </div>
     </section>
 
-    <!-- Enhanced About Section -->
-    <section id="about" class="py-32 bg-white section-reveal">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-5xl font-display font-bold mb-16 text-gray-900">
-                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
-                    About Me
-                </span>
-            </h2>
-            <div class="glass-card rounded-3xl p-12 md:p-16 shadow-2xl hover-lift">
-                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 font-medium">
-                    Passionate Data Analyst with proven expertise in leveraging Google-stack technologies like BigQuery and Gemini AI to drive business outcomes. Currently pursuing an MBA in Business Data Analytics while building impactful projects that demonstrate real-world problem-solving capabilities.
-                </p>
-                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
-                    Experienced in end-to-end data pipelines, machine learning, and business intelligence. Ready to contribute to Google's mission of organizing the world's information and making it universally accessible.
-                </p>
-            </div>
-        </div>
-    </section>
 
-  <!-- Enhanced Skills Section with Real Logos -->
-<section id="skills" class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 section-reveal">
+
+<!-- Clean Professional About Me Section -->
+<section id="about" class="py-24 bg-white section-reveal">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-gray-900 mb-6">
+        About Me
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        I'm a data analyst and Power BI trainer passionate about transforming complex data into actionable business insights. Currently pursuing an MBA in Business Data Analytics with focus on AI innovation and practical business applications.
+      </p>
+    </div>
+    
+    <!-- Professional Summary Grid -->
+    <div class="grid md:grid-cols-3 gap-12">
+      
+      <!-- What I Do -->
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Data Analytics</h3>
+        <p class="text-gray-600">
+          Building scalable analytics pipelines and interactive dashboards that drive business decisions. Specialized in Power BI, SQL, and Python for end-to-end data solutions.
+        </p>
+      </div>
+      
+      <!-- How I Help -->
+      <div class="text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Training & Education</h3>
+        <p class="text-gray-600">
+          Empowering 50+ students through hands-on Power BI workshops with 97% satisfaction rate. Creating practical, project-based curricula that build real-world skills.
+        </p>
+      </div>
+      
+      <!-- Current Focus -->
+      <div class="text-center">
+        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Machine Learning</h3>
+        <p class="text-gray-600">
+          Developing predictive models using TensorFlow and PyTorch. Focused on healthcare AI, sales forecasting, and real-time streaming analytics with cloud platforms.
+        </p>
+      </div>
+      
+    </div>
+    
+    <!-- Key Achievements -->
+    <div class="mt-16 bg-gray-50 rounded-2xl p-8">
+      <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Key Achievements</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-blue-600">50+</div>
+          <div class="text-sm text-gray-600 font-medium">Students Trained</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-green-600">97%</div>
+          <div class="text-sm text-gray-600 font-medium">Satisfaction Rate</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-purple-600">5⭐</div>
+          <div class="text-sm text-gray-600 font-medium">HackerRank SQL</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-orange-600">2026</div>
+          <div class="text-sm text-gray-600 font-medium">MBA Graduate</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+
+  <!-- Enhanced Skills Section - Categorized Approach -->
+<section id="skills" class="py-20 bg-white section-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
-            <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
-                Skills & Technologies
-            </span>
-        </h2>
         
-        <!-- Professional Skills Grid with Real Logos -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-8">
-            
-            <!-- Python -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
-                         class="w-12 h-12" alt="Python Logo">
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors text-lg">Python</h3>
-            </div>
-            
-            <!-- SQL -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="40" alt="SQL Server"/>
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors text-lg">SQL</h3>
-            </div>
-            
-            <!-- Power BI -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" 
-                          width="40" alt="Power BI"/>
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-yellow-500 transition-colors text-lg">Power BI</h3>
-            </div>
-            
-            <!-- Tableau -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" width="40" alt="Tableau"/>
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors text-lg">Tableau</h3>
-            </div>
-
-             <!-- TensorFlow -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" 
-                         class="w-12 h-12" alt="TensorFlow Logo">
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-lg">TensorFlow</h3>
-            </div>
-
-             <!-- PyTorch -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" width="40" alt="PyTorch"/>
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-lg">PyTorch</h3>
-            </div>
-            
-            <!-- Google Cloud -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" 
-                         class="w-12 h-12" alt="BigQuery Logo">
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-google-blue transition-colors text-lg">Google Cloud</h3>
-            </div>
-
-             <!-- AWS -->
-            <div class="skill-card rounded-2xl p-6 text-center group hover-lift">
-                <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" width="40" alt="AWS"/>
-                </div>
-                <h3 class="font-semibold text-gray-900 group-hover:text-google-blue transition-colors text-lg">AWS</h3>
-            </div>
-            
-        </div>
-
-        <!-- Additional Skills Row (Optional) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mt-12">
-            
-            <!-- Excel -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" 
-                         class="w-8 h-8" alt="Excel Logo">
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Excel</h4>
-            </div>
-            
-             <!-- Scikit-learn -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" 
-                         class="w-8 h-8" alt="Scikit-learn Logo">
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Scikit-learn</h4>
-            </div>
-            
-            <!-- Pandas -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" 
-                         class="w-8 h-8" alt="Pandas Logo">
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Pandas</h4>
-            </div>
-            
-            <!-- NumPy -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" 
-                         class="w-8 h-8" alt="NumPy Logo">
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">NumPy</h4>
-            </div>
-
-             <!-- Seaborn -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" width="40" alt="Seaborn"/>
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Seaborn</h4>
-            </div>
-
-             <!-- Matplotlib -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Created_with_Matplotlib-logo.svg" width="40" alt="Matplotlib"/>
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Matplotlib</h4>
-            </div>
-
-            <p align="centre">
-            <!-- Docker -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" width="40" alt="Docker"/>
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Docker</h4>
-            </div>
-            
-            <!-- Git -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
-                         class="w-8 h-8" alt="Git Logo">
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Git</h4>
-            </div>
-            
-            <!-- Jupyter -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" 
-                         class="w-8 h-8" alt="Jupyter Logo">
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Jupyter</h4>
-            </div>
-            
-            <!-- Colab -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="40" alt="Google Colab"/>
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">Colab</h4>
-            </div>
-            
-            <!-- Vs Code -->
-            <div class="skill-card rounded-xl p-4 text-center group hover-lift">
-                <div class="w-12 h-12 mx-auto mb-3 bg-white rounded-lg shadow-md flex items-center justify-center">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width="40" alt="VS Code"/>
-                </div>
-                <h4 class="text-sm font-medium text-gray-800">VS Code</h4>
-            </div>
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-gray-900 mb-4">
+                Skills & Technologies
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Technical expertise across the full data science and analytics stack
             </p>
         </div>
+        
+        <!-- Skill Categories -->
+        <div class="space-y-12">
+            
+            <!-- Data Science & Analytics -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Data Science & Analytics</h3>
+                        <p class="text-blue-700 font-medium">Core analytical and statistical computing</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-12 h-12 mx-auto mb-3" alt="Python">
+                        <h4 class="font-semibold text-gray-900">Python</h4>
+                        <p class="text-xs text-gray-600 mt-1">Data Analysis & ML</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="w-12 h-12 mx-auto mb-3" alt="Pandas">
+                        <h4 class="font-semibold text-gray-900">Pandas</h4>
+                        <p class="text-xs text-gray-600 mt-1">Data Manipulation</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="w-12 h-12 mx-auto mb-3" alt="NumPy">
+                        <h4 class="font-semibold text-gray-900">NumPy</h4>
+                        <p class="text-xs text-gray-600 mt-1">Numerical Computing</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" class="w-12 h-12 mx-auto mb-3" alt="Scikit-learn">
+                        <h4 class="font-semibold text-gray-900">Scikit-learn</h4>
+                        <p class="text-xs text-gray-600 mt-1">Machine Learning</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Machine Learning & AI -->
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Machine Learning & AI</h3>
+                        <p class="text-green-700 font-medium">Deep learning and neural networks</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-12 h-12 mx-auto mb-3" alt="TensorFlow">
+                        <h4 class="font-semibold text-gray-900">TensorFlow</h4>
+                        <p class="text-xs text-gray-600 mt-1">Deep Learning</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" class="w-12 h-12 mx-auto mb-3" alt="PyTorch">
+                        <h4 class="font-semibold text-gray-900">PyTorch</h4>
+                        <p class="text-xs text-gray-600 mt-1">Neural Networks</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" class="w-15 h-12 mx-auto mb-3" alt="Gemini">
+                        <h4 class="font-semibold text-gray-900">Gemini API</h4>
+                        <p class="text-xs text-gray-600 mt-1">Generative AI</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Visualization & BI -->
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Data Visualization & BI</h3>
+                        <p class="text-purple-700 font-medium">Business intelligence and reporting</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" class="w-12 h-12 mx-auto mb-3" alt="Power BI">
+                        <h4 class="font-semibold text-gray-900">Power BI</h4>
+                        <p class="text-xs text-gray-600 mt-1">Business Intelligence</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" class="w-15 h-15 mx-auto mb-3" alt="Tableau">
+                        <h4 class="font-semibold text-gray-900">Tableau</h4>
+                        <p class="text-xs text-gray-600 mt-1">Data Visualization</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" class="w-12 h-12 mx-auto mb-3" alt="Seaborn">
+                        <h4 class="font-semibold text-gray-900">Seaborn</h4>
+                        <p class="text-xs text-gray-600 mt-1">Statistical Plots</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Created_with_Matplotlib-logo.svg" class="w-12 h-12 mx-auto mb-3" alt="Matplotlib">
+                        <h4 class="font-semibold text-gray-900">Matplotlib</h4>
+                        <p class="text-xs text-gray-600 mt-1">Python Plotting</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Databases & Cloud -->
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Databases & Cloud</h3>
+                        <p class="text-orange-700 font-medium">Data storage and cloud platforms</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12 mx-auto mb-3" alt="SQL Server">
+                        <h4 class="font-semibold text-gray-900">SQL Server</h4>
+                        <p class="text-xs text-gray-600 mt-1">Database Management</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" class="w-12 h-12 mx-auto mb-3" alt="Google Cloud">
+                        <h4 class="font-semibold text-gray-900">Google Cloud</h4>
+                        <p class="text-xs text-gray-600 mt-1">BigQuery & GCP</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="w-12 h-12 mx-auto mb-3" alt="AWS">
+                        <h4 class="font-semibold text-gray-900">AWS</h4>
+                        <p class="text-xs text-gray-600 mt-1">Cloud Computing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Development Tools -->
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-gray-600 rounded-xl flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Development Tools</h3>
+                        <p class="text-gray-700 font-medium">Essential development environment</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Git">
+                        <h5 class="text-sm font-semibold text-gray-900">Git</h5>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" class="w-8 h-8 mx-auto mb-2" alt="Docker">
+                        <h5 class="text-sm font-semibold text-gray-900">Docker</h5>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Jupyter">
+                        <h5 class="text-sm font-semibold text-gray-900">Jupyter</h5>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" class="w-8 h-8 mx-auto mb-2" alt="Colab">
+                        <h5 class="text-sm font-semibold text-gray-900">Colab</h5>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" class="w-8 h-8 mx-auto mb-2" alt="VS Code">
+                        <h5 class="text-sm font-semibold text-gray-900">VS Code</h5>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" class="w-8 h-8 mx-auto mb-2" alt="Excel">
+                        <h5 class="text-sm font-semibold text-gray-900">Excel</h5>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Skill Highlights -->
+        <div class="mt-16 text-center">
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                    Core Competencies
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Statistical Analysis</h4>
+                        <p class="text-gray-600 text-sm">Advanced statistical modeling, hypothesis testing, and experimental design</p>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Machine Learning</h4>
+                        <p class="text-gray-600 text-sm">End-to-end ML pipeline development, model deployment, and optimization</p>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Data Storytelling</h4>
+                        <p class="text-gray-600 text-sm">Creating compelling narratives from complex datasets with interactive dashboards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </section>
 
 
-    <!-- Enhanced Projects Section -->
-    <section id="projects" class="py-32 bg-white section-reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
-                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
-                    Featured Projects
-                </span>
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                
-                <!-- Enhanced Project Cards -->
-                <div class="project-card rounded-3xl overflow-hidden shadow-2xl group">
-                    <div class="w-full h-64 bg-gradient-to-br from-google-blue to-google-green flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <span class="text-white text-2xl font-bold relative z-10">Amazon Forecasting</span>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-google-blue transition-colors">
-                            Predictive Sales Forecasting
-                        </h3>
-                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                            Built scalable analytics pipeline with BigQuery analyzing 2.5M+ records, achieving 87% accuracy and $450K cost savings.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-3 mb-6">
-                            <span class="px-4 py-2 bg-google-blue text-white text-sm rounded-full font-medium">BigQuery</span>
-                            <span class="px-4 py-2 bg-green-600 text-white text-sm rounded-full font-medium">Python</span>
-                            <span class="px-4 py-2 bg-purple-600 text-white text-sm rounded-full font-medium">Prophet</span>
-                            <span class="px-4 py-2 bg-orange-600 text-white text-sm rounded-full font-medium">LightGBM</span>
-                        </div>
-                        
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-google-blue hover:text-google-green transition-colors font-semibold">
-                                View Project →
-                            </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors font-semibold">
-                                GitHub →
-                            </a>
-                        </div>
-                    </div>
+<!-- Work Experience Section -->
+<section id="work" class="py-24 bg-white section-reveal">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Work Experience
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Building data-driven solutions and empowering teams through technology
+      </p>
+    </div>
+    
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Connecting Line -->
+      <div class="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-blue-200 via-green-200 to-purple-200 hidden md:block"></div>
+      
+      <div class="space-y-16">
+        
+        <!-- Power BI Trainer Position -->
+        <div class="relative">
+          <!-- Icon Circle -->
+          <div class="absolute left-0 md:left-0 w-12 h-12 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h2v10H7V7zm3 3h2v7h-2v-7zm3-2h2v9h-2V8zm3 1h2v8h-2V9z"/>
+            </svg>
+          </div>
+          
+          <!-- Content Card -->
+          <div class="ml-16 md:ml-20">
+            <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              <!-- Header -->
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">Power BI Trainer</h3>
+                  <p class="text-lg text-gray-600 font-medium">DBV TMF Smart-Broadway</p>
+                  <p class="text-sm text-gray-500">Chennai, India</p>
                 </div>
-                
-                <div class="project-card rounded-3xl overflow-hidden shadow-2xl group">
-                    <div class="w-full h-64 bg-gradient-to-br from-google-red to-google-yellow flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <span class="text-white text-2xl font-bold relative z-10">Sentiment Analysis</span>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-google-red transition-colors">
-                            Google Launch Sentiment Analysis
-                        </h3>
-                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                            AI-powered analysis of 500+ YouTube comments using Gemini API and TensorFlow with 95.2% confidence.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-3 mb-6">
-                            <span class="px-4 py-2 bg-google-red text-white text-sm rounded-full font-medium">Gemini API</span>
-                            <span class="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium">TensorFlow</span>
-                            <span class="px-4 py-2 bg-green-600 text-white text-sm rounded-full font-medium">YouTube API</span>
-                            <span class="px-4 py-2 bg-purple-600 text-white text-sm rounded-full font-medium">Hugging Face</span>
-                        </div>
-                        
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-google-red hover:text-google-blue transition-colors font-semibold">
-                                View Project →
-                            </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors font-semibold">
-                                GitHub →
-                            </a>
-                        </div>
-                    </div>
+                <div class="mt-4 md:mt-0 flex items-center">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    Mar 2025 - Present
+                  </span>
+                  <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    Freelance
+                  </span>
                 </div>
-                
-                <div class="project-card rounded-3xl overflow-hidden shadow-2xl group">
-                    <div class="w-full h-64 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <span class="text-white text-2xl font-bold relative z-10">Churn Dashboard</span>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-600 transition-colors">
-                            Customer Churn & Retention Dashboard
-                        </h3>
-                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                            Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-3 mb-6">
-                            <span class="px-4 py-2 bg-purple-600 text-white text-sm rounded-full font-medium">Power BI</span>
-                            <span class="px-4 py-2 bg-green-600 text-white text-sm rounded-full font-medium">Python</span>
-                            <span class="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium">SQL Server</span>
-                        </div>
-                        
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-purple-600 hover:text-blue-600 transition-colors font-semibold">
-                                View Project →
-                            </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors font-semibold">
-                                GitHub →
-                            </a>
-                        </div>
-                    </div>
+              </div>
+              
+              <!-- Key Metrics -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">50+</div>
+                  <div class="text-sm text-gray-600">Students Trained</div>
                 </div>
-                
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">40%</div>
+                  <div class="text-sm text-gray-600">Speed Improvement</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                  <div class="text-2xl font-bold text-purple-600">20+</div>
+                  <div class="text-sm text-gray-600">Training Hours</div>
+                </div>
+                <div class="text-center p-4 bg-orange-50 rounded-lg">
+                  <div class="text-2xl font-bold text-orange-600">97%</div>
+                  <div class="text-sm text-gray-600">Satisfaction Rate</div>
+                </div>
+              </div>
+              
+              <!-- Technologies Used -->
+              <div class="mb-6">
+                <h4 class="text-sm font-semibold text-gray-700 mb-3">Technologies & Tools</h4>
+                <div class="flex flex-wrap gap-3">
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <img src="https://logos-world.net/wp-content/uploads/2022/02/Microsoft-Power-BI-Symbol.png" class="w-10 h-5" alt="Power BI">
+                    <span class="text-sm font-medium">Power BI</span>
+                  </div>
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span class="text-sm font-medium">DAX</span>
+                  </div>
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-4 h-4" alt="Python">
+                    <span class="text-sm font-medium">Python</span>
+                  </div>
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="text-sm font-medium">AI Tools</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Achievements List -->
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Trained 50+ students through hands-on workshops, improving dashboard-building speed by 40%</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Delivered 20+ hours covering data modeling, Power Query (ETL), DAX, and advanced visualization</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Designed project-based curriculum achieving 100% completion rate and 97% positive feedback</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Integrated AI-powered analytics tools, boosting student awareness of modern tech by 80%</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+        
+        <!-- AR Process Analyst Position -->
+        <div class="relative">
+          <!-- Icon Circle -->
+          <div class="absolute left-0 md:left-0 w-12 h-12 bg-white border-4 border-green-500 rounded-full flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+            </svg>
+          </div>
+          
+          <!-- Content Card -->
+          <div class="ml-16 md:ml-20">
+            <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              <!-- Header -->
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">AR Process Analyst</h3>
+                  <p class="text-lg text-gray-600 font-medium">Omega Healthcare</p>
+                  <p class="text-sm text-gray-500">Chennai, India</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    Sep 2024 - Mar 2025
+                  </span>
+                  <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    Full-time
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Key Metrics -->
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                <div class="text-center p-4 bg-red-50 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">15%</div>
+                  <div class="text-sm text-gray-600">Error Reduction</div>
+                </div>
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">20%</div>
+                  <div class="text-sm text-gray-600">Faster Turnaround</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">100%</div>
+                  <div class="text-sm text-gray-600">Data Integrity</div>
+                </div>
+              </div>
+              
+              <!-- Technologies Used -->
+              <div class="mb-6">
+                <h4 class="text-sm font-semibold text-gray-700 mb-3">Technologies & Tools</h4>
+                <div class="flex flex-wrap gap-3">
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm1-4H8v-2h4v2zm0-4H8V6h4v2z"/>
+                    </svg>
+                    <span class="text-sm font-medium">CareCentral</span>
+                  </div>
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" class="w-4 h-4" alt="Google">
+                    <span class="text-sm font-medium">Google Sheets</span>
+                  </div>
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <img src="https://cdn.simpleicons.org/microsoftteams/6264A7" 
+     class="w-6 h-6" 
+     alt="Microsoft Teams Logo">
 
-    <!-- Keep Your Existing Enhanced Certifications Section (unchanged) -->
-    <section id="certifications" class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 section-reveal">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
-                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
-                    Certifications
-                </span>
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Google AI Essentials Certification -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                        <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-12 h-12" alt="Google Logo">
-                    </div>
-                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-google-green transition-colors flex-grow">
-                        Google AI Essentials Certificate
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-4">Coursera • Aug 2025</p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/1D59QUORGDQY" 
-                       class="text-green-600 hover:text-green-800 transition-colors text-sm font-medium">
-                        View Certificate →
-                    </a>
+                    <span class="text-sm font-medium">Microsoft Teams</span>
+                  </div>
+                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                    </svg>
+                    <span class="text-sm font-medium">HIPAA Compliance</span>
+                  </div>
                 </div>
-                
-                <!-- IBM Certification -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                        <img src="https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" class="w-12 h-12" alt="IBM Logo">
-                    </div>
-                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-black-600 transition-colors flex-grow">
-                        IBM Machine Learning Professional Certificate
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-4">Coursera • May 2025</p>
-                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/WT57ED6RK0T8" 
-                       class="text-black-600 hover:text-black-800 transition-colors text-sm font-medium">
-                        View Certificate →
-                    </a>
+              </div>
+              
+              <!-- Achievements List -->
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Verified insurance eligibility using CareCentral, reducing verification errors by 15%</p>
                 </div>
-                
-                <!-- Meta Certification -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg" class="w-12 h-12" alt="Meta Logo">
-                    </div>
-                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors flex-grow">
-                        Meta Database Engineer Professional Certificate
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-4">Coursera • Apr 2025</p>
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/90F7XBIW9DHJ" 
-                       class="text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium">
-                        View Certificate →
-                    </a>
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Coordinated prior authorization requests, enhancing turnaround time by 20%</p>
                 </div>
-                
-                <!-- Microsoft Certification -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                        <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" class="w-12 h-12" alt="Microsoft Logo">
-                    </div>
-                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors flex-grow">
-                        Microsoft Power BI Data Analyst Professional Certificate
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-4">Coursera • Feb 2025</p>
-                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/R6YAPT8WAUZZ" 
-                       class="text-orange-600 hover:text-orange-800 transition-colors text-sm font-medium">
-                        View Certificate →
-                    </a>
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Streamlined inter-team communication via Microsoft Teams, reducing delays by 18%</p>
                 </div>
-                
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Maintained 100% data integrity for daily records, improving reporting accuracy by 25%</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Enhanced Contact Section -->
-    <section id="contact" class="py-32 bg-white section-reveal">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
-                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
-                    Let's Connect
-                </span>
+
+<!-- Clean Projects Section -->
+<section id="projects" class="py-20 bg-gray-50 section-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-gray-900 mb-4">
+                Featured Projects
             </h2>
-            
-            <div class="grid md:grid-cols-2 gap-16">
-                
-                <!-- Enhanced Contact Form -->
-                <div class="glass-card rounded-3xl p-10 shadow-2xl">
-                    <h3 class="text-3xl font-bold mb-8 text-gray-900">Send me a message</h3>
-                    
-                    <form class="space-y-8">
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-3">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-6 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all bg-white/50 backdrop-blur-sm" placeholder="Your Name">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-6 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all bg-white/50 backdrop-blur-sm" placeholder="your.email@example.com">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-3">Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-6 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all bg-white/50 backdrop-blur-sm" placeholder="Your message here..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full btn-primary py-4 px-8 rounded-2xl font-semibold text-lg">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Enhanced Contact Info -->
-                <div class="space-y-12">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-8 text-gray-900">Get in touch</h3>
-                        <p class="text-gray-600 text-xl leading-relaxed mb-12">
-                            Ready to discuss data analytics opportunities? I'm always open to connecting with fellow data professionals and exploring new challenges.
-                        </p>
-                    </div>
-                    
-                    <!-- Enhanced Contact Details -->
-                    <div class="space-y-8">
-                        <div class="flex items-center space-x-6">
-                            <div class="w-16 h-16 bg-gradient-to-br from-google-blue to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                <span class="text-white text-2xl">✉</span>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-900 text-lg">Email</p>
-                                <p class="text-gray-600 text-lg">shakeelahamed6618@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center space-x-6">
-                            <div class="w-16 h-16 bg-gradient-to-br from-google-green to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                <span class="text-white text-2xl">📍</span>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-900 text-lg">Location</p>
-                                <p class="text-gray-600 text-lg">Chennai, India</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Enhanced Social Links -->
-                    <div class="pt-12">
-                        <h4 class="font-bold text-gray-900 mb-6 text-xl">Connect with me</h4>
-                        <div class="flex space-x-6">
-                            <a href="#" class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-white hover:shadow-2xl transition-all duration-300 hover:scale-110">
-                                <span class="font-bold text-lg">Li</span>
-                            </a>
-                            <a href="#" class="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center text-white hover:shadow-2xl transition-all duration-300 hover:scale-110">
-                                <span class="font-bold text-lg">Gh</span>
-                            </a>
-                            <a href="#" class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center text-white hover:shadow-2xl transition-all duration-300 hover:scale-110">
-                                <span class="font-bold text-lg">Po</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Enhanced Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400 text-lg">
-                © 2025 Shakeel Ahamed. Built with dedication for the Google 2026 Data Analytics Apprenticeship.
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                A collection of data analytics and machine learning projects demonstrating end-to-end problem-solving capabilities.
             </p>
         </div>
-    </footer>
+        
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            
+            <!-- Project 1: Amazon Forecasting -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="aspect-video bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        <p class="text-sm text-blue-700 font-medium">Predictive Analytics</p>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        Amazon Sales Forecasting
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Scalable analytics pipeline using BigQuery analyzing 2.5M+ records, achieving 87% accuracy and $450K cost savings.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">BigQuery</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Python</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">Prophet</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-md font-medium">LightGBM</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/shakeel-data/amazon-sales-forecasting-python-bigquery-ml" 
+                           target="_blank" 
+                           class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                            View Project →
+                        </a>
+                        <a href="https://github.com/shakeel-data/amazon-sales-forecasting-python-bigquery-ml" 
+                           target="_blank" 
+                           class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2: Sentiment Analysis -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="aspect-video bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                        <p class="text-sm text-green-700 font-medium">AI Analysis</p>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        YouTube Sentiment Analysis
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        AI-powered sentiment analysis of 500+ YouTube comments using Gemini API and TensorFlow with 95.2% confidence.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-md font-medium">Gemini API</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">TensorFlow</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">YouTube API</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">BERT</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini" 
+                           target="_blank" 
+                           class="text-green-600 hover:text-green-800 font-medium text-sm">
+                            View Project →
+                        </a>
+                        <a href="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini" 
+                           target="_blank" 
+                           class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Project 4: AWS Data Pipeline -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+                <div class="aspect-video bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-orange-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                        </svg>
+                        <p class="text-sm text-orange-700 font-medium">Data Engineering</p>
+                    </div>
+                </div>
+                
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        AWS Streaming Pipeline
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
+                        End-to-end streaming pipeline using Apache Kafka, AWS MSK, RDS, and S3 with Change Data Capture.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-md font-medium">Kafka</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">AWS MSK</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Debezium</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-md font-medium">S3</span>
+                    </div>
+                    
+                    <!-- FIXED FOOTER ALIGNMENT -->
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="https://github.com/shakeel-data/AWS-data-streaming-pipeline" 
+                           target="_blank" 
+                           class="text-orange-600 hover:text-orange-800 font-medium text-sm">
+                            View Project →
+                        </a>
+                        <a href="https://github.com/shakeel-data/AWS-data-streaming-pipeline" 
+                           target="_blank" 
+                           class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 5: Breast Cancer Prediction -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="aspect-video bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-pink-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                        <p class="text-sm text-pink-700 font-medium">Healthcare ML</p>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        Breast Cancer Prediction
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Neural network for breast cancer diagnosis using PyTorch with comprehensive exploratory data analysis.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-md font-medium">PyTorch</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-md font-medium">Neural Networks</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Healthcare</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">Classification</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/shakeel-data/breast-cancer-prediction-neural-network-pytorch" 
+                           target="_blank" 
+                           class="text-pink-600 hover:text-pink-800 font-medium text-sm">
+                            View Project →
+                        </a>
+                        <a href="https://github.com/shakeel-data/breast-cancer-prediction-neural-network-pytorch" 
+                           target="_blank" 
+                           class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3: Customer Churn -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="aspect-video bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-purple-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <p class="text-sm text-purple-700 font-medium">BI Dashboard</p>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        Customer Churn Analysis
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">Power BI</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">SQL Server</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-md font-medium">Scikit-learn</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/shakeel-data/customer-churn-prediction-dashboard" 
+                           target="_blank" 
+                           class="text-purple-600 hover:text-purple-800 font-medium text-sm">
+                            View Project →
+                        </a>
+                        <a href="https://github.com/shakeel-data/customer-churn-prediction-dashboard" 
+                           target="_blank" 
+                           class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 6: Revenue Dashboard -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="aspect-video bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-indigo-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                        </svg>
+                        <p class="text-sm text-indigo-700 font-medium">Business Intelligence</p>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        Revenue Trends Analysis
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Interactive Tableau dashboard analyzing sales trends, KPIs, and regional insights with advanced SQL queries.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">SQL Server</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-md font-medium">Tableau</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Data Analysis</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">KPI Analytics</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/shakeel-data/revenue-trends-analysis-dashboard" 
+                           target="_blank" 
+                           class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">
+                            View Project →
+                        </a>
+                        <a href="https://github.com/shakeel-data/revenue-trends-analysis-dashboard" 
+                           target="_blank" 
+                           class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- FIXED View More Projects Button -->
+        <div class="text-center mt-12">
+            <a href="https://github.com/shakeel-data?tab=repositories" 
+               target="_blank"
+               class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                View More Projects
+            </a>
+        </div>
+    </div>
+</section>
 
-    <!-- Enhanced JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+<!-- Minimalist Education Section -->
+<section id="education" class="py-20 bg-white section-reveal">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-5xl font-bold text-gray-900 mb-16 text-center">Education</h2>
+    
+    <div class="space-y-8">
+      <!-- MBA -->
+      <div class="border-l-4 border-blue-500 pl-8 py-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">MBA in Business Data Analytics</h3>
+            <p class="text-lg text-blue-600 font-medium">University of Madras</p>
+            <p class="text-gray-600">Institute of Distance Education • Chennai, India</p>
+          </div>
+          <div class="mt-2 md:mt-0">
+            <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+              Jul 2024 - Jun 2026
+            </span>
+          </div>
+        </div>
+        <p class="text-gray-700 mt-4">
+          Specialization: Business Intelligence • Advanced Analytics • Data Science • Strategic Decision Making
+        </p>
+      </div>
+      
+      <!-- Bachelor's -->
+      <div class="border-l-4 border-green-500 pl-8 py-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Bachelor of Commerce</h3>
+            <p class="text-lg text-green-600 font-medium">The New College</p>
+            <p class="text-gray-600">Chennai, India</p>
+          </div>
+          <div class="mt-2 md:mt-0">
+            <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+              Completed
+            </span>
+          </div>
+        </div>
+        <p class="text-gray-700 mt-4">
+          Foundation: Business Fundamentals • Accounting • Finance • Economics
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Enhanced typing animation
-        const typingText = document.getElementById('typing-text');
-        const phrases = [
-            'Transforming data into actionable insights',
-            'Building scalable analytics solutions', 
-            'Leveraging AI for business intelligence',
-            'Ready to join Google\'s mission'
-        ];
-        
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function typeWriter() {
-            const currentPhrase = phrases[phraseIndex];
+<!-- Certifications Section -->
+<section id="certifications" class="py-20 bg-gray-50 section-reveal">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-gray-900 mb-4">
+        Professional Certifications
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Industry-recognized credentials demonstrating expertise in data analytics, machine learning, and cloud platforms
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Google AI Essentials - FIXED ALIGNMENT -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-10 h-10" alt="Google">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+          Google AI Essentials
+        </h3>
+        <p class="text-sm text-gray-600 mb-4 flex-grow">
+          Generative AI fundamentals and practical applications
+        </p>
+        <div class="flex items-center justify-center mb-4">
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
+          <span class="text-gray-500 text-sm"> | Aug 2025</span>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/1D59QUORGDQY" 
+           target="_blank" 
+           class="text-green-600 text-sm font-medium hover:text-green-800">
+          View Certificate →
+        </a>
+      </div>
+      
+      <!-- IBM Machine Learning -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" class="w-10 h-10" alt="IBM">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+          IBM Machine Learning Professional
+        </h3>
+        <p class="text-sm text-gray-600 mb-4 flex-grow">
+          Advanced ML algorithms and model deployment
+        </p>
+        <div class="flex items-center justify-center mb-4">
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
+          <span class="text-gray-500 text-sm"> | May 2025</span>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/WT57ED6RK0T8" 
+           target="_blank" 
+           class="text-black-600 text-sm font-medium hover:text-black-800">
+          View Certificate →
+        </a>
+      </div>
+      
+      <!-- Meta Database Engineer -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg" class="w-10 h-10" alt="Meta">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+          Meta Database Engineer Professional
+        </h3>
+        <p class="text-sm text-gray-600 mb-4 flex-grow">
+          Database design, optimization, and administration
+        </p>
+        <div class="flex items-center justify-center mb-4">
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
+          <span class="text-gray-500 text-sm">| Apr 2025</span>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/90F7XBIW9DHJ" 
+           target="_blank" 
+           class="text-blue-600 text-sm font-medium hover:text-blue-800">
+          View Certificate →
+        </a>
+      </div>
+      
+      <!-- Microsoft Power BI -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" class="w-10 h-10" alt="Microsoft">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+          Microsoft Power BI Data Analyst Professional
+        </h3>
+        <p class="text-sm text-gray-600 mb-4 flex-grow">
+          Business intelligence and data visualization
+        </p>
+        <div class="flex items-center justify-center mb-4">
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
+          <span class="text-gray-500 text-sm">| Feb 2025</span>
+        </div>
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/R6YAPT8WAUZZ" 
+           target="_blank" 
+           class="text-yellow-600 text-sm font-medium hover:text-yellow-800">
+          View Certificate →
+        </a>
+      </div>
+      
+    </div>
+    
+<!-- Additional Credentials -->
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold text-gray-900 mb-8">
+        Additional Credentials
+      </h3>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="font-bold text-gray-900">HackerRank SQL</div>
+            <div class="text-sm text-gray-600">5-Star Gold Badge</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="font-bold text-gray-900">HackerRank Python</div>
+            <div class="text-sm text-gray-600">3-Star Badge</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-7 text-center">
+      <h3 class="text-medium font-bold text-gray-600 mb-8">
+    Solved 50+ competitive coding challenges demonstrating problem-solving skills.
+      </h3>
+  </div>
+</section>
+
+<!-- Community & Volunteer Involvement Section -->
+<section id="community" class="py-20 bg-white section-reveal">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-gray-900 mb-4">
+        Community & Volunteer
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Committed to empowering students and supporting educational initiatives in the community
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      
+      <!-- Volunteer Tutor -->
+      <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">Personal Tutor</h3>
+            <p class="text-blue-600 font-medium">Ongoing</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Providing personalized one-on-one tutoring to students in data analytics, Excel, Power BI, and AI. 
+          Helping learners build practical skills and confidence in data science concepts.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">Data Analytics</span>
+          <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Excel</span>
+          <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">AI</span>
+        </div>
+      </div>
+      
+      <!-- Community Volunteer -->
+      <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">Community Volunteer</h3>
+            <p class="text-green-600 font-medium">Active</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Supporting educational initiatives and digital literacy programs at Agaram Foundation. 
+          Focused on making technology education accessible to underserved students.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Education</span>
+          <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">Digital Literacy</span>
+          <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-md font-medium">Mentoring</span>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Impact Summary -->
+    <div class="mt-16 text-center">
+      <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 max-w-3xl mx-auto border border-gray-200">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Impact</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div>
+            <div class="text-3xl font-bold text-blue-600">25+</div>
+            <div class="text-sm text-gray-600">Students Tutored</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-green-600">100+</div>
+            <div class="text-sm text-gray-600">Hours Volunteered</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-purple-600">95%</div>
+            <div class="text-sm text-gray-600">Student Success Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- Enhanced Contact Section -->
+<section id="contact" class="py-24 bg-gray-50 section-reveal">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-gray-900 mb-4">
+        Let's Connect
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Interested in discussing data analytics opportunities? I'd be happy to connect.
+      </p>
+    </div>
+    
+    <div class="grid lg:grid-cols-3 gap-12">
+      
+      <!-- Contact Form -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Send a Message</h3>
+            <p class="text-gray-600">I typically respond within 24 hours.</p>
+          </div>
+          
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                  placeholder="Your name"
+                >
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                  placeholder="your.email@company.com"
+                >
+              </div>
+            </div>
             
-            if (isDeleting) {
-                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+              <select 
+                id="subject" 
+                name="subject" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option>General Inquiry</option>
+                <option>Data Analytics Project</option>
+                <option>Training Opportunity</option>
+                <option>Collaboration</option>
+              </select>
+            </div>
             
-            let typeSpeed = isDeleting ? 30 : 80;
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" 
+                placeholder="Your message..."
+              ></textarea>
+            </div>
             
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500;
-            }
+            <button 
+              type="submit" 
+              class="bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Enhanced Contact Information -->
+      <div class="space-y-8">
+        
+        <!-- Unified Contact & Professional Profiles Card -->
+        <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+          <h4 class="font-bold text-gray-900 mb-6">Get In Touch</h4>
+          
+          <!-- Contact Details -->
+          <div class="space-y-4 mb-8">
+            <div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Email</p>
+              <a href="mailto:shakeelahamed6618@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors">
+                shakeelahamed6618@gmail.com
+              </a>
+            </div>
             
-            setTimeout(typeWriter, typeSpeed);
-        }
-        
-        // Start typing animation
-        typeWriter();
-        
-        // Enhanced scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all sections
-        document.querySelectorAll('.section-reveal').forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Enhanced smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-        
-        // Enhanced form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
+            <div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Location</p>
+              <p class="text-gray-600">Chennai, India</p>
+            </div>
             
-            button.textContent = 'Sending...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                button.textContent = 'Message Sent!';
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1000);
-        });
-        
-        // Enhanced navbar scroll effect
-        let lastScrollY = window.scrollY;
-        
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('nav');
-            const currentScrollY = window.scrollY;
-            
-            if (currentScrollY > 100) {
-                navbar.classList.add('bg-white/95');
-                navbar.classList.remove('bg-white/85');
-            } else {
-                navbar.classList.add('bg-white/85');
-                navbar.classList.remove('bg-white/95');
-            }
-            
-            // Hide/show navbar on scroll
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollY = currentScrollY;
-        });
-        
-        // Parallax effect for floating elements
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax');
-            
-            parallaxElements.forEach(element => {
-                const speed = element.dataset.speed || 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-        
-    </script>
+            <div>
+              <p class="text-sm font-medium text-gray-900 mb-1">Response Time</p>
+              <p class="text-gray-600">Usually within 24 hours</p>
+            </div>
+          </div>
+          
+          <!-- Professional Profiles - ONLY Official Logos -->
+<div class="border-t border-gray-200 pt-6">
+  <h5 class="font-semibold text-gray-900 mb-6 text-center">Professional Profiles</h5>
+  
+  <div class="grid grid-cols-3 gap-6 justify-items-center max-w-sm mx-auto">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/shakeel-data/" 
+       target="_blank" 
+       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
+           alt="LinkedIn" 
+           class="w-12 h-12">
+    </a>
+    
+    <!-- GitHub -->
+    <a href="https://github.com/shakeel-data" 
+       target="_blank" 
+       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+           alt="GitHub" 
+           class="w-12 h-12">
+    </a>
+    
+    <!-- Reddit -->
+    <a href="https://reddit.com/user/shakeel-reddit" 
+       target="_blank" 
+       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+      <svg class="w-12 h-12 text-[#FF4500]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+      </svg>
+    </a>
+    
+    <!-- Coursera -->
+    <a href="https://www.coursera.org/learner/shakeel-data" 
+       target="_blank" 
+       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+      <svg class="w-7 h-7 text-[#0056D3]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.906 12.906c-.051 6.54-5.465 11.847-11.954 11.847C5.465 24.753.051 19.446 0 12.906.051 6.365 5.465 1.058 11.952 1.058c6.489 0 11.903 5.307 11.954 11.848zm-8.578-1.073V6.628c0-.192-.085-.277-.255-.277H9.927c-.17 0-.255.085-.255.277v10.744c0 .192.085.277.255.277h5.146c.17 0 .255-.085.255-.277v-5.205h2.128c.894 0 1.617-.723 1.617-1.617 0-.894-.723-1.617-1.617-1.617h-2.128z"/>
+      </svg>
+    </a>
+    
+    <!-- HackerRank -->
+    <a href="https://www.hackerrank.com/profile/sahilahamed098" 
+       target="_blank" 
+       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+      <svg class="w-12 h-12 text-[#00EA64]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.566 12.815l-1.011 2.845c-.124.349-.434.584-.814.615l-3.859.317c-.085.007-.17-.013-.243-.056l-2.456-1.422c-.146-.085-.236-.241-.236-.409v-2.866c0-.168.09-.324.236-.409l2.456-1.422c.073-.043.158-.063.243-.056l3.859.317c.38.031.69.266.814.615l1.011 2.931z"/>
+      </svg>
+    </a>
+    
+    <!-- Kaggle -->
+    <a href="https://www.kaggle.com/ahamed7815" 
+       target="_blank" 
+       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+      <svg class="w-12 h-12 text-[#20BEFF]" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.236.118-.353.354-.353h2.431c.234 0 .351.117.351.353v11.077l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.278.18.043.12.011.209-.096.267l-5.904 5.904 6.625 8.516c.131.176.158.269.098.381z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+      </div>
+       <!-- Current Status -->
+        <div class="bg-green-50 rounded-xl border border-green-200 p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <h4 class="font-bold text-gray-900">Available for Opportunities</h4>
+          </div>
+          <p class="text-sm text-gray-700">
+            Open to data analytics roles and Google 2026 apprenticeship opportunities.
+          </p>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Clean Professional Footer -->
+<footer class="bg-black text-white py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <h3 class="text-xl font-bold mb-3">Shakeel Ahamed</h3>
+        <p class="text-gray-400 mb-6 max-w-md">
+          Data Analyst & Power BI Trainer building data-driven solutions and teaching analytics skills.
+        </p>
+      </div>
+      
+      <!-- Navigation - Right Aligned -->
+      <div class="text-right">
+        <h4 class="font-semibold mb-4 text-gray-300">Navigation</h4>
+        <ul class="space-y-4">
+          <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+          <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+          <li><a href="#work" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+          <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+          <li><a href="#education" class="text-gray-400 hover:text-white transition-colors">Education</a></li>
+          <li><a href="#certifications" class="text-gray-400 hover:text-white transition-colors">Certifications</a></li>
+        </ul>
+      </div>
+      
+      <!-- Resources - Right Aligned -->
+      <div class="text-right">
+        <h4 class="font-semibold mb-4 text-gray-300">Resources</h4>
+        <ul class="space-y-4">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Resume</a></li>
+          <li><a href="mailto:shakeelahamed6618@gmail.com" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <div class="border-t border-gray-800 pt-8 text-center">
+      <p class="text-gray-400 text-sm">
+        © 2025 Shakeel Ahamed. All rights reserved.
+      </p>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+
+<!-- Enhanced JavaScript -->
+<script>
+// Mobile menu functionality
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  
+  // Animate button icon
+  const svg = mobileMenuButton.querySelector('svg');
+  if (mobileMenu.classList.contains('hidden')) {
+    svg.style.transform = 'rotate(0deg)';
+  } else {
+    svg.style.transform = 'rotate(180deg)';
+  }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+    mobileMenu.classList.add('hidden');
+    mobileMenuButton.querySelector('svg').style.transform = 'rotate(0deg)';
+  }
+});
+
+// FIXED: Active link detection and smooth scrolling
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveLink() {
+  // Get current scroll position
+  let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Account for fixed header height (adjust this value to match your header height)
+  const headerOffset = 80;
+  
+  // Find which section is currently visible
+  let currentSection = '';
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - headerOffset;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    
+    // Check if scroll position is within this section
+    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+      currentSection = sectionId;
+    }
+  });
+  
+  // Update active class on nav links
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const linkHref = link.getAttribute('href');
+    if (linkHref === `#${currentSection}`) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', updateActiveLink);
+
+// Initial call when page loads
+updateActiveLink();
+
+// Handle navigation clicks with smooth scrolling
+navLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    // Get target section
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      // Calculate scroll position accounting for header
+      const headerOffset = 80;
+      const targetPosition = targetSection.offsetTop - headerOffset;
+      
+      // Remove active class from all links
+      navLinks.forEach(navLink => navLink.classList.remove('active'));
+      
+      // Add active class to clicked link
+      this.classList.add('active');
+      
+      // Smooth scroll to target
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if open
+      mobileMenu.classList.add('hidden');
+      mobileMenuButton.querySelector('svg').style.transform = 'rotate(0deg)';
+    }
+  });
+});
+</script>
 </body>
 </html>
-
-
-
 
