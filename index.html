@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shakeel Ahamed - Data Analyst & Data Scientist Portfolio. Specialized in Python, SQL, BigQuery, and Machine Learning.">
+    <meta name="keywords" content="Data Analyst, Data Scientist, Python, SQL, BigQuery, Machine Learning, Portfolio">
+    <title>Shakeel Ahamed | Data Analyst & Data Scientist</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'google-blue': '#4285f4',
+                        'google-green': '#34a853',
+                        'google-yellow': '#fbbc05',
+                        'google-red': '#ea4335',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS for animations -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #4285f4;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #4285f4; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .section-fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="font-bold text-xl text-gray-900">
+                    Shakeel Ahamed
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-google-blue transition-colors duration-200">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Projects</a>
+                    <a href="#certifications" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Certifications</a>
+                    <a href="#contact" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-google-blue">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-google-blue">About</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Projects</a>
+                <a href="#certifications" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Certifications</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg text-white">
+        <div class="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Profile Photo Placeholder -->
+            <div class="mb-8 animate-float">
+                <!-- Replace with your actual photo: <img src="./assets/profile-photo.jpg" class="w-32 h-32 rounded-full mx-auto shadow-2xl" alt="Shakeel Ahamed"> -->
+                <div class="w-32 h-32 rounded-full mx-auto bg-white/20 flex items-center justify-center shadow-2xl">
+                    <span class="text-4xl font-bold">SA</span>
+                </div>
+            </div>
+            
+            <!-- Name and Title -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
+                Shakeel Ahamed
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl font-light mb-8 animate-fade-in">
+                Data Analyst | Data Scientist
+            </h2>
+            
+            <!-- Animated Tagline -->
+            <p id="typing-text" class="text-xl md:text-2xl mb-12 typing-animation min-h-[2rem]">
+                <!-- Animated text will appear here -->
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+                <a href="#projects" class="bg-white/20 glass-effect px-8 py-3 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-105">
+                    View My Work
+                </a>
+                <a href="#contact" class="border-2 border-white/50 px-8 py-3 rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white section-fade">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900">About Me</h2>
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg hover-lift">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                    <!-- EDIT: Replace with your bio -->
+                    Passionate Data Analyst with proven expertise in leveraging Google-stack technologies like BigQuery and Gemini AI to drive business outcomes. Currently pursuing an MBA in Business Data Analytics while building impactful projects that demonstrate real-world problem-solving capabilities.
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <!-- EDIT: Replace with your additional bio text -->
+                    Experienced in end-to-end data pipelines, machine learning, and business intelligence. Ready to contribute to Google's mission of organizing the world's information and making it universally accessible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 section-fade">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Skills & Technologies</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- EDIT: Add/modify skills as needed -->
+                <!-- Skill Card Template -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <!-- Replace with actual skill icon: <img src="./assets/icons/python.png" class="w-12 h-12 mx-auto mb-4" alt="Python"> -->
+                    <div class="w-12 h-12 mx-auto mb-4 bg-google-blue rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">PY</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-blue transition-colors">Python</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-google-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">SQL</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-green transition-colors">SQL</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-google-yellow rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">BQ</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-yellow transition-colors">BigQuery</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-google-red rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">TF</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-red transition-colors">TensorFlow</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">PBI</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Power BI</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">TB</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">Tableau</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-orange-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">GM</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">Gemini AI</h3>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
+                    <div class="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">ML</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">Machine Learning</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white section-fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <!-- EDIT: Replace with your actual project details -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover-lift group">
+                    <!-- Replace with project image: <img src="./assets/projects/amazon-forecasting.jpg" class="w-full h-48 object-cover" alt="Amazon Sales Forecasting"> -->
+                    <div class="w-full h-48 bg-gradient-to-br from-google-blue to-google-green flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">Amazon Forecasting</span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-google-blue transition-colors">
+                            Predictive Sales Forecasting
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Built scalable analytics pipeline with BigQuery analyzing 2.5M+ records, achieving 87% accuracy and $450K cost savings.
+                        </p>
+                        
+                        <!-- Tech Stack Badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-google-blue text-white text-sm rounded-full">BigQuery</span>
+                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Prophet</span>
+                            <span class="px-3 py-1 bg-orange-600 text-white text-sm rounded-full">LightGBM</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-google-blue hover:text-google-green transition-colors">
+                                View Project →
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover-lift group">
+                    <div class="w-full h-48 bg-gradient-to-br from-google-red to-google-yellow flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">Sentiment Analysis</span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-google-red transition-colors">
+                            Google Launch Sentiment Analysis
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            AI-powered analysis of 500+ YouTube comments using Gemini API and TensorFlow with 95.2% confidence.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-google-red text-white text-sm rounded-full">Gemini API</span>
+                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">TensorFlow</span>
+                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">YouTube API</span>
+                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Hugging Face</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-google-red hover:text-google-blue transition-colors">
+                                View Project →
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover-lift group">
+                    <div class="w-full h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">Churn Dashboard</span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-600 transition-colors">
+                            Customer Churn & Retention Dashboard
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Power BI</span>
+                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">SQL Server</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-purple-600 hover:text-blue-600 transition-colors">
+                                View Project →
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">
+                                GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-50 section-fade">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Certifications</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- EDIT: Replace with your actual certifications -->
+                <!-- Certification 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center group">
+                    <!-- Replace with certification logo: <img src="./assets/certifications/ibm-logo.png" class="w-16 h-16 mx-auto mb-4" alt="IBM"> -->
+                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">IBM</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">
+                        IBM Machine Learning Professional Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • May 2025</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors text-sm">
+                        View Certificate →
+                    </a>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">META</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-blue-500 transition-colors">
+                        Meta Database Engineer Professional Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • Apr 2025</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors text-sm">
+                        View Certificate →
+                    </a>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center group">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-orange-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">MS</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">
+                        Microsoft Power BI Data Analyst Professional Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • Feb 2025</p>
+                    <a href="#" class="text-orange-600 hover:text-orange-800 transition-colors text-sm">
+                        View Certificate →
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white section-fade">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Let's Connect</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Contact Form -->
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Send me a message</h3>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all" placeholder="Your Name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all" placeholder="Your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-google-blue text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Social Links -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Get in touch</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            <!-- EDIT: Replace with your contact information -->
+                            Ready to discuss data analytics opportunities? I'm always open to connecting with fellow data professionals and exploring new challenges.
+                        </p>
+                    </div>
+                    
+                    <!-- Contact Details -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-google-blue rounded-lg flex items-center justify-center">
+                                <span class="text-white">✉</span>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Email</p>
+                                <!-- EDIT: Replace with your email -->
+                                <p class="text-gray-600">shakeelahamed6618@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-google-green rounded-lg flex items-center justify-center">
+                                <span class="text-white">📍</span>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Location</p>
+                                <!-- EDIT: Replace with your location -->
+                                <p class="text-gray-600">Chennai, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="pt-8">
+                        <h4 class="font-bold text-gray-900 mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <!-- EDIT: Replace with your actual social media links -->
+                            <a href="#" class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <span class="font-bold">Li</span>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
+                                <span class="font-bold">Gh</span>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+                                <span class="font-bold">Po</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Shakeel Ahamed. Built with dedication for the Google 2026 Data Analytics Apprenticeship.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Typing animation for hero section
+        const typingText = document.getElementById('typing-text');
+        const phrases = [
+            'Transforming data into actionable insights',
+            'Building scalable analytics solutions', 
+            'Leveraging AI for business intelligence',
+            'Ready to join Google\'s mission'
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Pause before next phrase
+            }
+            
+            setTimeout(typeWriter, typeSpeed);
+        }
+        
+        // Start typing animation
+        typeWriter();
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections with fade animation
+        document.querySelectorAll('.section-fade').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission (add your own logic here)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+        
+        // Add navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white/80');
+            } else {
+                navbar.classList.add('bg-white/80');
+                navbar.classList.remove('bg-white/90');
+            }
+        });
+        
+    </script>
+</body>
+</html>
