@@ -20,61 +20,113 @@
                         'google-green': '#34a853',
                         'google-yellow': '#fbbc05',
                         'google-red': '#ea4335',
+                        'microsoft-blue': '#0078d4',
+                        'meta-blue': '#1877f2',
+                        'openai-green': '#10a37f',
                     },
                     fontFamily: {
                         'inter': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.8s ease-in-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'float': 'float 3s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1.2s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
                     }
                 }
             }
         }
     </script>
     
-    <!-- Custom CSS for animations -->
+    <!-- Enhanced CSS with Professional Animations -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        * {
+            scroll-behavior: smooth;
         }
         
-        @keyframes slideUp {
+        @keyframes fadeIn {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        @keyframes pulseSoft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
         
-        .glass-effect {
-            backdrop-filter: blur(10px);
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(66, 133, 244, 0.3); }
+            to { box-shadow: 0 0 30px rgba(66, 133, 244, 0.6); }
+        }
+        
+        /* Premium Gradient Backgrounds */
+        .hero-gradient {
+            background: linear-gradient(135deg, 
+                #667eea 0%, 
+                #764ba2 25%, 
+                #f093fb 50%, 
+                #f5576c 75%, 
+                #4facfe 100%);
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Glass Morphism Effects */
+        .glass-card {
+            backdrop-filter: blur(16px) saturate(180%);
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.125);
         }
         
+        .glass-nav {
+            backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Premium Hover Effects */
         .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
         
-        .typing-animation {
-            border-right: 2px solid #4285f4;
-            animation: blink 1s infinite;
+        .hover-glow:hover {
+            box-shadow: 0 0 40px rgba(66, 133, 244, 0.4);
+            transform: scale(1.02);
+        }
+        
+        /* Typing Animation */
+        .typing-cursor {
+            border-right: 3px solid #4285f4;
+            animation: blink 1.2s infinite;
         }
         
         @keyframes blink {
@@ -82,47 +134,138 @@
             51%, 100% { border-color: transparent; }
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .section-fade {
+        /* Section Reveal Animation */
+        .section-reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        .section-fade.visible {
+        .section-reveal.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* Enhanced Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #3367d6, #2d8f47);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Skills Grid Enhancement */
+        .skill-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Project Card Enhancements */
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Parallax Effect */
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3367d6, #2d8f47);
         }
     </style>
 </head>
 
-<body class="font-inter bg-gray-50 text-gray-900">
+<body class="font-inter bg-gray-50 text-gray-900 overflow-x-hidden">
     
-    <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
+    <!-- Enhanced Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Name -->
-                <div class="font-bold text-xl text-gray-900">
-                    Shakeel Ahamed
+                <!-- Enhanced Logo -->
+                <div class="font-bold text-xl text-gray-900 hover:text-google-blue transition-colors duration-300">
+                    <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
+                        Shakeel Ahamed
+                    </span>
                 </div>
                 
-                <!-- Navigation Links -->
+                <!-- Enhanced Navigation Links -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-google-blue transition-colors duration-200">About</a>
-                    <a href="#skills" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Skills</a>
-                    <a href="#projects" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Projects</a>
-                    <a href="#certifications" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Certifications</a>
-                    <a href="#contact" class="text-gray-700 hover:text-google-blue transition-colors duration-200">Contact</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
+                    </a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
+                        Skills
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
+                    </a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
+                    </a>
+                    <a href="#certifications" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
+                        Certifications
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-google-blue transition-all duration-300 relative">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-google-blue transition-all duration-300 hover:w-full"></span>
+                    </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-google-blue">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-google-blue transition-colors duration-300">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -131,240 +274,257 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-google-blue">About</a>
-                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Skills</a>
-                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Projects</a>
-                <a href="#certifications" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Certifications</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-google-blue">Contact</a>
+        <!-- Enhanced Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden glass-card mx-4 mt-2 rounded-2xl">
+            <div class="px-4 pt-4 pb-4 space-y-2">
+                <a href="#home" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Home</a>
+                <a href="#about" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">About</a>
+                <a href="#skills" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Skills</a>
+                <a href="#projects" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Projects</a>
+                <a href="#certifications" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Certifications</a>
+                <a href="#contact" class="block px-4 py-3 text-gray-700 hover:text-google-blue hover:bg-white/50 rounded-xl transition-all">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg text-white">
-        <div class="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Profile Photo Placeholder -->
-            <div class="mb-8 animate-float">
-                <!-- Replace with your actual photo: <img src="./assets/profile-photo.jpg" class="w-32 h-32 rounded-full mx-auto shadow-2xl" alt="Shakeel Ahamed"> -->
-                <div class="w-32 h-32 rounded-full mx-auto bg-white/20 flex items-center justify-center shadow-2xl">
-                    <span class="text-4xl font-bold">SA</span>
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center hero-gradient text-white relative overflow-hidden">
+        <!-- Floating Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-white/10 animate-float" style="animation-delay: 0s;"></div>
+            <div class="absolute top-3/4 right-1/4 w-96 h-96 rounded-full bg-white/5 animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-48 h-48 rounded-full bg-white/15 animate-float" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Enhanced Profile Photo -->
+            <div class="mb-12 animate-float">
+                <div class="w-40 h-40 rounded-full mx-auto glass-card flex items-center justify-center shadow-2xl hover-glow">
+                    <span class="text-5xl font-bold">SA</span>
                 </div>
             </div>
             
-            <!-- Name and Title -->
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
-                Shakeel Ahamed
+            <!-- Enhanced Name and Title -->
+            <h1 class="text-6xl md:text-8xl font-display font-bold mb-6 animate-fade-in">
+                <span class="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+                    Shakeel Ahamed
+                </span>
             </h1>
             
-            <h2 class="text-2xl md:text-3xl font-light mb-8 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-light mb-12 animate-fade-in opacity-90">
                 Data Analyst | Data Scientist
             </h2>
             
-            <!-- Animated Tagline -->
-            <p id="typing-text" class="text-xl md:text-2xl mb-12 typing-animation min-h-[2rem]">
+            <!-- Enhanced Typing Animation -->
+            <p id="typing-text" class="text-xl md:text-2xl mb-16 typing-cursor min-h-[3rem] font-medium">
                 <!-- Animated text will appear here -->
             </p>
             
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-                <a href="#projects" class="bg-white/20 glass-effect px-8 py-3 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-105">
+            <!-- Enhanced CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up">
+                <a href="#projects" class="btn-primary px-10 py-4 rounded-full font-semibold text-lg">
                     View My Work
                 </a>
-                <a href="#contact" class="border-2 border-white/50 px-8 py-3 rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <a href="#contact" class="btn-secondary px-10 py-4 rounded-full font-semibold text-lg">
                     Get In Touch
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white section-fade">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-12 text-gray-900">About Me</h2>
-            <div class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg hover-lift">
-                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                    <!-- EDIT: Replace with your bio -->
+    <!-- Enhanced About Section -->
+    <section id="about" class="py-32 bg-white section-reveal">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-display font-bold mb-16 text-gray-900">
+                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
+                    About Me
+                </span>
+            </h2>
+            <div class="glass-card rounded-3xl p-12 md:p-16 shadow-2xl hover-lift">
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 font-medium">
                     Passionate Data Analyst with proven expertise in leveraging Google-stack technologies like BigQuery and Gemini AI to drive business outcomes. Currently pursuing an MBA in Business Data Analytics while building impactful projects that demonstrate real-world problem-solving capabilities.
                 </p>
-                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-                    <!-- EDIT: Replace with your additional bio text -->
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
                     Experienced in end-to-end data pipelines, machine learning, and business intelligence. Ready to contribute to Google's mission of organizing the world's information and making it universally accessible.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50 section-fade">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Skills & Technologies</h2>
+    <!-- Enhanced Skills Section -->
+    <section id="skills" class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 section-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
+                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
+                    Skills & Technologies
+                </span>
+            </h2>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- EDIT: Add/modify skills as needed -->
-                <!-- Skill Card Template -->
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <!-- Replace with actual skill icon: <img src="./assets/icons/python.png" class="w-12 h-12 mx-auto mb-4" alt="Python"> -->
-                    <div class="w-12 h-12 mx-auto mb-4 bg-google-blue rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">PY</span>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Enhanced Skill Cards -->
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-google-blue to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">PY</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-google-blue transition-colors">Python</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-blue transition-colors text-lg">Python</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-google-green rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">SQL</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-google-green to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">SQL</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-google-green transition-colors">SQL</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-green transition-colors text-lg">SQL</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-google-yellow rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">BQ</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-google-yellow to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">BQ</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-google-yellow transition-colors">BigQuery</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-yellow transition-colors text-lg">BigQuery</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-google-red rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">TF</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-google-red to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">TF</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-google-red transition-colors">TensorFlow</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-google-red transition-colors text-lg">TensorFlow</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-purple-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">PBI</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">PBI</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Power BI</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors text-lg">Power BI</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">TB</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">TB</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">Tableau</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors text-lg">Tableau</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-orange-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">GM</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-600 to-orange-700 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">GM</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">Gemini AI</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors text-lg">Gemini AI</h3>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-lg hover-lift text-center group">
-                    <div class="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">ML</span>
+                <div class="skill-card rounded-2xl p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">ML</span>
                     </div>
-                    <h3 class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">Machine Learning</h3>
+                    <h3 class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors text-lg">Machine Learning</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white section-fade">
+    <!-- Enhanced Projects Section -->
+    <section id="projects" class="py-32 bg-white section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Featured Projects</h2>
+            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
+                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
+                    Featured Projects
+                </span>
+            </h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 
-                <!-- Project 1 -->
-                <!-- EDIT: Replace with your actual project details -->
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover-lift group">
-                    <!-- Replace with project image: <img src="./assets/projects/amazon-forecasting.jpg" class="w-full h-48 object-cover" alt="Amazon Sales Forecasting"> -->
-                    <div class="w-full h-48 bg-gradient-to-br from-google-blue to-google-green flex items-center justify-center">
-                        <span class="text-white text-2xl font-bold">Amazon Forecasting</span>
+                <!-- Enhanced Project Cards -->
+                <div class="project-card rounded-3xl overflow-hidden shadow-2xl group">
+                    <div class="w-full h-64 bg-gradient-to-br from-google-blue to-google-green flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <span class="text-white text-2xl font-bold relative z-10">Amazon Forecasting</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-google-blue transition-colors">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-google-blue transition-colors">
                             Predictive Sales Forecasting
                         </h3>
-                        <p class="text-gray-600 mb-4">
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
                             Built scalable analytics pipeline with BigQuery analyzing 2.5M+ records, achieving 87% accuracy and $450K cost savings.
                         </p>
                         
-                        <!-- Tech Stack Badges -->
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-google-blue text-white text-sm rounded-full">BigQuery</span>
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Python</span>
-                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Prophet</span>
-                            <span class="px-3 py-1 bg-orange-600 text-white text-sm rounded-full">LightGBM</span>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="px-4 py-2 bg-google-blue text-white text-sm rounded-full font-medium">BigQuery</span>
+                            <span class="px-4 py-2 bg-green-600 text-white text-sm rounded-full font-medium">Python</span>
+                            <span class="px-4 py-2 bg-purple-600 text-white text-sm rounded-full font-medium">Prophet</span>
+                            <span class="px-4 py-2 bg-orange-600 text-white text-sm rounded-full font-medium">LightGBM</span>
                         </div>
                         
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-google-blue hover:text-google-green transition-colors">
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-google-blue hover:text-google-green transition-colors font-semibold">
                                 View Project →
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors font-semibold">
                                 GitHub →
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover-lift group">
-                    <div class="w-full h-48 bg-gradient-to-br from-google-red to-google-yellow flex items-center justify-center">
-                        <span class="text-white text-2xl font-bold">Sentiment Analysis</span>
+                <div class="project-card rounded-3xl overflow-hidden shadow-2xl group">
+                    <div class="w-full h-64 bg-gradient-to-br from-google-red to-google-yellow flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <span class="text-white text-2xl font-bold relative z-10">Sentiment Analysis</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-google-red transition-colors">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-google-red transition-colors">
                             Google Launch Sentiment Analysis
                         </h3>
-                        <p class="text-gray-600 mb-4">
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
                             AI-powered analysis of 500+ YouTube comments using Gemini API and TensorFlow with 95.2% confidence.
                         </p>
                         
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-google-red text-white text-sm rounded-full">Gemini API</span>
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">TensorFlow</span>
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">YouTube API</span>
-                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Hugging Face</span>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="px-4 py-2 bg-google-red text-white text-sm rounded-full font-medium">Gemini API</span>
+                            <span class="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium">TensorFlow</span>
+                            <span class="px-4 py-2 bg-green-600 text-white text-sm rounded-full font-medium">YouTube API</span>
+                            <span class="px-4 py-2 bg-purple-600 text-white text-sm rounded-full font-medium">Hugging Face</span>
                         </div>
                         
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-google-red hover:text-google-blue transition-colors">
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-google-red hover:text-google-blue transition-colors font-semibold">
                                 View Project →
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors font-semibold">
                                 GitHub →
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover-lift group">
-                    <div class="w-full h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-                        <span class="text-white text-2xl font-bold">Churn Dashboard</span>
+                <div class="project-card rounded-3xl overflow-hidden shadow-2xl group">
+                    <div class="w-full h-64 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <span class="text-white text-2xl font-bold relative z-10">Churn Dashboard</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-600 transition-colors">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-600 transition-colors">
                             Customer Churn & Retention Dashboard
                         </h3>
-                        <p class="text-gray-600 mb-4">
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
                             Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies.
                         </p>
                         
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Power BI</span>
-                            <span class="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Python</span>
-                            <span class="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">SQL Server</span>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="px-4 py-2 bg-purple-600 text-white text-sm rounded-full font-medium">Power BI</span>
+                            <span class="px-4 py-2 bg-green-600 text-white text-sm rounded-full font-medium">Python</span>
+                            <span class="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium">SQL Server</span>
                         </div>
                         
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-purple-600 hover:text-blue-600 transition-colors">
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-purple-600 hover:text-blue-600 transition-colors font-semibold">
                                 View Project →
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors font-semibold">
                                 GitHub →
                             </a>
                         </div>
@@ -375,159 +535,162 @@
         </div>
     </section>
 
-   <!-- Certifications Section -->
-<section id="certifications" class="py-20 bg-gray-50 section-fade">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Certifications</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Keep Your Existing Enhanced Certifications Section (unchanged) -->
+    <section id="certifications" class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 section-reveal">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
+                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
+                    Certifications
+                </span>
+            </h2>
             
-             <!-- Google AI Essentials Certification -->
-            <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                    <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-12 h-12" alt="Google Logo">
-                </div>
-                <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-google-green transition-colors flex-grow">
-                    Google AI Essentials Certificate
-                </h3>
-                <p class="text-gray-600 text-sm mb-4">Coursera • Aug 2025</p>
-                <a href="https://www.coursera.org/account/accomplishments/verify/1D59QUORGDQY" 
-                   class="text-green-600 hover:text-green-800 transition-colors text-sm font-medium">
-                    View Certificate →
-                </a>
-            </div>
-            
-            <!-- IBM Certification -->
-            <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                    <img src="https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" class="w-12 h-12" alt="IBM Logo">
-                </div>
-                <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-black-600 transition-colors flex-grow">
-                    IBM Machine Learning Professional Certificate
-                </h3>
-                <p class="text-gray-600 text-sm mb-4">Coursera • May 2025</p>
-                <a href="https://www.coursera.org/account/accomplishments/professional-cert/WT57ED6RK0T8" 
-                   class="text-black-600 hover:text-black-800 transition-colors text-sm font-medium">
-                    View Certificate →
-                </a>
-            </div>
-            
-            <!-- Meta Certification -->
-            <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg" class="w-12 h-12" alt="Meta Logo">
-                </div>
-                <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors flex-grow">
-                    Meta Database Engineer Professional Certificate
-                </h3>
-                <p class="text-gray-600 text-sm mb-4">Coursera • Apr 2025</p>
-                <a href="https://www.coursera.org/account/accomplishments/specialization/90F7XBIW9DHJ" 
-                   class="text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium">
-                    View Certificate →
-                </a>
-            </div>
-            
-            <!-- Microsoft Certification -->
-            <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
-                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
-                    <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" class="w-12 h-12" alt="Microsoft Logo">
-                </div>
-                <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors flex-grow">
-                    Microsoft Power BI Data Analyst Professional Certificate
-                </h3>
-                <p class="text-gray-600 text-sm mb-4">Coursera • Feb 2025</p>
-                <a href="https://www.coursera.org/account/accomplishments/professional-cert/R6YAPT8WAUZZ" 
-                   class="text-orange-600 hover:text-orange-800 transition-colors text-sm font-medium">
-                    View Certificate →
-                </a>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white section-fade">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Let's Connect</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Contact Form -->
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Send me a message</h3>
+                <!-- Google AI Essentials Certification -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                        <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-12 h-12" alt="Google Logo">
+                    </div>
+                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-google-green transition-colors flex-grow">
+                        Google AI Essentials Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • Aug 2025</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/1D59QUORGDQY" 
+                       class="text-green-600 hover:text-green-800 transition-colors text-sm font-medium">
+                        View Certificate →
+                    </a>
+                </div>
+                
+                <!-- IBM Certification -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                        <img src="https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" class="w-12 h-12" alt="IBM Logo">
+                    </div>
+                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-black-600 transition-colors flex-grow">
+                        IBM Machine Learning Professional Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • May 2025</p>
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/WT57ED6RK0T8" 
+                       class="text-black-600 hover:text-black-800 transition-colors text-sm font-medium">
+                        View Certificate →
+                    </a>
+                </div>
+                
+                <!-- Meta Certification -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg" class="w-12 h-12" alt="Meta Logo">
+                    </div>
+                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors flex-grow">
+                        Meta Database Engineer Professional Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • Apr 2025</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/90F7XBIW9DHJ" 
+                       class="text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium">
+                        View Certificate →
+                    </a>
+                </div>
+                
+                <!-- Microsoft Certification -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift text-center group h-full flex flex-col">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                        <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" class="w-12 h-12" alt="Microsoft Logo">
+                    </div>
+                    <h3 class="text-base font-bold mb-2 text-gray-900 group-hover:text-orange-600 transition-colors flex-grow">
+                        Microsoft Power BI Data Analyst Professional Certificate
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">Coursera • Feb 2025</p>
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/R6YAPT8WAUZZ" 
+                       class="text-orange-600 hover:text-orange-800 transition-colors text-sm font-medium">
+                        View Certificate →
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="py-32 bg-white section-reveal">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-display font-bold text-center mb-20 text-gray-900">
+                <span class="bg-gradient-to-r from-google-blue to-google-green bg-clip-text text-transparent">
+                    Let's Connect
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-16">
+                
+                <!-- Enhanced Contact Form -->
+                <div class="glass-card rounded-3xl p-10 shadow-2xl">
+                    <h3 class="text-3xl font-bold mb-8 text-gray-900">Send me a message</h3>
                     
-                    <form class="space-y-6">
+                    <form class="space-y-8">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all" placeholder="Your Name">
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-3">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-6 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all bg-white/50 backdrop-blur-sm" placeholder="Your Name">
                         </div>
                         
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all" placeholder="your.email@example.com">
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-6 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all bg-white/50 backdrop-blur-sm" placeholder="your.email@example.com">
                         </div>
                         
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all" placeholder="Your message here..."></textarea>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-3">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-6 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all bg-white/50 backdrop-blur-sm" placeholder="Your message here..."></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full bg-google-blue text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium">
+                        <button type="submit" class="w-full btn-primary py-4 px-8 rounded-2xl font-semibold text-lg">
                             Send Message
                         </button>
                     </form>
                 </div>
                 
-                <!-- Contact Info & Social Links -->
-                <div class="space-y-8">
+                <!-- Enhanced Contact Info -->
+                <div class="space-y-12">
                     <div>
-                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Get in touch</h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                            <!-- EDIT: Replace with your contact information -->
+                        <h3 class="text-3xl font-bold mb-8 text-gray-900">Get in touch</h3>
+                        <p class="text-gray-600 text-xl leading-relaxed mb-12">
                             Ready to discuss data analytics opportunities? I'm always open to connecting with fellow data professionals and exploring new challenges.
                         </p>
                     </div>
                     
-                    <!-- Contact Details -->
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-google-blue rounded-lg flex items-center justify-center">
-                                <span class="text-white">✉</span>
+                    <!-- Enhanced Contact Details -->
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-google-blue to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <span class="text-white text-2xl">✉</span>
                             </div>
                             <div>
-                                <p class="font-medium text-gray-900">Email</p>
-                                <!-- EDIT: Replace with your email -->
-                                <p class="text-gray-600">shakeelahamed6618@gmail.com</p>
+                                <p class="font-semibold text-gray-900 text-lg">Email</p>
+                                <p class="text-gray-600 text-lg">shakeelahamed6618@gmail.com</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-google-green rounded-lg flex items-center justify-center">
-                                <span class="text-white">📍</span>
+                        <div class="flex items-center space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-google-green to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <span class="text-white text-2xl">📍</span>
                             </div>
                             <div>
-                                <p class="font-medium text-gray-900">Location</p>
-                                <!-- EDIT: Replace with your location -->
-                                <p class="text-gray-600">Chennai, India</p>
+                                <p class="font-semibold text-gray-900 text-lg">Location</p>
+                                <p class="text-gray-600 text-lg">Chennai, India</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Social Links -->
-                    <div class="pt-8">
-                        <h4 class="font-bold text-gray-900 mb-4">Connect with me</h4>
-                        <div class="flex space-x-4">
-                            <!-- EDIT: Replace with your actual social media links -->
-                            <a href="#" class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                                <span class="font-bold">Li</span>
+                    <!-- Enhanced Social Links -->
+                    <div class="pt-12">
+                        <h4 class="font-bold text-gray-900 mb-6 text-xl">Connect with me</h4>
+                        <div class="flex space-x-6">
+                            <a href="#" class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-white hover:shadow-2xl transition-all duration-300 hover:scale-110">
+                                <span class="font-bold text-lg">Li</span>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
-                                <span class="font-bold">Gh</span>
+                            <a href="#" class="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center text-white hover:shadow-2xl transition-all duration-300 hover:scale-110">
+                                <span class="font-bold text-lg">Gh</span>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
-                                <span class="font-bold">Po</span>
+                            <a href="#" class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center text-white hover:shadow-2xl transition-all duration-300 hover:scale-110">
+                                <span class="font-bold text-lg">Po</span>
                             </a>
                         </div>
                     </div>
@@ -537,16 +700,16 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
+    <!-- Enhanced Footer -->
+    <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">
+            <p class="text-gray-400 text-lg">
                 © 2025 Shakeel Ahamed. Built with dedication for the Google 2026 Data Analytics Apprenticeship.
             </p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Enhanced JavaScript -->
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -555,8 +718,8 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        
-        // Typing animation for hero section
+
+        // Enhanced typing animation
         const typingText = document.getElementById('typing-text');
         const phrases = [
             'Transforming data into actionable insights',
@@ -580,15 +743,15 @@
                 charIndex++;
             }
             
-            let typeSpeed = isDeleting ? 50 : 100;
+            let typeSpeed = isDeleting ? 30 : 80;
             
             if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 2000; // Pause at end
+                typeSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500; // Pause before next phrase
+                typeSpeed = 500;
             }
             
             setTimeout(typeWriter, typeSpeed);
@@ -597,10 +760,10 @@
         // Start typing animation
         typeWriter();
         
-        // Scroll animations
+        // Enhanced scroll reveal animation
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
@@ -611,12 +774,12 @@
             });
         }, observerOptions);
         
-        // Observe all sections with fade animation
-        document.querySelectorAll('.section-fade').forEach(section => {
+        // Observe all sections
+        document.querySelectorAll('.section-reveal').forEach(section => {
             observer.observe(section);
         });
         
-        // Smooth scroll for navigation links
+        // Enhanced smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -626,40 +789,66 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
                     mobileMenu.classList.add('hidden');
                 }
             });
         });
         
-        // Form submission (add your own logic here)
+        // Enhanced form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = 'Message Sent!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    this.reset();
+                }, 2000);
+            }, 1000);
         });
         
-        // Add navbar background on scroll
+        // Enhanced navbar scroll effect
+        let lastScrollY = window.scrollY;
+        
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white/90');
-                navbar.classList.remove('bg-white/80');
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/85');
             } else {
-                navbar.classList.add('bg-white/80');
-                navbar.classList.remove('bg-white/90');
+                navbar.classList.add('bg-white/85');
+                navbar.classList.remove('bg-white/95');
             }
+            
+            // Hide/show navbar on scroll
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+        
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
         });
         
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
