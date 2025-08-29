@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shakeel Ahamed - Data Analyst & Data Scientist Portfolio. Specialized in Python, SQL, BigQuery, and Machine Learning.">
+    <meta name="description" content="Shakeel Ahamed - Portfolio">
     <meta name="keywords" content="Data Analyst, Data Scientist, Python, SQL, BigQuery, Machine Learning, Portfolio">
-    <title>Shakeel Ahamed | Data Analyst & Data Scientist</title>
+    <title>Shakeel Ahamed | Portfolio</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -288,43 +288,172 @@
   </div>
 </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-16 min-h-screen flex items-center justify-center bg-white">
-        <div class="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Profile Photo -->
-<div class="mb-8">
-    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 shadow-lg border-4 border-white">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOORzc0mcFmPnCtW0bcOzfOJfyMQqKImsPKW3lNehBHkvJgP5TaS6VPTDqU_AMmRjpXYoo8tQ1DssNEQfvkOOwcIPx11W4YzPTtIXEdGhSUNUi5Q80=w2400" alt="Shakeel Ahamed" class="w-full h-full object-cover" />
+    <!-- Hero Section with Typing Effect -->
+<section id="home" class="pt-16 min-h-screen flex items-center justify-center bg-white">
+    <div class="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Profile Photo -->
+        <div class="mb-8">
+            <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-lg border-4 border-white-600">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOORzc0mcFmPnCtW0bcOzfOJfyMQqKImsPKW3lNehBHkvJgP5TaS6VPTDqU_AMmRjpXYoo8tQ1DssNEQfvkOOwcIPx11W4YzPTtIXEdGhSUNUi5Q80=w2400" class="w-full h-full object-cover" />
+            </div>
+        </div>
+        
+        <!-- Name and Title -->
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Shakeel Ahamed
+        </h1>
+        
+        <!-- Typing Animation -->
+        <div class="text-2xl md:text-3xl font-medium text-gray-600 mb-8 h-12 flex items-center justify-center">
+            <span id="typing-text" class="typing-text"></span>
+        </div>
+        
+        <!-- Description -->
+        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Interested in discussing data analytics opportunities or collaboration? I'd love to hear from you.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#projects" class="border border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                View Projects
+            </a>
+            <button id="download-resume-btn" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                Download Resume
+            </button>
+        </div>     
+    </div>
+</section>
+
+<!-- Typing Animation Container -->
+<div class="text-2xl md:text-3xl font-medium mb-8 h-12 flex items-center justify-center">
+    <div class="typing-container">
+        <span id="typing-text" class="role-text"></span>
     </div>
 </div>
 
-            
-            <!-- Name and Title -->
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Shakeel Ahamed
-            </h1>
-            
-            <h2 class="text-2xl md:text-3xl font-medium text-gray-600 mb-8">
-                Data Analyst & Data Scientist
-            </h2>
-            
-            <!-- Description -->
-            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Interested in discussing data analytics opportunities or collaboration? I'd love to hear from you.
-            </p>
-            
-           <!-- CTA Buttons -->
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="#projects" class="border border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-        View Projects
-    </a>
-    <button id="download-resume-btn" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-        Download Resume
-    </button>
-</div>     
-  </div>
-    </section>
+<style>
+/* Perfect Center-Aligned Typing Container */
+.typing-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Enhanced Typography */
+.role-text {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+/* Beautiful Color Palette for Each Role */ 
+.role-color-0 { color: #f59e0b; } /* Modern Blue */
+.role-color-1 { color: #10b981; } /* Emerald Green */
+.role-color-2 { color: #8b5cf6; } /* Violet Purple */
+.role-color-3 { color: #3b82f6; } /* Amber Orange */
+.role-color-4 { color: #ef4444; } /* Modern Red */
+.role-color-5 { color: #ec4899; } /* Hot Pink */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .typing-container {
+        width: 320px;
+    }
+    
+    .role-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .typing-container {
+        width: 280px;
+    }
+    
+    .role-text {
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const roles = [
+        "Data Analyst",
+        "Business Analyst", 
+        "Data Scientist",
+        "SQL Specialist",
+        "Machine Learning Engineer",
+        "AI Innovation Explorer"
+    ];
+
+    const colorClasses = [
+        "role-color-0", "role-color-1", "role-color-2", 
+        "role-color-3", "role-color-4", "role-color-5"
+    ];
+
+    const typingElement = document.getElementById('typing-text');
+    let currentRoleIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    
+    // Smooth, professional timing
+    let typingSpeed = 100;     // Slightly faster for better flow
+    let deletingSpeed = 50;    // Quick deletion
+    let pauseAfterTyping = 1800; // Display duration
+    let pauseAfterDeleting = 800; // Brief pause before next role
+
+    function type() {
+        const currentRole = roles[currentRoleIndex];
+        const currentColorClass = colorClasses[currentRoleIndex];
+        
+        if (!isDeleting) {
+            // Typing phase
+            if (currentCharIndex < currentRole.length) {
+                typingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
+                typingElement.className = `role-text ${currentColorClass}`;
+                currentCharIndex++;
+                setTimeout(type, typingSpeed);
+            } else {
+                // Finished typing, pause before deleting
+                setTimeout(() => {
+                    isDeleting = true;
+                    type();
+                }, pauseAfterTyping);
+            }
+        } else {
+            // Deleting phase  
+            if (currentCharIndex > 0) {
+                typingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                setTimeout(type, deletingSpeed);
+            } else {
+                // Finished deleting, move to next role
+                isDeleting = false;
+                currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                setTimeout(type, pauseAfterDeleting);
+            }
+        }
+    }
+
+    // Initialize with first role color and start animation
+    typingElement.className = `role-text ${colorClasses[0]}`;
+    type();
+});
+</script>
+
+
 
 <!-- Resume Download Modal with Blur -->
 <div id="resume-modal" class="fixed inset-0 z-50 hidden">
@@ -338,7 +467,7 @@
             <!-- Header -->
             <div class="px-6 py-5 border-b border-gray-100">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-lg font-semibold text-gray-900">Download Resume</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">View Resume</h3>
                     <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-md hover:bg-gray-100">
                     </button>
                 </div>
@@ -408,11 +537,11 @@
             </form>
 
             <!-- Footer Buttons -->
-            <div class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 rounded-b-2xl flex justify-end space-x-3">
+            <div class="px-6 py-4 bg-green-50/50 border-t border-gray-300 rounded-b-2xl flex justify-end space-x-3">
                 <button 
                     type="button" 
                     id="cancel-btn"
-                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500/20 transition-all"
+                    class="px-4 py-2.5 text-sm font-medium text-red-500 bg-white-600 border border-black-1000 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500/20 transition-all"
                 >
                     Cancel
                 </button>
@@ -420,7 +549,7 @@
                     type="submit" 
                     form="resume-form"
                     id="download-btn"
-                    class="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:opacity-50 transition-all"
+                    class="px-6 py-2.5 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500/20 disabled:opacity-50 transition-all"
                 >
                     <span id="btn-text">Download</span>
                     <span id="loading-spinner" class="hidden">Downloading...</span>
@@ -432,359 +561,330 @@
 
 
 
-<!-- About Me Section -->
-<section id="about" class="py-24 bg-white section-reveal">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold text-gray-900 mb-6">
+<!-- About Me - Clean, Professional, Approachable -->
+<section id="about" class="relative py-20 sm:py-24 bg-gradient-to-b from-yellow-50 to-white overflow-hidden">
+  <!-- Subtle Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.03]">
+    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <g fill="currentColor">
+          <circle cx="7" cy="7" r="1"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+  
+  <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6 tracking-tight">
         About Me
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        I'm a data analyst and Power BI trainer passionate about transforming complex data into actionable business insights. Currently pursuing an MBA in Business Data Analytics with focus on AI innovation and practical business applications.
+      <p class="text-lg sm:text-xl text-gray-700 leading-relaxed font-light">
+        Detail-oriented data and business analyst with hands-on experience in SQL, Python, and BigQuery. Proven ability to build end-to-end analytics pipelines, develop machine learning models with up to 87% accuracy, and deliver actionable insights through data visualization. 
+        Eager to apply analytical problem-solving skills to support business growth and innovation in a dynamic, technology-driven company.
       </p>
     </div>
-    
-    <!-- Summary Grid -->
-    <div class="grid md:grid-cols-3 gap-12">
-      
-      <!-- What I Do -->
-      <div class="text-center">
-        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Data Analytics</h3>
-        <p class="text-gray-600">
-          Building scalable analytics pipelines and interactive dashboards that drive business decisions. Specialized in Power BI, SQL, and Python for end-to-end data solutions.
-        </p>
-      </div>
-      
-      <!-- How I Help -->
-      <div class="text-center">
-        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Training & Education</h3>
-        <p class="text-gray-600">
-          Empowering 50+ students through hands-on Power BI workshops with 97% satisfaction rate. Creating practical, project-based curricula that build real-world skills.
-        </p>
-      </div>
-      
-      <!-- Current Focus -->
-      <div class="text-center">
-        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Machine Learning</h3>
-        <p class="text-gray-600">
-          Developing predictive models using TensorFlow and PyTorch. Focused on healthcare AI, sales forecasting, and real-time streaming analytics with cloud platforms.
-        </p>
-      </div>
-      
-    </div>
-    
-    <!-- Key Achievements -->
-    <div class="mt-16 bg-gray-50 rounded-2xl p-8">
-      <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Key Achievements</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="text-center">
-          <div class="text-3xl font-bold text-blue-600">50+</div>
-          <div class="text-sm text-gray-600 font-medium">Students Trained</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-green-600">97%</div>
-          <div class="text-sm text-gray-600 font-medium">Satisfaction Rate</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-purple-600">5⭐</div>
-          <div class="text-sm text-gray-600 font-medium">HackerRank SQL</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-orange-600">2026</div>
-          <div class="text-sm text-gray-600 font-medium">MBA Graduate</div>
-        </div>
-      </div>
-    </div>
-    
+
+    <!-- Simplest Google-Style Curved Lines -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 mb-20">
+  
+  <!-- What I Do -->
+  <div class="relative pl-8">
+    <div class="absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b from-transparent via-yellow-600 to-transparent rounded-full"></div>
+    <h3 class="text-xl font-medium text-gray-900 mb-4">What I Do</h3>
+    <p class="text-gray-600 leading-relaxed">
+      I develop scalable data pipelines and create interactive dashboards that drive business decisions. 
+      My expertise spans Power BI, SQL, and Python for comprehensive data solutions.
+    </p>
+  </div>
+
+  <!-- How I Help -->
+  <div class="relative pl-8">
+    <div class="absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b from-transparent via-gray-600 to-transparent rounded-full"></div>
+    <h3 class="text-xl font-medium text-gray-900 mb-4">How I Help</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Through hands-on training, I empower 50+ students with real-world Power BI skills, achieving 97% satisfaction. 
+      I design practical curricula that build industry-relevant competencies.
+    </p>
+  </div>
+
+  <!-- Current Focus -->
+  <div class="relative pl-8">
+    <div class="absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b from-transparent via-purple-600 to-transparent rounded-full"></div>
+    <h3 class="text-xl font-medium text-gray-900 mb-4">Current Focus</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Building predictive ML models with TensorFlow and PyTorch. Focused on healthcare AI, sales forecasting, 
+      and streaming analytics on cloud platforms.
+    </p>
+  </div>
+
+</div>
+
+
   </div>
 </section>
 
 
 
-  <!-- Skills Section -->
-<section id="skills" class="py-20 bg-white section-reveal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <!-- Skills Section - Perfect Card Sizes -->
+<section id="skills" class="relative py-20 sm:py-24 bg-gradient-to-b from-purple-50 to-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center mb-16">
-            <h2 class="text-5xl font-bold text-gray-900 mb-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 Skills & Technologies
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                 Technical expertise across the full data science and analytics stack
             </p>
         </div>
         
         <!-- Skill Categories -->
-        <div class="space-y-12">
+        <div class="space-y-8">
             
             <!-- Data Science & Analytics -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-                <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 sm:p-5 max-w-4xl mx-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Data Science & Analytics</h3>
-                        <p class="text-blue-700 font-medium">Core analytical and statistical computing</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">Data Science & Analytics</h3>
+                        <p class="text-blue-700 font-medium text-sm">Core analytical and statistical computing</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-12 h-12 mx-auto mb-3" alt="Python">
-                        <h4 class="font-semibold text-gray-900">Python</h4>
-                        <p class="text-xs text-gray-600 mt-1">Data Analysis & ML</p>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Python">
+                        <h4 class="font-semibold text-gray-900 text-sm">Python</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Data Analysis & ML</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="w-12 h-12 mx-auto mb-3" alt="Pandas">
-                        <h4 class="font-semibold text-gray-900">Pandas</h4>
-                        <p class="text-xs text-gray-600 mt-1">Data Manipulation</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Pandas">
+                        <h4 class="font-semibold text-gray-900 text-sm">Pandas</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Data Manipulation</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="w-12 h-12 mx-auto mb-3" alt="NumPy">
-                        <h4 class="font-semibold text-gray-900">NumPy</h4>
-                        <p class="text-xs text-gray-600 mt-1">Numerical Computing</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="w-8 h-8 mx-auto mb-2" alt="NumPy">
+                        <h4 class="font-semibold text-gray-900 text-sm">NumPy</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Numerical Computing</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" class="w-12 h-12 mx-auto mb-3" alt="Scikit-learn">
-                        <h4 class="font-semibold text-gray-900">Scikit-learn</h4>
-                        <p class="text-xs text-gray-600 mt-1">Machine Learning</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" class="w-8 h-8 mx-auto mb-2" alt="Scikit-learn">
+                        <h4 class="font-semibold text-gray-900 text-sm">Scikit-learn</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Machine Learning</p>
                     </div>
                 </div>
             </div>
             
             <!-- Machine Learning & AI -->
-            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
-                <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 sm:p-5 max-w-4xl mx-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Machine Learning & AI</h3>
-                        <p class="text-green-700 font-medium">Deep learning and neural networks</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">Machine Learning & AI</h3>
+                        <p class="text-green-700 font-medium text-sm">Deep learning and neural networks</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-12 h-12 mx-auto mb-3" alt="TensorFlow">
-                        <h4 class="font-semibold text-gray-900">TensorFlow</h4>
-                        <p class="text-xs text-gray-600 mt-1">Deep Learning</p>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-8 h-8 mx-auto mb-2" alt="TensorFlow">
+                        <h4 class="font-semibold text-gray-900 text-sm">TensorFlow</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Deep Learning</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" class="w-12 h-12 mx-auto mb-3" alt="PyTorch">
-                        <h4 class="font-semibold text-gray-900">PyTorch</h4>
-                        <p class="text-xs text-gray-600 mt-1">Neural Networks</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" class="w-8 h-8 mx-auto mb-2" alt="PyTorch">
+                        <h4 class="font-semibold text-gray-900 text-sm">PyTorch</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Neural Networks</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" class="w-15 h-12 mx-auto mb-3" alt="Gemini">
-                        <h4 class="font-semibold text-gray-900">Gemini API</h4>
-                        <p class="text-xs text-gray-600 mt-1">Generative AI</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" class="w-8 h-8 mx-auto mb-2" alt="Gemini">
+                        <h4 class="font-semibold text-gray-900 text-sm">Gemini API</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Generative AI</p>
                     </div>
                 </div>
             </div>
             
             <!-- Data Visualization & BI -->
-            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
-                <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 sm:p-5 max-w-4xl mx-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Data Visualization & BI</h3>
-                        <p class="text-purple-700 font-medium">Business intelligence and reporting</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">Data Visualization & BI</h3>
+                        <p class="text-purple-700 font-medium text-sm">Business intelligence and reporting</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" class="w-12 h-12 mx-auto mb-3" alt="Power BI">
-                        <h4 class="font-semibold text-gray-900">Power BI</h4>
-                        <p class="text-xs text-gray-600 mt-1">Business Intelligence</p>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" class="w-8 h-8 mx-auto mb-2" alt="Power BI">
+                        <h4 class="font-semibold text-gray-900 text-sm">Power BI</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Business Intelligence</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" class="w-15 h-15 mx-auto mb-3" alt="Tableau">
-                        <h4 class="font-semibold text-gray-900">Tableau</h4>
-                        <p class="text-xs text-gray-600 mt-1">Data Visualization</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="data:image/png;base64,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" class="w-8 h-8 mx-auto mb-2 object-contain" alt="Tableau">
+                        <h4 class="font-semibold text-gray-900 text-sm">Tableau</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Data Visualization</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" class="w-12 h-12 mx-auto mb-3" alt="Seaborn">
-                        <h4 class="font-semibold text-gray-900">Seaborn</h4>
-                        <p class="text-xs text-gray-600 mt-1">Statistical Plots</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" class="w-8 h-8 mx-auto mb-2" alt="Seaborn">
+                        <h4 class="font-semibold text-gray-900 text-sm">Seaborn</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Statistical Plots</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Created_with_Matplotlib-logo.svg" class="w-12 h-12 mx-auto mb-3" alt="Matplotlib">
-                        <h4 class="font-semibold text-gray-900">Matplotlib</h4>
-                        <p class="text-xs text-gray-600 mt-1">Python Plotting</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Created_with_Matplotlib-logo.svg" class="w-8 h-8 mx-auto mb-2" alt="Matplotlib">
+                        <h4 class="font-semibold text-gray-900 text-sm">Matplotlib</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Python Plotting</p>
                     </div>
                 </div>
             </div>
             
             <!-- Databases & Cloud -->
-            <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
-                <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 sm:p-5 max-w-4xl mx-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Databases & Cloud</h3>
-                        <p class="text-orange-700 font-medium">Data storage and cloud platforms</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">Databases & Cloud</h3>
+                        <p class="text-orange-700 font-medium text-sm">Data storage and cloud platforms</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12 mx-auto mb-3" alt="SQL Server">
-                        <h4 class="font-semibold text-gray-900">SQL Server</h4>
-                        <p class="text-xs text-gray-600 mt-1">Database Management</p>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-8 h-8 mx-auto mb-2" alt="SQL Server">
+                        <h4 class="font-semibold text-gray-900 text-sm">SQL Server</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Database Management</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" class="w-12 h-12 mx-auto mb-3" alt="Google Cloud">
-                        <h4 class="font-semibold text-gray-900">Google Cloud</h4>
-                        <p class="text-xs text-gray-600 mt-1">BigQuery & GCP</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Google Cloud">
+                        <h4 class="font-semibold text-gray-900 text-sm">Google Cloud</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">BigQuery & GCP</p>
                     </div>
-                    <div class="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="w-12 h-12 mx-auto mb-3" alt="AWS">
-                        <h4 class="font-semibold text-gray-900">AWS</h4>
-                        <p class="text-xs text-gray-600 mt-1">Cloud Computing</p>
+                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="w-8 h-8 mx-auto mb-2 object-contain" alt="AWS">
+                        <h4 class="font-semibold text-gray-900 text-sm">AWS</h4>
+                        <p class="text-xs text-gray-600 hidden sm:block">Cloud Computing</p>
                     </div>
                 </div>
             </div>
             
             <!-- Development Tools -->
-            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8">
-                <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 bg-gray-600 rounded-xl flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 sm:p-5 max-w-4xl mx-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Development Tools</h3>
-                        <p class="text-gray-700 font-medium">Essential development environment</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">Development Tools</h3>
+                        <p class="text-gray-700 font-medium text-sm">Essential development environment</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
-                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Git">
-                        <h5 class="text-sm font-semibold text-gray-900">Git</h5>
+                <div class="grid grid-cols-3 lg:grid-cols-6 gap-3">
+                    <div class="bg-white rounded-lg p-2 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-6 h-6 mx-auto mb-1" alt="Git">
+                        <h5 class="text-xs font-semibold text-gray-900">Git</h5>
                     </div>
-                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" class="w-8 h-8 mx-auto mb-2" alt="Docker">
-                        <h5 class="text-sm font-semibold text-gray-900">Docker</h5>
+                    <div class="bg-white rounded-lg p-2 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnp4fCi5iJhF-8YXxlqwf0nROLW6jQaZjAog&s" class="w-6 h-6 mx-auto mb-1" alt="GitHub">
+                        <h5 class="text-xs font-semibold text-gray-900">GitHub</h5>
                     </div>
-                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="w-8 h-8 mx-auto mb-2" alt="Jupyter">
-                        <h5 class="text-sm font-semibold text-gray-900">Jupyter</h5>
+                    <div class="bg-white rounded-lg p-2 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" class="w-6 h-6 mx-auto mb-1 object-contain" alt="Docker">
+                        <h5 class="text-xs font-semibold text-gray-900">Docker</h5>
                     </div>
-                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" class="w-8 h-8 mx-auto mb-2" alt="Colab">
-                        <h5 class="text-sm font-semibold text-gray-900">Colab</h5>
-                    </div>
-                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" class="w-8 h-8 mx-auto mb-2" alt="VS Code">
-                        <h5 class="text-sm font-semibold text-gray-900">VS Code</h5>
+                    <div class="bg-white rounded-lg p-2 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="w-6 h-6 mx-auto mb-1" alt="Jupyter">
+                        <h5 class="text-xs font-semibold text-gray-900">Jupyter</h5>
                     </div>
                     
-                    <div class="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" class="w-8 h-8 mx-auto mb-2" alt="Excel">
-                        <h5 class="text-sm font-semibold text-gray-900">Excel</h5>
+                    <div class="bg-white rounded-lg p-2 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" class="w-6 h-6 mx-auto mb-1" alt="VS Code">
+                        <h5 class="text-xs font-semibold text-gray-900">VS Code</h5>
+                    </div>
+                    <div class="bg-white rounded-lg p-2 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="data:image/png;base64,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" class="w-6 h-6 mx-auto mb-1" alt="Spyder">
+                        <h5 class="text-xs font-semibold text-gray-900">Spyder</h5>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Core Competencies -->
+        <div class="mt-16">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-light text-gray-900">Core Competencies</h3>
             </div>
             
-        </div>
-        
-        <!-- Skill Highlights -->
-        <div class="mt-16 text-center">
-            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">
-                    Core Competencies
-                </h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div>
-                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Statistical Analysis</h4>
-                        <p class="text-gray-600 text-sm">Advanced statistical modeling, hypothesis testing, and experimental design</p>
-                    </div>
-                    <div>
-                        <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Machine Learning</h4>
-                        <p class="text-gray-600 text-sm">End-to-end ML pipeline development, model deployment, and optimization</p>
-                    </div>
-                    <div>
-                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Data Storytelling</h4>
-                        <p class="text-gray-600 text-sm">Creating compelling narratives from complex datasets with interactive dashboards</p>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <div class="bg-white p-5 border border-gray-100 hover:border-gray-200 transition-colors rounded-lg">
+                    <h4 class="text-lg font-medium text-gray-900 mb-3">Statistical Analysis</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Advanced statistical modeling, hypothesis testing, and experimental design</p>
+                </div>
+                
+                <div class="bg-white p-5 border border-gray-100 hover:border-gray-200 transition-colors rounded-lg">
+                    <h4 class="text-lg font-medium text-gray-900 mb-3">Machine Learning</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">End-to-end ML pipeline development, model deployment, and optimization</p>
+                </div>
+                
+                <div class="bg-white p-5 border border-gray-100 hover:border-gray-200 transition-colors rounded-lg">
+                    <h4 class="text-lg font-medium text-gray-900 mb-3">Data Storytelling</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Creating compelling narratives from complex datasets with interactive dashboards</p>
                 </div>
             </div>
         </div>
-        
     </div>
 </section>
 
 
-<!-- Work Experience Section -->
-<section id="work" class="py-24 bg-white section-reveal">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+
+<!-- Work Experience Section - Mobile Optimized -->
+<section id="work" class="relative py-20 sm:py-24 bg-gradient-to-b from-green-50 to-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Work Experience
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         Building data-driven solutions and empowering teams through technology
       </p>
     </div>
     
-    <div class="relative max-w-5xl mx-auto">
-      <!-- Connecting Line -->
-      <div class="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-blue-200 via-green-200 to-purple-200 hidden md:block"></div>
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Timeline Line (Desktop Only) -->
+      <div class="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-blue-200 to-green-200 hidden md:block"></div>
       
-      <div class="space-y-16">
+      <div class="space-y-8 sm:space-y-12">
         
         <!-- Power BI Trainer Position -->
         <div class="relative">
           <!-- Icon Circle -->
-          <div class="absolute left-0 md:left-0 w-12 h-12 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+          <div class="absolute left-0 w-12 h-12 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
             <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
               <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h2v10H7V7zm3 3h2v7h-2v-7zm3-2h2v9h-2V8zm3 1h2v8h-2V9z"/>
             </svg>
@@ -792,85 +892,70 @@
           
           <!-- Content Card -->
           <div class="ml-16 md:ml-20">
-            <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              
               <!-- Header -->
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                <div>
-                  <h3 class="text-2xl font-bold text-gray-900 mb-2">Power BI Trainer</h3>
-                  <p class="text-lg text-gray-600 font-medium">DBV TMF Smart-Broadway</p>
-                  <p class="text-sm text-gray-500">Chennai, India</p>
-                </div>
-                <div class="mt-4 md:mt-0 flex items-center">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                    Mar 2025 - Present
-                  </span>
-                  <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                    Freelance
-                  </span>
-                </div>
-              </div>
-              
-              <!-- Key Metrics -->
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                  <div class="text-2xl font-bold text-blue-600">50+</div>
-                  <div class="text-sm text-gray-600">Students Trained</div>
-                </div>
-                <div class="text-center p-4 bg-green-50 rounded-lg">
-                  <div class="text-2xl font-bold text-green-600">40%</div>
-                  <div class="text-sm text-gray-600">Speed Improvement</div>
-                </div>
-                <div class="text-center p-4 bg-purple-50 rounded-lg">
-                  <div class="text-2xl font-bold text-purple-600">20+</div>
-                  <div class="text-sm text-gray-600">Training Hours</div>
-                </div>
-                <div class="text-center p-4 bg-orange-50 rounded-lg">
-                  <div class="text-2xl font-bold text-orange-600">97%</div>
-                  <div class="text-sm text-gray-600">Satisfaction Rate</div>
-                </div>
-              </div>
-              
-              <!-- Technologies Used -->
               <div class="mb-6">
-                <h4 class="text-sm font-semibold text-gray-700 mb-3">Technologies & Tools</h4>
-                <div class="flex flex-wrap gap-3">
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoji_EKQxlY7vgaTqhS3MANVlVF84uku9EbQ&s" class="w-6 h-5" alt="DAX">
-                    <span class="text-sm font-medium">Power BI</span>
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Power BI Trainer</h3>
+                    <p class="text-base sm:text-lg text-gray-600 font-medium">DBV TMF Smart-Broadway</p>
+                    <p class="text-sm text-gray-500">Chennai, India</p>
                   </div>
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUc6BDVUoCmqWEnIsvXzGq2JCl00a9Y7sd8Q&s" class="w-5 h-4" alt="DAX">
-                    <span class="text-sm font-medium">DAX</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-4 h-4" alt="Python">
-                    <span class="text-sm font-medium">Python</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="data:image/png;base64,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" class="w-7 h-5" alt="Python">
-
-                    <span class="text-sm font-medium">AI Tools</span>
+                  <div class="flex flex-col sm:flex-row gap-2 mt-3 sm:mt-0">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                      Mar 2025 - Present
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                      Freelance
+                    </span>
                   </div>
                 </div>
               </div>
               
-              <!-- Achievements List -->
-              <div class="space-y-3">
+              <!-- Key Results (Simplified) -->
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
+                <div class="text-center p-3 bg-blue-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-blue-600">50+</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Students</div>
+                </div>
+                <div class="text-center p-3 bg-green-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-green-600">40%</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Speed Up</div>
+                </div>
+                <div class="text-center p-3 bg-purple-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-purple-600">20+</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Hours</div>
+                </div>
+                <div class="text-center p-3 bg-orange-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-orange-600">97%</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Success</div>
+                </div>
+              </div>
+              
+              <!-- Key Skills -->
+              <div class="mb-6">
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Power BI</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">DAX</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Python</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">AI Tools</span>
+                </div>
+              </div>
+              
+              <!-- Key Achievements (Condensed) -->
+              <div class="space-y-2">
                 <div class="flex items-start gap-3">
                   <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Trained 50+ students through hands-on workshops, improving dashboard-building speed by 40%</p>
+                  <p class="text-gray-700 text-sm sm:text-base">Delivered hands-on Power BI training to 50+ students, boosting dashboard creation speed by 40%</p>
                 </div>
                 <div class="flex items-start gap-3">
                   <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Delivered 20+ hours covering data modeling, Power Query (ETL), DAX, and advanced visualization</p>
+                  <p class="text-gray-700 text-sm sm:text-base">Designed project-based curriculum achieving 97% satisfaction and 100% completion rate</p>
                 </div>
                 <div class="flex items-start gap-3">
                   <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Designed project-based curriculum achieving 100% completion rate and 97% positive feedback</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Integrated AI-powered analytics tools, boosting student awareness of modern tech by 80%</p>
+                  <p class="text-gray-700 text-sm sm:text-base">Integrated AI-powered analytics tools, increasing modern tech awareness by 80%</p>
                 </div>
               </div>
             </div>
@@ -880,7 +965,7 @@
         <!-- AR Process Analyst Position -->
         <div class="relative">
           <!-- Icon Circle -->
-          <div class="absolute left-0 md:left-0 w-12 h-12 bg-white border-4 border-green-500 rounded-full flex items-center justify-center shadow-lg">
+          <div class="absolute left-0 w-12 h-12 bg-white border-4 border-green-500 rounded-full flex items-center justify-center shadow-lg">
             <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
             </svg>
@@ -888,83 +973,66 @@
           
           <!-- Content Card -->
           <div class="ml-16 md:ml-20">
-            <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              
               <!-- Header -->
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                <div>
-                  <h3 class="text-2xl font-bold text-gray-900 mb-2">AR Process Analyst</h3>
-                  <p class="text-lg text-gray-600 font-medium">Omega Healthcare</p>
-                  <p class="text-sm text-gray-500">Chennai, India</p>
-                </div>
-                <div class="mt-4 md:mt-0 flex items-center">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                    Sep 2024 - Mar 2025
-                  </span>
-                  <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                    Full-time
-                  </span>
-                </div>
-              </div>
-              
-              <!-- Key Metrics -->
-              <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                <div class="text-center p-4 bg-red-50 rounded-lg">
-                  <div class="text-2xl font-bold text-red-600">15%</div>
-                  <div class="text-sm text-gray-600">Error Reduction</div>
-                </div>
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                  <div class="text-2xl font-bold text-blue-600">20%</div>
-                  <div class="text-sm text-gray-600">Faster Turnaround</div>
-                </div>
-                <div class="text-center p-4 bg-green-50 rounded-lg">
-                  <div class="text-2xl font-bold text-green-600">100%</div>
-                  <div class="text-sm text-gray-600">Data Integrity</div>
-                </div>
-              </div>
-              
-              <!-- Technologies Used -->
               <div class="mb-6">
-                <h4 class="text-sm font-semibold text-gray-700 mb-3">Technologies & Tools</h4>
-                <div class="flex flex-wrap gap-3">
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAh1BMVEVFtklAtUQ4sz0vsTVzw3SFyYZ3xXlMt04qsDBCtUZivmS737v0+fT///9TuVYzsjg7tEDU6tTD48M9tEJtwW+c053e797m8OeCyYOW0Jei1KKw2LHI4chqwWxfuWKPzpDC48J0vXY5sz0osC7v8e+k0qX//P/W5Nfl7uabyZxUt1ddvWCq1qv9fxK9AAABSElEQVR4AVWRBZLEMAwEZTtgh5xceJn5/++7jLTYRZ5qjQKmF0obCsIwiq129IszSZrlTJYW/keXcSVG+Kvrj/PhRwiNfrs2F7Ku6nNheNpyENPG1ntTj5l0FZyLOcxs6WTWpDxrEEzHazy9se3kCoyqBm4UpxQBM8+IT34xud7iqOtgaRSvJidTKIY1z+NRQUkflpAePbiJlfvI9ZQ7yDoXKv+R+AEbTaS2MMCIiAui2RTnO35rod+LLApZu8C/8q/mFklAIbN45nvvKItfhZXCx62qg/z3o33JCnt51nmzj06w6V5kPSANOwKo52BhnPxmXpWUJNRxhnzW8rOX8o5GiS33B+SLJ6CPsmllvd5525w5rmticLvgsEjn1UHOVxTFSleQnjhGL/tv1d00MY6p90P1UovG1o6h5Yv7ff1I0+Nwuy9f/AMMiR961GVquwAAAABJRU5ErkJggg==" class="w-5 h-5" alt="Google">
-                    <span class="text-sm font-medium">CareCentral</span>
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">AR Process Analyst</h3>
+                    <p class="text-base sm:text-lg text-gray-600 font-medium">Omega Healthcare</p>
+                    <p class="text-sm text-gray-500">Chennai, India</p>
                   </div>
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61fZVpA0X730WPWupCUNYGq_n-eNQ3drcuw&s" class="w-7 h-5" alt="Google">
-                    <span class="text-sm font-medium">Google Sheets</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="data:image/jpeg;base64,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" 
-     class="w-6 h-6" 
-     alt="Microsoft Teams Logo">
-
-                    <span class="text-sm font-medium">Microsoft Teams</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
-                    <img src="data:image/jpeg;base64,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" class="w-5 h-5" alt="Hippa">
-                    <span class="text-sm font-medium">HIPAA Compliance</span>
+                  <div class="flex flex-col sm:flex-row gap-2 mt-3 sm:mt-0">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                      Sep 2024 - Mar 2025
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                      Full-time
+                    </span>
                   </div>
                 </div>
               </div>
               
-              <!-- Achievements List -->
-              <div class="space-y-3">
+              <!-- Key Results (Simplified) -->
+              <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6">
+                <div class="text-center p-3 bg-red-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-red-600">15%</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Error Reduction</div>
+                </div>
+                <div class="text-center p-3 bg-blue-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-blue-600">20%</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Faster Process</div>
+                </div>
+                <div class="text-center p-3 bg-green-50 rounded-lg">
+                  <div class="text-xl sm:text-2xl font-bold text-green-600">100%</div>
+                  <div class="text-xs sm:text-sm text-gray-600">Data Accuracy</div>
+                </div>
+              </div>
+              
+              <!-- Key Skills -->
+              <div class="mb-6">
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">CareCentral</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Google Sheets</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">MS Teams</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">HIPAA</span>
+                </div>
+              </div>
+              
+              <!-- Key Achievements (Condensed) -->
+              <div class="space-y-2">
                 <div class="flex items-start gap-3">
                   <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Verified insurance eligibility using CareCentral, reducing verification errors by 15%</p>
+                  <p class="text-gray-700 text-sm sm:text-base">Verified insurance eligibility reducing errors by 15% and improving process efficiency</p>
                 </div>
                 <div class="flex items-start gap-3">
                   <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Coordinated prior authorization requests, enhancing turnaround time by 20%</p>
+                  <p class="text-gray-700 text-sm sm:text-base">Enhanced authorization turnaround time by 20% through streamlined coordination</p>
                 </div>
                 <div class="flex items-start gap-3">
                   <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Streamlined inter-team communication via Microsoft Teams, reducing delays by 18%</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-gray-700">Maintained 100% data integrity for daily records, improving reporting accuracy by 25%</p>
+                  <p class="text-gray-700 text-sm sm:text-base">Maintained 100% data integrity improving reporting accuracy by 25%</p>
                 </div>
               </div>
             </div>
@@ -977,48 +1045,50 @@
 </section>
 
 
-<!-- Projects Section -->
-<section id="projects" class="py-20 bg-gray-50 section-reveal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<!-- Projects Section - Mobile Optimized & Perfect Sizing -->
+<section id="projects" class="relative py-20 sm:py-24 bg-gradient-to-b from-red-50 to-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center mb-16">
-            <h2 class="text-5xl font-bold text-gray-900 mb-4">
+        <!-- Header -->
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 Featured Projects
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                A collection of data analytics and machine learning projects demonstrating end-to-end problem-solving capabilities.
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Data analytics and machine learning projects demonstrating end-to-end problem-solving capabilities
             </p>
         </div>
         
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6 lg:gap-8">
             
             <!-- Project 1: Amazon Forecasting -->
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
                     <div class="text-center">
-                        <svg class="w-16 h-16 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-12 h-12 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                         <p class="text-sm text-blue-700 font-medium">Predictive Analytics</p>
                     </div>
                 </div>
                 
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                         Amazon Sales Forecasting
                     </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Scalable analytics pipeline using BigQuery analyzing 2.5M+ records, achieving 87% accuracy and $450K cost savings.
+                    <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+                        Scalable analytics pipeline using BigQuery analyzing 2.5M+ records, achieving 87% accuracy and $450K cost savings
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">BigQuery</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Python</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">Prophet</span>
-                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-md font-medium">LightGBM</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">BigQuery</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Python</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Prophet</span>
+                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-md">LightGBM</span>
                     </div>
                     
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/amazon-sales-forecasting-python-bigquery-ml" 
                            target="_blank" 
                            class="text-blue-600 hover:text-blue-800 font-medium text-sm">
@@ -1036,32 +1106,32 @@
             </div>
             
             <!-- Project 2: Sentiment Analysis -->
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
                     <div class="text-center">
-                        <svg class="w-16 h-16 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-12 h-12 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                         </svg>
                         <p class="text-sm text-green-700 font-medium">AI Analysis</p>
                     </div>
                 </div>
                 
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                         YouTube Sentiment Analysis
                     </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        AI-powered sentiment analysis of 500+ YouTube comments using Gemini API and TensorFlow with 95.2% confidence.
+                    <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+                        AI-powered sentiment analysis of 500+ YouTube comments using Gemini API and TensorFlow with 95.2% confidence
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-md font-medium">Gemini API</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">TensorFlow</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">YouTube API</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">BERT</span>
+                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-md">Gemini API</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">TensorFlow</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">YouTube API</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">BERT</span>
                     </div>
                     
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini" 
                            target="_blank" 
                            class="text-green-600 hover:text-green-800 font-medium text-sm">
@@ -1078,33 +1148,32 @@
                 </div>
             </div>
             
-             <!-- Project 4: AWS Data Pipeline -->
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+            <!-- Project 3: AWS Data Pipeline (FIXED ALIGNMENT) -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
                     <div class="text-center">
-                        <svg class="w-16 h-16 text-orange-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-12 h-12 text-orange-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
                         </svg>
                         <p class="text-sm text-orange-700 font-medium">Data Engineering</p>
                     </div>
                 </div>
                 
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                         AWS Streaming Pipeline
                     </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                        End-to-end streaming pipeline using Apache Kafka, AWS MSK, RDS, and S3 with Change Data Capture.
+                    <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+                        End-to-end streaming pipeline using Apache Kafka, AWS MSK, RDS, and S3 with Change Data Capture
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-md font-medium">Kafka</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">AWS MSK</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Debezium</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-md font-medium">S3</span>
+                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-md">Kafka</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">AWS MSK</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Debezium</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-md">S3</span>
                     </div>
                     
-                    <!-- FOOTER ALIGNMENT -->
                     <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/AWS-data-streaming-pipeline" 
                            target="_blank" 
@@ -1115,40 +1184,40 @@
                            target="_blank" 
                            class="text-gray-400 hover:text-gray-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Project 5: Breast Cancer Prediction -->
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <!-- Project 4: Breast Cancer Prediction -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center">
                     <div class="text-center">
-                        <svg class="w-16 h-16 text-pink-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-12 h-12 text-pink-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
                         <p class="text-sm text-pink-700 font-medium">Healthcare ML</p>
                     </div>
                 </div>
                 
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                         Breast Cancer Prediction
                     </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Neural network for breast cancer diagnosis using PyTorch with comprehensive exploratory data analysis.
+                    <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+                        Neural network for breast cancer diagnosis using PyTorch with comprehensive exploratory data analysis
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-md font-medium">PyTorch</span>
-                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-md font-medium">Neural Networks</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Healthcare</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">Classification</span>
+                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-md">PyTorch</span>
+                        <span class="px-2 py-1 bg-pink-100 text-pink-800 text-xs font-medium rounded-md">Neural Networks</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Healthcare</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">Classification</span>
                     </div>
                     
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/breast-cancer-prediction-neural-network-pytorch" 
                            target="_blank" 
                            class="text-pink-600 hover:text-pink-800 font-medium text-sm">
@@ -1165,33 +1234,33 @@
                 </div>
             </div>
             
-            <!-- Project 3: Customer Churn -->
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <!-- Project 5: Customer Churn -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
                     <div class="text-center">
-                        <svg class="w-16 h-16 text-purple-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-12 h-12 text-purple-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                         <p class="text-sm text-purple-700 font-medium">BI Dashboard</p>
                     </div>
                 </div>
                 
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                         Customer Churn Analysis
                     </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies.
+                    <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+                        Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">Power BI</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Python</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">SQL Server</span>
-                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-md font-medium">Scikit-learn</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Power BI</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Python</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">SQL Server</span>
+                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-md">Scikit-learn</span>
                     </div>
                     
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/customer-churn-prediction-dashboard" 
                            target="_blank" 
                            class="text-purple-600 hover:text-purple-800 font-medium text-sm">
@@ -1201,7 +1270,7 @@
                            target="_blank" 
                            class="text-gray-400 hover:text-gray-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
                     </div>
@@ -1209,32 +1278,32 @@
             </div>
             
             <!-- Project 6: Revenue Dashboard -->
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center">
                     <div class="text-center">
-                        <svg class="w-16 h-16 text-indigo-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-12 h-12 text-indigo-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
                         </svg>
                         <p class="text-sm text-indigo-700 font-medium">Business Intelligence</p>
                     </div>
                 </div>
                 
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                         Revenue Trends Analysis
                     </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Interactive Tableau dashboard analyzing sales trends, KPIs, and regional insights with advanced SQL queries.
+                    <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+                        Interactive Tableau dashboard analyzing sales trends, KPIs, and regional insights with advanced SQL queries
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">SQL Server</span>
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-md font-medium">Tableau</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Data Analysis</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">KPI Analytics</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">SQL Server</span>
+                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-md">Tableau</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Data Analysis</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">KPI Analytics</span>
                     </div>
                     
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/revenue-trends-analysis-dashboard" 
                            target="_blank" 
                            class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">
@@ -1244,7 +1313,7 @@
                            target="_blank" 
                            class="text-gray-400 hover:text-gray-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
                     </div>
@@ -1252,113 +1321,119 @@
             </div>
             
         </div>
+        
         <!-- More Projects Button -->
         <div class="text-center mt-12">
             <a href="https://github.com/shakeel-data?tab=repositories" 
                target="_blank"
-               class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">
-                Explore more Projects →
+               class="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                Explore More Projects →
             </a>
         </div>
     </div>
 </section>
 
-<!-- Minimalist Education Section -->
-<section id="education" class="py-20 bg-white section-reveal">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-5xl font-bold text-gray-900 mb-16 text-center">Education</h2>
-    
-    <div class="space-y-8">
-      <!-- MBA - RIGHT ALIGNED -->
-      <div class="border-r-4 border-yellow-500 pr-8 py-6 text-right shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+<!-- Education Section - Perfect Sizing & Mobile Optimized -->
+<section id="education" class="relative py-20 sm:py-24 bg-gradient-to-b from-purple-50 to-white overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">Education</h2>
+
+    <div class="space-y-6 sm:space-y-8">
+
+      <!-- MBA - Right Aligned -->
+      <div class="border-r-4 border-yellow-500 pr-6 sm:pr-8 py-4 sm:py-5 text-right shadow-md hover:shadow-lg transition-shadow duration-300 rounded-md bg-gradient-to-l from-yellow-50/30">
         <div class="flex flex-col md:flex-row-reverse md:items-center md:justify-between">
           <div>
-            <h3 class="text-2xl font-bold text-gray-900">MBA in Business Data Analytics</h3>
-            <p class="text-lg text-blue-600 font-medium">University of Madras</p>
-            <p class="text-gray-600">Institute of Distance Education • Chennai, India</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900">MBA in Business Data Analytics</h3>
+            <p class="text-base text-yellow-700 font-semibold">University of Madras</p>
+            <p class="text-gray-600 text-sm sm:text-base">Institute of Distance Education • Chennai, India</p>
           </div>
           <div class="mt-2 md:mt-0">
-            <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
               Jul 2024 - Jun 2026
             </span>
           </div>
         </div>
-        <p class="text-gray-700 mt-4">
-          Specialization: Business Intelligence • Advanced Analytics • Data Science • Strategic Decision Making
+        <p class="text-gray-700 mt-3 text-sm sm:text-base leading-relaxed">
+          Foundation: Business Intelligence • Advanced Analytics • Data Science • Strategic Decision Making
         </p>
       </div>
-      
-      <!-- Bachelor's - LEFT ALIGNED -->
-      <div class="border-l-4 border-green-500 pl-8 py-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+      <!-- Bachelor's - Left Aligned -->
+      <div class="border-l-4 border-green-500 pl-6 sm:pl-8 py-4 sm:py-5 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-md bg-gradient-to-r from-green-50/30">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 class="text-2xl font-bold text-gray-900">Bachelor of Commerce</h3>
-            <p class="text-lg text-blue-600 font-medium">The New College</p>
-            <p class="text-gray-600">Chennai, India</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Bachelor of Commerce</h3>
+            <p class="text-base text-green-700 font-semibold">The New College</p>
+            <p class="text-gray-600 text-sm sm:text-base">Chennai, India</p>
           </div>
           <div class="mt-2 md:mt-0">
-            <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
               Completed
             </span>
           </div>
         </div>
-        <p class="text-gray-700 mt-4">
+        <p class="text-gray-700 mt-3 text-sm sm:text-base leading-relaxed">
           Foundation: Business Fundamentals • Accounting • Finance • Economics
         </p>
       </div>
-      
-      <!-- 12th - RIGHT ALIGNED -->
-     <div class="border-r-4 border-red-500 pr-8 py-6 text-right shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+      <!-- 12th - Right Aligned -->
+      <div class="border-r-4 border-red-500 pr-6 sm:pr-8 py-4 sm:py-5 text-right shadow-md hover:shadow-lg transition-shadow duration-300 rounded-md bg-gradient-to-l from-red-50/30">
         <div class="flex flex-col md:flex-row-reverse md:items-center md:justify-between">
           <div>
-            <h3 class="text-2xl font-bold text-gray-900">Higher Secondary Education</h3>
-            <p class="text-lg text-blue-600 font-medium">Shree A.G gain hr. school</p>
-            <p class="text-gray-600">Chennai, India</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Higher Secondary Education</h3>
+            <p class="text-base text-red-700 font-semibold">Shree A.G Gain Hr. School</p>
+            <p class="text-gray-600 text-sm sm:text-base">Chennai, India</p>
           </div>
           <div class="mt-2 md:mt-0">
-            <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
               Completed
             </span>
           </div>
         </div>
-        <p class="text-gray-700 mt-4">
+        <p class="text-gray-700 mt-3 text-sm sm:text-base leading-relaxed">
           Foundation: Business Maths • Accounting • Commerce • Economics
         </p>
       </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- Certifications Section -->
-<section id="certifications" class="py-20 bg-gray-50 section-reveal">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<!-- Certifications Section - Mobile Optimized & Perfect Sizing -->
+<section id="certifications" class="relative py-20 sm:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold text-gray-900 mb-4">
+    <!-- Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Certifications
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Industry-recognized credentials demonstrating expertise in data analytics, machine learning, and cloud platforms
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Industry-recognized credentials in data analytics, machine learning, and cloud platforms
       </p>
     </div>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <!-- Google AI Essentials -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-10 h-10" alt="Google">
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-8 h-8" alt="Google">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
           Google AI Essentials
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Generative AI fundamentals and practical applications
         </p>
         <div class="flex items-center justify-center mb-4">
-          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
-          <span class="text-gray-500 text-sm"> | Aug 2025</span>
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-12 h-3 mr-2" alt="Coursera">
+          <span class="text-gray-500 text-sm">| Aug 2025</span>
         </div>
         <a href="https://www.coursera.org/account/accomplishments/verify/1D59QUORGDQY" 
            target="_blank" 
@@ -1368,84 +1443,87 @@
       </div>
       
       <!-- IBM Machine Learning -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" class="w-10 h-10" alt="IBM">
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg" class="w-8 h-8" alt="IBM">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
           IBM Machine Learning Professional
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Advanced ML algorithms and model deployment
         </p>
         <div class="flex items-center justify-center mb-4">
-          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
-          <span class="text-gray-500 text-sm"> | May 2025</span>
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-12 h-3 mr-2" alt="Coursera">
+          <span class="text-gray-500 text-sm">| May 2025</span>
         </div>
         <a href="https://www.coursera.org/account/accomplishments/professional-cert/WT57ED6RK0T8" 
            target="_blank" 
-           class="text-black-600 text-sm font-medium hover:text-black-800">
+           class="text-blue-600 text-sm font-medium hover:text-blue-800">
           View Certificate →
         </a>
       </div>
       
       <!-- Meta Database Engineer -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFdNatYGiBelg/company-logo_100_100/company-logo_100_100/0/1636138754252/facebook_logo?e=1759363200&v=beta&t=V5NzhLIcElTJ4DOfi-RhTL3PUlg0QtAp2Cw-PXtq7F8" class="w-10 h-10" alt="Meta">
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFdNatYGiBelg/company-logo_100_100/company-logo_100_100/0/1636138754252/facebook_logo?e=1759363200&v=beta&t=V5NzhLIcElTJ4DOfi-RhTL3PUlg0QtAp2Cw-PXtq7F8" class="w-8 h-8" alt="Meta">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
           Meta Database Engineer Professional
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Database design, optimization, and administration
         </p>
         <div class="flex items-center justify-center mb-4">
-          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-12 h-3 mr-2" alt="Coursera">
           <span class="text-gray-500 text-sm">| Apr 2025</span>
         </div>
         <a href="https://www.coursera.org/account/accomplishments/specialization/90F7XBIW9DHJ" 
-           target="_blank" 
-           class="text-blue-600 text-sm font-medium hover:text-blue-800">
-          View Certificate →
-        </a>
-      </div>
-
-      <!-- AI for techies -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://media.licdn.com/dms/image/v2/D4D0BAQEnGUaRe8JbvQ/company-logo_100_100/company-logo_100_100/0/1714040112134/ai_for_techies_logo?e=1759363200&v=beta&t=WqydlXgmeXh3G_0seRaVfK1WyJmFQWzLFeg_aGTTKs4" class="w-10 h-10" alt="AI for techies">
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
-          Python Using AI
-        </h3>
-        <p class="text-sm text-gray-600 mb-4 flex-grow">
-          Create visualizations, debug, and write Python code using AI
-        </p>
-        <div class="flex items-center justify-center mb-4">
-          <span class="text-gray-500 text-sm"><strong>AI for Techies</strong> | Apr 2025</span>
-        </div>
-        <a href="https://certx.in/certificate/08982a60-ee18-43e4-9061-8f0dc40fd449297718" 
            target="_blank" 
            class="text-purple-600 text-sm font-medium hover:text-purple-800">
           View Certificate →
         </a>
       </div>
 
-    
-      <!-- Finance and accounting  -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGCOIhzula4OQ/company-logo_100_100/company-logo_100_100/0/1718779216576/don_bosco_vazhikaatti_logo?e=1759363200&v=beta&t=4Z-mUg_5VUCa1G-lPb4Md-5Tn8wicjVeL3STXF1k6bo" class="w-10 h-10" alt="AI for techies">
+      <!-- AI for techies -->
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://media.licdn.com/dms/image/v2/D4D0BAQEnGUaRe8JbvQ/company-logo_100_100/company-logo_100_100/0/1714040112134/ai_for_techies_logo?e=1759363200&v=beta&t=WqydlXgmeXh3G_0seRaVfK1WyJmFQWzLFeg_aGTTKs4" class="w-8 h-8" alt="AI for techies">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
-          Finance and Accounting Executive
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
+          Python Using AI
+        </h3>
+        <p class="text-sm text-gray-600 mb-4 flex-grow">
+          Create visualizations, debug, and write Python code using AI
+        </p>
+        <div class="flex items-center justify-center mb-4">
+          <span class="text-gray-500 text-sm font-semibold">AI for Techies</span>
+          <span class="text-gray-400 text-sm mx-1">|</span>
+          <span class="text-gray-500 text-sm">Apr 2025</span>
+        </div>
+        <a href="https://certx.in/certificate/08982a60-ee18-43e4-9061-8f0dc40fd449297718" 
+           target="_blank" 
+           class="text-orange-600 text-sm font-medium hover:text-orange-800">
+          View Certificate →
+        </a>
+      </div>
+
+      <!-- Finance and accounting  -->
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGCOIhzula4OQ/company-logo_100_100/company-logo_100_100/0/1718779216576/don_bosco_vazhikaatti_logo?e=1759363200&v=beta&t=4Z-mUg_5VUCa1G-lPb4Md-5Tn8wicjVeL3STXF1k6bo" class="w-8 h-8" alt="DBV TMF">
+        </div>
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
+          Finance & Accounting Executive
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Manages accounts and finances using Tally Prime for accurate reporting
         </p>
         <div class="flex items-center justify-center mb-4">
-          <span class="text-gray-500 text-sm"><strong>DBV TMF</strong> Smart-Broadway | Apr 2025</span>
+          <span class="text-gray-500 text-sm font-semibold">DBV TMF Broadway</span>
+          <span class="text-gray-400 text-sm mx-1">|</span>
+          <span class="text-gray-500 text-sm">Mar 2025</span>
         </div>
         <a href="https://media.licdn.com/dms/image/v2/D4E2DAQGAnHCa3OOofQ/profile-treasury-image-shrink_160_160/B4EZiRnWrNHoAk-/0/1754789671860?e=1756976400&v=beta&t=EdZcpe_C5XG-7egSU0X9mGn_fz3Fcoqjp5FsSM2dWgM" 
            target="_blank" 
@@ -1455,18 +1533,18 @@
       </div>
       
       <!-- Microsoft Power BI -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" class="w-10 h-10" alt="Microsoft">
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" class="w-8 h-8" alt="Microsoft">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
           Microsoft Power BI Data Analyst Professional
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Business intelligence and data visualization
         </p>
         <div class="flex items-center justify-center mb-4">
-          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-15 h-3 mr-1" alt="Coursera">
+          <img src="https://cdn.worldvectorlogo.com/logos/coursera.svg" class="w-12 h-3 mr-2" alt="Coursera">
           <span class="text-gray-500 text-sm">| Feb 2025</span>
         </div>
         <a href="https://www.coursera.org/account/accomplishments/professional-cert/R6YAPT8WAUZZ" 
@@ -1477,39 +1555,43 @@
       </div>
 
       <!-- Tableau -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://media.licdn.com/dms/image/v2/D560BAQENKiYx2_hXCw/company-logo_100_100/company-logo_100_100/0/1732620355624/great_learning_logo?e=1759363200&v=beta&t=NMKunQcWw0qf-qZTKWwIYv5RPN59eoAbS76-UM3olG4" class="w-10 h-10" alt="Microsoft">
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://media.licdn.com/dms/image/v2/D560BAQENKiYx2_hXCw/company-logo_100_100/company-logo_100_100/0/1732620355624/great_learning_logo?e=1759363200&v=beta&t=NMKunQcWw0qf-qZTKWwIYv5RPN59eoAbS76-UM3olG4" class="w-8 h-8" alt="Great Learning">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
           Data Visualization Using Tableau
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Transforms data into interactive dashboards using Tableau
         </p>
         <div class="flex items-center justify-center mb-4">
-          <span class="text-gray-500 text-sm"><strong>Great Learning</strong> | Feb 2025</span>
+          <span class="text-gray-500 text-sm font-semibold">Great Learning</span>
+          <span class="text-gray-400 text-sm mx-1">|</span>
+          <span class="text-gray-500 text-sm">Feb 2025</span>
         </div>
         <a href="https://media.licdn.com/dms/image/v2/D4E2DAQFejfHjbdQVpg/profile-treasury-document-cover-images_480/B4EZUCQ0t7H0Aw-/0/1739499723909?e=1756976400&v=beta&t=wS5mL3nBAw4Vm_t3Fp2k8iahTt8I3UVZroT6fMsnmls" 
            target="_blank" 
-           class="text-orange-600 text-sm font-medium hover:text-orange-800">
+           class="text-indigo-600 text-sm font-medium hover:text-indigo-800">
           View Certificate →
         </a>
       </div>
 
-       <!-- Excel -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
-          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGYQB0W2zliFg/company-logo_100_100/company-logo_100_100/0/1631328732272?e=1759363200&v=beta&t=WpkV7zb2aEd3y7vKM81kI9x18qr8jRpGEk-A3xG4XXY" class="w-10 h-10" alt="AI for techies">
+      <!-- Excel -->
+      <div class="bg-white rounded-xl border border-gray-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
+          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGYQB0W2zliFg/company-logo_100_100/company-logo_100_100/0/1631328732272?e=1759363200&v=beta&t=WpkV7zb2aEd3y7vKM81kI9x18qr8jRpGEk-A3xG4XXY" class="w-8 h-8" alt="ExcelGoodies">
         </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-3 min-h-[56px] flex items-center justify-center">
-          MIS reporting and Business modeling Specialist
+        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-3 min-h-[48px] flex items-center justify-center text-center">
+          MIS Reporting & Business Modeling Specialist
         </h3>
         <p class="text-sm text-gray-600 mb-4 flex-grow">
           Builds MIS reports and business models using Excel for data-driven decisions
         </p>
         <div class="flex items-center justify-center mb-4">
-          <span class="text-gray-500 text-sm"><strong>ExcelGoodies</strong> | Dec 2024</span>
+          <span class="text-gray-500 text-sm font-semibold">ExcelGoodies</span>
+          <span class="text-gray-400 text-sm mx-1">|</span>
+          <span class="text-gray-500 text-sm">Dec 2024</span>
         </div>
         <a href="https://media.licdn.com/dms/image/v2/D4E2DAQEBNy7p5-5m-Q/profile-treasury-document-cover-images_480/B4EZUB_BrnHUA4-/0/1739495058380?e=1756976400&v=beta&t=swWcqD7QMVQ4LqhzJHAfCGfdsx_tVwt7fZHgt97wo6g" 
            target="_blank" 
@@ -1520,124 +1602,148 @@
 
     </div>
     
-<!-- Additional Credentials -->
-    <div class="mt-16 text-center">
-      <h3 class="text-2xl font-bold text-gray-900 mb-8">
-        Additional Credentials
-      </h3>
-      <div class="flex flex-wrap justify-center gap-8">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <div class="font-bold text-gray-900">HackerRank SQL</div>
-            <div class="text-sm text-gray-600">5-Star Gold Badge</div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <div class="font-bold text-gray-900">HackerRank Python</div>
-            <div class="text-sm text-gray-600">3-Star Badge</div>
-          </div>
-        </div>
+ <!-- Additional Credentials - Clean Minimal -->
+<div class="mt-16">
+  <div class="text-center mb-12">
+    <h3 class="text-2xl font-light text-gray-900">Additional Achievements</h3>
+  </div>
+  
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors">
+      <h4 class="text-lg font-medium text-gray-900 mb-2">HackerRank SQL</h4>
+      <p class="text-sm text-gray-600 mb-3">5-Star Gold Badge</p>
+      <p class="text-xs text-gray-500">Advanced SQL problem solving and query optimization</p>
+    </div>
+    
+    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors">
+      <h4 class="text-lg font-medium text-gray-900 mb-2">HackerRank Python</h4>
+      <p class="text-sm text-gray-600 mb-3">3-Star Badge</p>
+      <p class="text-xs text-gray-500">Python programming and algorithmic challenges</p>
+    </div>
+    
+    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors">
+      <h4 class="text-lg font-medium text-gray-900 mb-2">Problem Solving</h4>
+      <p class="text-sm text-gray-600 mb-3">50+ Challenges</p>
+      <p class="text-xs text-gray-500">Cross-platform competitive programming achievements</p>
+    </div>
+  </div>
+</div>
+        
       </div>
-      <div class="mt-7 text-center">
-      <h3 class="text-medium font-bold text-gray-600 mb-8">
-    Solved 50+ competitive coding challenges demonstrating problem-solving skills.
-      </h3>
+    </div>
+    
   </div>
 </section>
 
-<!-- Community & Volunteer Involvement Section -->
-<section id="community" class="py-20 bg-white section-reveal">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold text-gray-900 mb-4">
+
+<!-- Community & Volunteer - Perfect Mobile & Desktop -->
+<section id="community" class="relative py-20 sm:py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Community & Volunteer
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <div class="w-16 h-px bg-gray-300 mx-auto mb-6"></div>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
         Committed to empowering students and supporting educational initiatives in the community
       </p>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <!-- Main Content Grid -->
+    <div class="grid md:grid-cols-2 gap-8 md:gap-0 relative">
       
-      <!-- Volunteer Tutor -->
-      <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-            </svg>
+      <!-- Minimal Center Divider Line (Desktop Only) -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-1/2 hidden md:block"></div>
+      
+      <!-- Personal Tutor -->
+      <div class="p-6 sm:p-8 md:pr-12 hover:bg-gray-50/30 transition-colors duration-300 border border-gray-100 md:border-0 rounded-lg md:rounded-none">
+        <div class="mb-6">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+            <h3 class="text-lg sm:text-xl font-medium text-gray-900">Personal Tutor</h3>
+            <span class="text-xs font-mono text-blue-600 tracking-wider uppercase mt-1 sm:mt-0">Ongoing</span>
           </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900">Personal Tutor</h3>
-            <p class="text-blue-600 font-medium">Ongoing</p>
-          </div>
+          <div class="w-8 sm:w-12 h-px bg-blue-600 mb-4"></div>
         </div>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Providing personalized one-on-one tutoring to students in data analytics, Excel, Power BI, and AI. 
-          Helping learners build practical skills and confidence in data science concepts.
+        
+        <p class="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
+          Providing personalized one-on-one tutoring to students in data analytics, Google Sheets, Power BI, and AI. 
+          Helping learners build practical skills and confidence in data science concepts
         </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">Data Analytics</span>
-          <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Excel</span>
-          <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-md font-medium">AI</span>
+        
+        <div class="space-y-2">
+          <div class="flex items-center text-sm">
+            <div class="w-1 h-1 bg-gray-400 rounded-full mr-3"></div>
+            <span class="text-gray-600">Data Analytics</span>
+          </div>
+          <div class="flex items-center text-sm">
+            <div class="w-1 h-1 bg-gray-400 rounded-full mr-3"></div>
+            <span class="text-gray-600">Google Sheets</span>
+          </div>
+          <div class="flex items-center text-sm">
+            <div class="w-1 h-1 bg-gray-400 rounded-full mr-3"></div>
+            <span class="text-gray-600">Artificial Intelligence</span>
+          </div>
         </div>
       </div>
       
       <!-- Community Volunteer -->
-      <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
+      <div class="p-6 sm:p-8 md:pl-12 hover:bg-gray-50/30 transition-colors duration-300 border border-gray-100 md:border-0 rounded-lg md:rounded-none">
+        <div class="mb-6">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+            <h3 class="text-lg sm:text-xl font-medium text-gray-900">Community Volunteer</h3>
+            <span class="text-xs font-mono text-green-600 tracking-wider uppercase mt-1 sm:mt-0">Active</span>
           </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900">Community Volunteer</h3>
-            <p class="text-green-600 font-medium">Active</p>
-          </div>
+          <div class="w-8 sm:w-12 h-px bg-green-600 mb-4"></div>
         </div>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        
+        <p class="text-gray-600 leading-relaxed mb-6 text-sm sm:text-base">
           Supporting educational initiatives and digital literacy programs at Agaram Foundation. 
-          Focused on making technology education accessible to underserved students.
+          Focused on making technology education accessible to underserved students
         </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md font-medium">Education</span>
-          <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-md font-medium">Digital Literacy</span>
-          <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-md font-medium">Mentoring</span>
+        
+        <div class="space-y-2">
+          <div class="flex items-center text-sm">
+            <div class="w-1 h-1 bg-gray-400 rounded-full mr-3"></div>
+            <span class="text-gray-600">Education Initiatives</span>
+          </div>
+          <div class="flex items-center text-sm">
+            <div class="w-1 h-1 bg-gray-400 rounded-full mr-3"></div>
+            <span class="text-gray-600">Digital Literacy</span>
+          </div>
+          <div class="flex items-center text-sm">
+            <div class="w-1 h-1 bg-gray-400 rounded-full mr-3"></div>
+            <span class="text-gray-600">Student Mentoring</span>
+          </div>
         </div>
       </div>
       
     </div>
     
-    <!-- Impact Summary -->
-    <div class="mt-16 text-center">
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 max-w-3xl mx-auto border border-gray-200">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Impact</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-          <div>
-            <div class="text-3xl font-bold text-blue-600">25+</div>
-            <div class="text-sm text-gray-600">Students Tutored</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-green-600">100+</div>
-            <div class="text-sm text-gray-600">Hours Volunteered</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-purple-600">95%</div>
-            <div class="text-sm text-gray-600">Student Success Rate</div>
-          </div>
-        </div>
+    <!-- Impact Metrics - Two Metrics Centered -->
+<div class="mt-16">
+  <div class="text-center mb-8">
+    <h3 class="text-xl font-light text-gray-900 mb-4">Community Impact</h3>
+    <div class="w-12 h-px bg-gray-300 mx-auto"></div>
+  </div>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-xl mx-auto">
+    
+    <div class="flex flex-col items-center justify-center py-4 sm:py-0">
+      <div class="text-2xl sm:text-3xl font-light text-gray-900 mb-2">25+</div>
+      <div class="text-sm text-gray-500">Students Tutored</div>
+    </div>
+    
+    <div class="flex flex-col items-center justify-center py-4 sm:py-0">
+      <div class="text-2xl sm:text-3xl font-light text-gray-900 mb-2">100+</div>
+      <div class="text-sm text-gray-500">Hours Volunteered</div>
+    </div>
+    
+  </div>
+</div>
+
+        
       </div>
     </div>
     
@@ -1645,27 +1751,28 @@
 </section>
 
 
-<!-- Contact Section -->
-<section id="contact" class="py-24 bg-gray-50 section-reveal">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Contact Section - Perfect Mobile & Desktop with aligned cards -->
+<section id="contact" class="py-16 sm:py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold text-gray-900 mb-4">
+    <!-- Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Let's Connect
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Interested in discussing data analytics opportunities? I'd be happy to connect.
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Interested in discussing data analytics opportunities? I'd be happy to connect
       </p>
     </div>
     
-    <div class="grid lg:grid-cols-3 gap-12">
+    <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
       
       <!-- Contact Form -->
       <div class="lg:col-span-2">
-        <div class="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Send a Message</h3>
-            <p class="text-gray-600">I typically respond within 24 hours.</p>
+        <div class="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm h-full">
+          <div class="mb-6 sm:mb-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Send a Message</h3>
+            <p class="text-gray-600">I typically respond within 24 hours</p>
           </div>
           
           <form class="space-y-6">
@@ -1676,7 +1783,7 @@
                   type="text" 
                   id="name" 
                   name="name" 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm" 
                   placeholder="Your name"
                 >
               </div>
@@ -1687,7 +1794,7 @@
                   type="email" 
                   id="email" 
                   name="email" 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm" 
                   placeholder="your.email@company.com"
                 >
               </div>
@@ -1698,7 +1805,7 @@
               <select 
                 id="subject" 
                 name="subject" 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option>General Inquiry</option>
                 <option>Data Analytics Project</option>
@@ -1713,14 +1820,14 @@
                 id="message" 
                 name="message" 
                 rows="5" 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm" 
                 placeholder="Your message..."
               ></textarea>
             </div>
             
             <button 
               type="submit" 
-              class="bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+              class="bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors text-sm"
             >
               Send Message
             </button>
@@ -1730,81 +1837,126 @@
       </div>
       
       <!-- Contact Information -->
-      <div class="space-y-8">
+      <div class="flex flex-col space-y-6 h-full">
         
-        <!-- Unified Contact & Profiles Card -->
+        <!-- Contact Details & Profiles -->
         <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
           <h4 class="font-bold text-gray-900 mb-6">Get In Touch</h4>
           
-          <!-- Contact Details -->
-          <div class="space-y-4 mb-8">
+          <div class="space-y-4 mb-6">
             <div>
               <p class="text-sm font-medium text-gray-900 mb-1">Email</p>
-              <a href="mailto:shakeelahamed6618@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors">
+              <a href="mailto:shakeelahamed6618@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors text-sm">
                 shakeelahamed6618@gmail.com
               </a>
             </div>
             
             <div>
               <p class="text-sm font-medium text-gray-900 mb-1">Location</p>
-              <p class="text-gray-600">Chennai, India</p>
+              <p class="text-gray-600 text-sm">Chennai, India</p>
             </div>
             
             <div>
               <p class="text-sm font-medium text-gray-900 mb-1">Response Time</p>
-              <p class="text-gray-600">Usually within 24 hours</p>
+              <p class="text-gray-600 text-sm">Usually within 24 hours</p>
             </div>
           </div>
           
-          <!-- Professional Profiles - ONLY Official Logos -->
-<div class="border-t border-gray-200 pt-6">
-  <h5 class="font-semibold text-gray-900 mb-6 text-center">Professional Profiles</h5>
-  
-  <div class="grid grid-cols-3 gap-6 justify-items-center max-w-sm mx-auto">
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/shakeel-data/" 
-       target="_blank" 
-       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
-           alt="LinkedIn" 
-           class="w-12 h-12">
-    </a>
-    
-    <!-- GitHub -->
-    <a href="https://github.com/shakeel-data" 
-       target="_blank" 
-       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
-           alt="GitHub" 
-           class="w-12 h-12">
-    </a>
-    
-    <!-- Reddit -->
-    <a href="https://reddit.com/user/shakeel-reddit" 
-       target="_blank" 
-       class="w-7 h-7 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-      <svg class="w-12 h-12 text-[#FF4500]" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-      </svg>
-    </a>
-    
-  
-  </div>
-</div>
-      </div>
-       <!-- Current Status -->
-        <div class="bg-green-50 rounded-xl border border-green-200 p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <h4 class="font-bold text-gray-900">Available for Opportunities</h4>
+          <!-- Professional Profiles -->
+          <div class="border-t border-gray-200 pt-6">
+            <h5 class="font-semibold text-gray-900 mb-4 text-center">Professional Profiles</h5>
+            
+            <div class="flex justify-center space-x-6">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/shakeel-data/" 
+                 target="_blank" 
+                 class="hover:scale-110 transition-transform duration-300">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
+                     alt="LinkedIn" 
+                     class="w-8 h-8">
+              </a>
+              
+              <!-- GitHub -->
+              <a href="https://github.com/shakeel-data" 
+                 target="_blank" 
+                 class="hover:scale-110 transition-transform duration-300">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+                     alt="GitHub" 
+                     class="w-8 h-8">
+              </a>
+              
+              <!-- Reddit -->
+              <a href="https://reddit.com/user/shakeel-reddit" 
+                 target="_blank" 
+                 class="hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-[#FF4500]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                </svg>
+              </a>
+            </div>
           </div>
-          <p class="text-sm text-gray-700">
-            Open to data analytics roles and Google 2026 apprenticeship opportunities.
-          </p>
         </div>
+        
+       <!-- Current Status - Continuous Animated Tick with No Blanks -->
+<div class="bg-white rounded-2xl border border-gray-200 p-6 text-center shadow-sm mt-auto max-w-xs mx-auto">
+  <div class="relative w-14 h-14 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-scale-pulse">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path class="checkmark-continuous" d="M5 13l4 4L19 7" />
+    </svg>
+  </div>
+  <h4 class="text-lg font-medium text-gray-900 mb-3">Available for Opportunities</h4>
+  <p class="text-sm text-gray-600 leading-relaxed">
+    Open to data analytics roles and Google 2026 apprenticeship opportunities
+  </p>
+</div>
+
+<style>
+/* Continuous Check Drawing - No Blank States */
+@keyframes drawContinuousCheck {
+  0% {
+    stroke-dashoffset: 22;
+  }
+  40%, 60% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -22;
+  }
+}
+
+.checkmark-continuous {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  animation: drawContinuousCheck 2.5s ease-in-out infinite;
+}
+
+/* Gentle Scale Pulse */
+@keyframes scalePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-scale-pulse {
+  animation: scalePulse 2.5s ease-in-out infinite;
+}
+
+/* Hover Effect */
+.animate-scale-pulse:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s ease;
+}
+</style>
+
+
+      </div>
     </div>
   </div>
 </section>
+
 
 
 <!-- Footer -->
