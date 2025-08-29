@@ -229,9 +229,9 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-      <!-- Logo -->
-      <div class="font-semibold text-xl text-gray-900">
-        SA
+      <!-- Clickable Logo -->
+      <div class="font-semibold text-2xl text-gray-900 cursor-pointer hover:opacity-80 transition-opacity duration-200" id="logo-home">
+        <span class="text-red-600">S</span>A
       </div>
       
       <!-- Navigation Links with Dual Effects -->
@@ -1852,6 +1852,32 @@
 
 <!-- JavaScript -->
 <script>
+
+// Logo click to scroll to top functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const logoHome = document.getElementById('logo-home');
+    
+    if (logoHome) {
+        logoHome.addEventListener('click', () => {
+            // Smooth scroll to top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Optional: Update active navigation state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Add active class to home link if it exists
+            const homeLink = document.querySelector('a[href="#home"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
+        });
+    }
+});
+
 
 /// Clean Resume Download Modal Functionality
 class ResumeDownloader {
