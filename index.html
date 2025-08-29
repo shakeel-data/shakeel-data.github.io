@@ -273,7 +273,7 @@
     </div>
   </div>
   
-  <!-- Enhanced Mobile Menu -->
+  <!-- Mobile Menu -->
   <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm border-t border-gray-200">
     <div class="px-4 pt-3 pb-4 space-y-2">
       <a href="#home" class="mobile-nav-item block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-blue-50 rounded-lg transition-all">Home</a>
@@ -314,19 +314,116 @@
                 Interested in discussing data analytics opportunities or collaboration? I'd love to hear from you.
             </p>
             
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#projects" class="border border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                    View Projects
-                
-                <a href="#contact" class="bg-google-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                    Download Resume
-                </a>
-            </div>
-            
-        </div>
+           <!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="#projects" class="border border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+        View Projects
+    </a>
+    <button id="download-resume-btn" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+        Download Resume
+    </button>
+</div>     
+  </div>
     </section>
 
+<!-- Resume Download Modal -->
+<div id="resume-modal" class="fixed inset-0 bg-gray-800 bg-opacity-60 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-sm w-full shadow-xl" id="modal-content">
+        
+        <!-- Clean Header -->
+        <div class="px-6 py-4 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-medium text-gray-900">Download Resume</h3>
+                <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Form Body -->
+        <form id="resume-form" class="p-6 space-y-4">
+            <!-- Name Field -->
+            <div>
+                <label for="user-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input 
+                    type="text" 
+                    id="user-name" 
+                    name="name" 
+                    required 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Your name"
+                >
+                <div id="name-error" class="text-red-600 text-xs mt-1 hidden"></div>
+            </div>
+
+            <!-- Email Field -->
+            <div>
+                <label for="user-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input 
+                    type="email" 
+                    id="user-email" 
+                    name="email" 
+                    required 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="your@email.com"
+                >
+                <div id="email-error" class="text-red-600 text-xs mt-1 hidden"></div>
+            </div>
+
+            <!-- Purpose Field -->
+            <div>
+                <label for="download-reason" class="block text-sm font-medium text-gray-700 mb-1">Purpose (optional)</label>
+                <select 
+                    id="download-reason" 
+                    name="reason" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                >
+                    <option value="">Select purpose</option>
+                    <option value="job-opportunity">Job Opportunity</option>
+                    <option value="freelance-project">Freelance Project</option>
+                    <option value="collaboration">Collaboration</option>
+                    <option value="networking">Networking</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Tech Tip -->
+            <div class="bg-blue-50 p-3 rounded-md">
+                <div class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <p class="text-xs font-medium text-blue-800 mb-1">Tech Tip</p>
+                        <p id="tech-tip" class="text-xs text-blue-700"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Footer Buttons -->
+        <div class="px-6 py-3 bg-gray-50 border-t border-gray-200 rounded-b-lg flex justify-end space-x-3">
+            <button 
+                type="button" 
+                id="cancel-btn"
+                class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+                Cancel
+            </button>
+            <button 
+                type="submit" 
+                form="resume-form"
+                id="download-btn"
+                class="px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-md hover:bg-green-700 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:opacity-50"
+            >
+                <span id="btn-text">Download</span>
+                <span id="loading-spinner" class="hidden">Downloading...</span>
+            </button>
+        </div>
+    </div>
+</div>
 
 
 <!-- Clean Professional About Me Section -->
@@ -414,7 +511,7 @@
 
 
 
-  <!-- Enhanced Skills Section - Categorized Approach -->
+  <!-- Skills Section -->
 <section id="skills" class="py-20 bg-white section-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -1001,7 +1098,7 @@
                         <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-md font-medium">S3</span>
                     </div>
                     
-                    <!-- FIXED FOOTER ALIGNMENT -->
+                    <!-- FOOTER ALIGNMENT -->
                     <div class="flex items-center justify-between mt-auto">
                         <a href="https://github.com/shakeel-data/AWS-data-streaming-pipeline" 
                            target="_blank" 
@@ -1149,7 +1246,7 @@
             </div>
             
         </div>
-        <!-- FIXED View More Projects Button -->
+        <!-- More Projects Button -->
         <div class="text-center mt-12">
             <a href="https://github.com/shakeel-data?tab=repositories" 
                target="_blank"
@@ -1242,7 +1339,7 @@
     
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- Google AI Essentials - FIXED ALIGNMENT -->
+      <!-- Google AI Essentials -->
       <div class="bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
         <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-xl border border-blue-100">
           <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" class="w-10 h-10" alt="Google">
@@ -1542,7 +1639,7 @@
 </section>
 
 
-<!-- Enhanced Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-24 bg-gray-50 section-reveal">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
@@ -1621,11 +1718,12 @@
             >
               Send Message
             </button>
+            
           </form>
         </div>
       </div>
       
-      <!-- Enhanced Contact Information -->
+      <!-- Contact Information -->
       <div class="space-y-8">
         
         <!-- Unified Contact & Professional Profiles Card -->
@@ -1752,9 +1850,256 @@
 
 
 
-
-<!-- Enhanced JavaScript -->
+<!-- JavaScript -->
 <script>
+
+/// Clean Resume Download Modal Functionality
+class ResumeDownloader {
+    constructor() {
+        this.modal = document.getElementById('resume-modal');
+        this.modalContent = document.getElementById('modal-content');
+        this.form = document.getElementById('resume-form');
+        
+        // GitHub Pages URL structure
+        // For username.github.io repositories, the URL is just:
+        this.resumeUrl = 'https://shakeel-data.github.io/assets/ShakeelAhamed_Resume.pdf';
+        
+        // Tech Tips Collection
+        this.techTips = [
+            "SQL indexes can speed up queries by 100x, but they slow down INSERTs and UPDATEs.",
+            "Python's list comprehensions are often 2x faster than regular loops.",
+            "In Power BI, use CALCULATE() instead of basic SUM() for dynamic filtering.",
+            "Machine learning models are only as good as your feature engineering.",
+            "Always use version control, even for solo projects. Your future self will thank you.",
+            "Data visualization rule: If you need more than 7 colors, simplify your chart.",
+            "Pandas .loc[] is explicit and safe, .iloc[] is position-based—know the difference.",
+            "In BigQuery, partitioning tables by date can reduce query costs by 90%.",
+            "The 80/20 rule: 80% of your insights come from 20% of your data.",
+            "Use .apply() sparingly in Pandas—vectorized operations are usually faster.",
+            "Docker containers ensure 'it works on my machine' actually works everywhere.",
+            "In data science, cleaning data takes 80% of your time—automate it.",
+            "API rate limits exist for a reason—always implement exponential backoff.",
+            "TensorFlow and PyTorch both have their strengths—choose based on your team.",
+            "Cloud costs can spiral quickly—monitor your usage daily.",
+            "The best machine learning model is often the simplest one that works.",
+            "Jupyter notebooks are great for exploration, scripts are better for production.",
+            "In SQL, WHERE clauses filter before JOIN—optimize your query order.",
+            "Data pipelines should be idempotent—running twice should yield the same result.",
+            "Excel is not a database, but it's still the most widely used data tool.",
+            "Learn Git branching strategies—your team collaboration will improve dramatically.",
+            "Correlation doesn't imply causation, but it's still a useful starting point.",
+            "Always validate your data before building models—garbage in, garbage out.",
+            "Kubernetes is powerful but complex—start with Docker if you're new to containers.",
+            "In data visualization, white space is not wasted space—it improves readability.",
+            "The best code is readable code—write for humans, not just computers."
+        ];
+        
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+        this.setupValidation();
+    }
+
+    bindEvents() {
+        // Open modal when download button is clicked
+        const downloadBtn = document.getElementById('download-resume-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.openModal();
+            });
+        }
+        
+        // Close modal events
+        document.getElementById('close-modal').addEventListener('click', () => this.closeModal());
+        document.getElementById('cancel-btn').addEventListener('click', () => this.closeModal());
+        
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) this.closeModal();
+        });
+
+        // Form submission
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+
+        // Escape key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !this.modal.classList.contains('hidden')) {
+                this.closeModal();
+            }
+        });
+    }
+
+    openModal() {
+        this.modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        // Show random tech tip
+        this.displayRandomTechTip();
+        
+        // Focus first input
+        setTimeout(() => {
+            document.getElementById('user-name').focus();
+        }, 100);
+    }
+
+    closeModal() {
+        this.modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        this.form.reset();
+        this.clearErrors();
+        this.resetButton();
+    }
+
+    displayRandomTechTip() {
+        const randomIndex = Math.floor(Math.random() * this.techTips.length);
+        const tipElement = document.getElementById('tech-tip');
+        tipElement.textContent = this.techTips[randomIndex];
+    }
+
+    async handleSubmit(e) {
+        e.preventDefault();
+        
+        if (!this.validateForm()) return;
+
+        const formData = new FormData(this.form);
+        const userData = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            reason: formData.get('reason') || 'Not specified',
+            timestamp: new Date().toISOString()
+        };
+
+        await this.processDownload(userData);
+    }
+
+    async processDownload(userData) {
+        const downloadBtn = document.getElementById('download-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('loading-spinner');
+
+        // Show loading state
+        downloadBtn.disabled = true;
+        btnText.classList.add('hidden');
+        spinner.classList.remove('hidden');
+
+        try {
+            // Log the download
+            this.logDownload(userData);
+
+            // Wait a moment
+            await this.delay(500);
+
+            // Trigger download
+            this.downloadFile();
+
+            // Show success and close
+            setTimeout(() => {
+                this.closeModal();
+            }, 800);
+
+        } catch (error) {
+            console.error('Download error:', error);
+            alert('Download failed. Please try again.');
+            this.resetButton();
+        }
+    }
+
+    logDownload(userData) {
+        const downloads = JSON.parse(localStorage.getItem('resume_downloads') || '[]');
+        downloads.push(userData);
+        localStorage.setItem('resume_downloads', JSON.stringify(downloads));
+        console.log('Resume download logged:', userData);
+    }
+
+    downloadFile() {
+        // Create a hidden link and trigger download
+        const link = document.createElement('a');
+        link.href = this.resumeUrl;
+        link.download = 'ShakeelAhamed_Resume.pdf';
+        link.style.display = 'none';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    validateForm() {
+        this.clearErrors();
+        let isValid = true;
+
+        const name = document.getElementById('user-name').value.trim();
+        const email = document.getElementById('user-email').value.trim();
+
+        if (!name) {
+            this.showFieldError('name-error', 'Name is required');
+            isValid = false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            this.showFieldError('email-error', 'Email is required');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            this.showFieldError('email-error', 'Please enter a valid email');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    showFieldError(errorId, message) {
+        const errorElement = document.getElementById(errorId);
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+    }
+
+    clearErrors() {
+        document.querySelectorAll('[id$="-error"]').forEach(error => {
+            error.classList.add('hidden');
+        });
+    }
+
+    resetButton() {
+        const downloadBtn = document.getElementById('download-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('loading-spinner');
+        
+        downloadBtn.disabled = false;
+        btnText.classList.remove('hidden');
+        spinner.classList.add('hidden');
+    }
+
+    setupValidation() {
+        // Clear errors on input
+        ['user-name', 'user-email'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('input', () => {
+                    const errorElement = document.getElementById(id.replace('user-', '') + '-error');
+                    if (errorElement) {
+                        errorElement.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    }
+
+    delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new ResumeDownloader();
+});
+
+
+
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -1779,7 +2124,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// FIXED: Active link detection and smooth scrolling
+// link detection and smooth scrolling
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -1787,7 +2132,7 @@ function updateActiveLink() {
   // Get current scroll position
   let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
   
-  // Account for fixed header height (adjust this value to match your header height)
+  // header height
   const headerOffset = 80;
   
   // Find which section is currently visible
