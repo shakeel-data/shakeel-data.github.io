@@ -318,101 +318,90 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </nav>
 
-    <!-- Hero Section with Typing Effect -->
+   <!-- Hero Section with Clean Typing -->
 <section id="home" class="pt-16 min-h-screen flex items-center justify-center bg-white">
     <div class="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Profile Photo -->
         <div class="mb-8">
-            <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-lg border-4 border-white-600">
-                <img src="https://lh3.googleusercontent.com/pw/AP1GczOORzc0mcFmPnCtW0bcOzfOJfyMQqKImsPKW3lNehBHkvJgP5TaS6VPTDqU_AMmRjpXYoo8tQ1DssNEQfvkOOwcIPx11W4YzPTtIXEdGhSUNUi5Q80=w2400" class="w-full h-full object-cover" />
+            <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-lg border-4 border-white-600">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOORzc0mcFmPnCtW0bcOzfOJfyMQqKImsPKW3lNehBHkvJgP5TaS6VPTDqU_AMmRjpXYoo8tQ1DssNEQfvkOOwcIPx11W4YzPTtIXEdGhSUNUi5Q80=w2400" 
+                     class="w-full h-full object-cover" 
+                     loading="eager"
+                     alt="Shakeel Ahamed Profile Photo" />
             </div>
         </div>
         
-        <!-- Name and Title -->
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        <!-- Name -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Shakeel Ahamed
         </h1>
         
-        <!-- Typing Animation -->
-        <div class="text-2xl md:text-3xl font-medium text-gray-600 mb-8 h-12 flex items-center justify-center">
+        <!-- Clean Typing Animation (No Prefix) -->
+        <div class="mb-8 h-16 sm:h-20 flex items-center justify-center">
             <span id="typing-text" class="typing-text"></span>
         </div>
         
         <!-- Description -->
-        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed px-4">
             Interested in discussing data analytics opportunities or collaboration? I'd love to hear from you.
         </p>
         
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#projects" class="border border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <a href="#projects" class="border border-gray-300 text-gray-900 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center">
                 View Projects
             </a>
-            <button id="download-resume-btn" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+            <button id="download-resume-btn" class="bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
                 Download Resume
             </button>
         </div>     
     </div>
 </section>
 
-<!-- Typing Animation Container -->
-<div class="text-2xl md:text-3xl font-medium mb-8 h-12 flex items-center justify-center">
-    <div class="typing-container">
-        <span id="typing-text" class="role-text"></span>
-    </div>
-</div>
-
 <style>
-/* Perfect Center-Aligned Typing Container */
-.typing-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 50px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Enhanced Typography */
-.role-text {
+/* Glitch-Free Typing Animation */
+.typing-text {
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     line-height: 1.2;
     text-align: center;
     white-space: nowrap;
     letter-spacing: -0.02em;
+    display: inline-block;
+    min-height: 2.1rem;
+    vertical-align: middle;
     transition: color 0.3s ease;
+    will-change: color;
 }
 
-/* Beautiful Color Palette for Each Role */ 
-.role-color-0 { color: #f59e0b; } /* Modern Blue */
-.role-color-1 { color: #10b981; } /* Emerald Green */
-.role-color-2 { color: #8b5cf6; } /* Violet Purple */
-.role-color-3 { color: #3b82f6; } /* Amber Orange */
-.role-color-4 { color: #ef4444; } /* Modern Red */
-.role-color-5 { color: #ec4899; } /* Hot Pink */
+/* Color Palette */
+.color-0 { color: #f59e0b; }
+.color-1 { color: #10b981; }
+.color-2 { color: #8b5cf6; }
+.color-3 { color: #3b82f6; }
+.color-4 { color: #ef4444; }
+.color-5 { color: #ec4899; }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .typing-container {
-        width: 320px;
-    }
-    
-    .role-text {
-        font-size: 1.5rem;
+/* Responsive Typography */
+@media (min-width: 640px) {
+    .typing-text {
+        font-size: 2.25rem;
+        min-height: 2.7rem;
     }
 }
 
-@media (max-width: 480px) {
-    .typing-container {
-        width: 280px;
+@media (min-width: 1024px) {
+    .typing-text {
+        font-size: 2.5rem;
+        min-height: 3rem;
     }
-    
-    .role-text {
-        font-size: 1.25rem;
+}
+
+/* Prevent layout shifts */
+@media (max-width: 639px) {
+    body {
+        overflow-x: hidden;
     }
 }
 </style>
@@ -421,65 +410,65 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const roles = [
         "Data Analyst",
-        "Business Analyst", 
+        "Business Analyst",
         "Data Scientist",
-        "SQL Specialist",
+        "SQL Specialist", 
         "Machine Learning Engineer",
         "AI Innovation Explorer"
     ];
 
     const colorClasses = [
-        "role-color-0", "role-color-1", "role-color-2", 
-        "role-color-3", "role-color-4", "role-color-5"
+        "color-0", "color-1", "color-2",
+        "color-3", "color-4", "color-5"
     ];
 
     const typingElement = document.getElementById('typing-text');
-    let currentRoleIndex = 0;
-    let currentCharIndex = 0;
+    let roleIndex = 0;
+    let charIndex = 0;
     let isDeleting = false;
-    
-    // Smooth, professional timing
-    let typingSpeed = 100;     // Slightly faster for better flow
-    let deletingSpeed = 50;    // Quick deletion
-    let pauseAfterTyping = 1800; // Display duration
-    let pauseAfterDeleting = 800; // Brief pause before next role
 
-    function type() {
-        const currentRole = roles[currentRoleIndex];
-        const currentColorClass = colorClasses[currentRoleIndex];
-        
+    // Smooth timing
+    const typeSpeed = 85;
+    const deleteSpeed = 40;
+    const pauseTime = 1800;
+    const nextRolePause = 700;
+
+    function typeAnimation() {
+        const currentRole = roles[roleIndex];
+        const currentColor = colorClasses[roleIndex];
+
         if (!isDeleting) {
-            // Typing phase
-            if (currentCharIndex < currentRole.length) {
-                typingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
-                typingElement.className = `role-text ${currentColorClass}`;
-                currentCharIndex++;
-                setTimeout(type, typingSpeed);
+            // Typing
+            if (charIndex < currentRole.length) {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                typingElement.className = `typing-text ${currentColor}`;
+                charIndex++;
+                setTimeout(typeAnimation, typeSpeed);
             } else {
                 // Finished typing, pause before deleting
                 setTimeout(() => {
                     isDeleting = true;
-                    type();
-                }, pauseAfterTyping);
+                    typeAnimation();
+                }, pauseTime);
             }
         } else {
-            // Deleting phase  
-            if (currentCharIndex > 0) {
-                typingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
-                currentCharIndex--;
-                setTimeout(type, deletingSpeed);
+            // Deleting
+            if (charIndex > 0) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeAnimation, deleteSpeed);
             } else {
                 // Finished deleting, move to next role
                 isDeleting = false;
-                currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-                setTimeout(type, pauseAfterDeleting);
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeAnimation, nextRolePause);
             }
         }
     }
 
-    // Initialize with first role color and start animation
-    typingElement.className = `role-text ${colorClasses[0]}`;
-    type();
+    // Initialize
+    typingElement.className = `typing-text ${colorClasses[0]}`;
+    typeAnimation();
 });
 </script>
 
@@ -2399,5 +2388,4 @@ navLinks.forEach(link => {
 </script>
 </body>
 </html>
-
 
