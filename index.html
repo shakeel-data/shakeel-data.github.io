@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <html style="background-color: #ffffff;">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shakeel Ahamed - Portfolio">
-    <meta name="keywords" content="Data Analyst, Data Scientist, Python, SQL, BigQuery, Machine Learning, Portfolio">
-    <head>
-    <title>Shakeel Ahamed | Portfolio</title>
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigCoN68E8XpwaNCVWnJBF1eOWJXQwR0bu8Q&s" type="image/jpeg">
-</head>
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,6 +132,7 @@
             align-items: center;
             justify-content: space-between;
             background: #333333;
+            flex-shrink: 0;
         }
 
         .header-info {
@@ -173,7 +161,7 @@
             margin: 0;
         }
 
-        /* Updated Header Buttons with Icon Styling */
+        /* Header Buttons */
         .header-buttons {
             display: flex;
             gap: 8px;
@@ -289,6 +277,7 @@
             gap: 12px;
             align-items: flex-end;
             background: #333333;
+            flex-shrink: 0;
         }
 
         .input-wrapper {
@@ -339,12 +328,6 @@
             cursor: not-allowed;
         }
 
-        .send-btn svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-        }
-
         /* Welcome Message */
         .welcome-message {
             text-align: center;
@@ -362,12 +345,116 @@
             font-size: 14px;
         }
 
+        /* RESPONSIVE STYLES */
         @media (max-width: 480px) {
+            /* Chat Container Mobile */
             .chat-container {
-                width: calc(100vw - 24px);
-                height: calc(100vh - 120px);
-                right: 12px;
-                bottom: 88px;
+                width: calc(100vw - 20px);
+                height: calc(100vh - 100px);
+                right: 10px;
+                bottom: 80px;
+                max-height: none;
+            }
+
+            /* Chat Header Mobile */
+            .chat-header {
+                padding: 15px 16px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .header-info {
+                justify-content: center;
+            }
+
+            .header-buttons {
+                justify-content: space-around;
+                margin-top: 8px;
+            }
+
+            /* Chat Messages Mobile */
+            .chat-messages {
+                padding: 16px;
+            }
+
+            .message-content {
+                max-width: 90%;
+                font-size: 15px;
+                padding: 14px 16px;
+            }
+
+            /* Chat Input Mobile */
+            .chat-input {
+                padding: 16px;
+                gap: 10px;
+            }
+
+            .chat-input input {
+                font-size: 16px; /* Prevents zoom on iOS */
+                min-height: 44px; /* Touch target */
+                padding: 12px 16px;
+            }
+
+            .send-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            /* Chat Toggle Mobile */
+            .chat-toggle {
+                width: 60px;
+                height: 60px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .chat-toggle img {
+                width: 60px;
+                height: 60px;
+            }
+
+            /* Tooltip Mobile */
+            .tooltip {
+                bottom: 85px;
+                right: 16px;
+                max-width: calc(100vw - 32px);
+                font-size: 13px;
+            }
+
+            /* Notification Dot Mobile */
+            .notification-dot {
+                top: 6px;
+                right: 6px;
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .chat-container {
+                width: calc(100vw - 16px);
+                right: 8px;
+            }
+
+            .chat-header {
+                padding: 12px;
+            }
+
+            .header-buttons {
+                gap: 4px;
+            }
+
+            .header-btn {
+                width: 32px;
+                height: 32px;
+                padding: 6px;
+            }
+
+            .header-btn svg {
+                width: 14px;
+                height: 14px;
             }
         }
     </style>
@@ -394,7 +481,6 @@
                     <p>Online now</p>
                 </div>
             </div>
-            <!-- Updated Header Buttons with Lucide Icons -->
             <div class="header-buttons">
                 <button class="header-btn" id="deleteBtn" title="Delete last message">
                     <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -430,77 +516,26 @@
             <div class="input-wrapper">
                 <input type="text" id="messageInput" placeholder="Type your message..." maxlength="1000">
             </div>
-            <button class="send-btn" id="sendBtn" disabled>
-                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                </svg>
-            </button>
+            <button class="send-btn" id="sendBtn" disabled>→</button>
         </div>
     </div>
 
     <script>
         class ShakeelAI {
             constructor() {
-                this.apiKey = 'AIzaSyCKUwTm3_bCqZ4AtpzqZQrAC34RRkeaLNM';
+                this.apiKey = 'AIzaSyA-Mkb1DWZW_P4196zrYTb8sEuaulnO3d8';
                 this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
                 this.isOpen = false;
                 this.isTyping = false;
                 this.messages = [];
                 
-                // NEW: Tooltip messages array
-this.tooltipMessages = [
-    'Hey there! Need any help?',
-    'Hi! Shakeel AI is ready.',
-    'Got a question? Ask me!',
-    'Your assistant is here for you!',
-    'Click to start chatting!',
-    'I can help you anytime!',
-    'Ask me anything!',
-    'Need info? I’ve got you.',
-    'Looking for answers?',
-    'Shakeel AI is always ready.',
-    'I’m here to help!',
-    'Tap me to chat!',
-    'Your AI buddy is here.',
-    'Say hi to Shakeel AI!',
-    'Let’s solve this together!',
-    'Stuck? I’ll help!',
-    'I’m ready to chat!',
-    'Your questions, answered.',
-    'Got doubts? Ask now!',
-    'Here to assist you!',
-    'Need quick help?',
-    'I’m one click away.',
-    'Shakeel AI is listening.',
-    'Ask your question here.',
-    'Want fast answers?',
-    'Get help instantly!',
-    'Curious? Let’s chat!',
-    'I’m here to guide you!',
-    'Your personal chatbot.',
-    'Click me to talk!',
-    'Looking for support?',
-    'Ask me anything you like.',
-    'Need quick solutions?',
-    'Help is right here!',
-    'Your friendly AI helper.',
-    'Tap to start a chat!',
-    'Instant help is here.',
-    'Ready to answer you!',
-    'Chat with me anytime.',
-    'Hi! Let’s chat now!',
-    'Looking for something?',
-    'Shakeel AI can help!',
-    'I’m here 24/7 for you.',
-    'Have a question?',
-    'Need a quick tip?',
-    'Click me for help.',
-    'I’m ready when you are.',
-    'Want to know something?',
-    'Your assistant awaits.',
-    'Help is one click away.'
-];
-
+                this.tooltipMessages = [
+                    'Hey there! Need any help?',
+                    'Hi! Shakeel AI is ready.',
+                    'Got a question? Ask me!',
+                    'Your assistant is here for you!',
+                    'Click to start chatting!'
+                ];
                 
                 this.descriptions = [
                     "I'm your AI assistant, ready to help!",
@@ -660,13 +695,65 @@ this.tooltipMessages = [
                 const requestBody = {
                     contents: [{
                         parts: [{
-                            text: `You are Shakeel AI, a helpful assistant created for Shakeel Ahamed. You can answer questions about:
+                            text: `You are Shakeel AI, a virtual assistant representing Shakeel Ahamed.  
+Your job is to answer questions about Shakeel’s background, skills, education, experience, and projects in a friendly and professional tone.
 
-1. Shakeel's experience as a Power BI Trainer and AR Process Analyst
-2. His skills in Python, SQL, BigQuery, Power BI, Tableau, Machine Learning
-3. His projects like Amazon Sales Forecasting, YouTube Sentiment Analysis
-4. General technology, programming, and AI topics
-5. Any other questions users might have
+About Shakeel:
+- Full Name: Shakeel Ahamed
+- Age: 21
+- Location: Chennai, India
+- Role: Data Scientist, Analyst, Educator, and Aspiring AI Entrepreneur
+- Personality: Focused, disciplined, ambitious, and passionate about technology, education, and building a legacy.
+- Motto: “I don’t wish to be a page in history; I aim to be history itself.”
+
+Education:
+- Pursuing MBA in Business Data Analytics (2024–2026)
+- Bachelor of Commerce @ New collge (Business, Analytics, Computer Systems)
+- Completed multiple industry certifications in Machine Learning, Databases, AI, and BI tools.
+
+Experience:
+- **Power BI Trainer** at DBV TMF Smart-Broadway (training professionals in BI and analytics)
+- **AR Process Analyst** at Omega Healthcare (business process workflows & analytics)
+- **Tutor** for high school/college students in Python, Math, Data Science, and CS
+- **Volunteer** at Agaram Foundation, supporting education initiatives
+
+Skills (Medium-Level Overview):
+- **Programming:** Python, SQL, BigQuery
+- **Data Visualization:** Power BI, Tableau, Looker Studio
+- **Machine Learning:** Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM
+- **Data Engineering & Cloud:** ETL, Kafka, Debezium, AWS basics
+- **Other:** Excel, GitHub, Business Analysis, Dashboard Design
+
+Key Projects:
+1. **Amazon Sales Forecasting & Insights** – Predicting revenue trends with ML & BigQuery
+2. **YouTube Comment Sentiment Analysis** – AI-powered NLP sentiment engine
+3. **AWS Data Streaming Pipeline** – Real-time data flow with Kafka & Debezium
+4. **Credit Card Fraud Detection** – Handling imbalanced data with XGBoost & LightGBM
+5. **Customer Segmentation & Retail Analytics** – KMeans clustering & PCA
+6. **Educational & Career Outcomes Analysis** – Analyzing student data for insights
+7. **BI Dashboards** – Built interactive dashboards in Power BI, Tableau, and Excel
+
+Certifications:
+- Google AI Essentials (Aug 2025)
+- IBM Machine Learning Professional (May 2025)
+- Meta Database Engineer Professional (Apr 2025)
+- Microsoft Power BI Data Analyst Professional (May 2025)
+
+Personal Interests:
+- Artificial Intelligence, Data Science, and Education Technology
+- Building AI-powered startups (NextLearn AI, TamilGPT, ProjectGPT)
+- Teaching, mentoring, and sharing knowledge
+- Business, investing, and tech trends
+- Cars, gaming, and exploring new tools
+
+Response Style:
+- Clear, structured, and friendly
+- Professional but approachable
+- Uses bullet points, bold text, and simple language
+- Motivational and resourceful when answering
+
+General technology, programming, and AI topics
+Any other questions users might have
 
 Always be helpful, professional, and informative.
 
@@ -763,6 +850,21 @@ Please provide a helpful response:`
 </html>
 
 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <html style="background-color: #ffffff;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shakeel Ahamed - Portfolio">
+    <meta name="keywords" content="Data Analyst, Data Scientist, Python, SQL, BigQuery, Machine Learning, Portfolio">
+    <head>
+    <title>Shakeel Ahamed | Portfolio</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigCoN68E8XpwaNCVWnJBF1eOWJXQwR0bu8Q&s" type="image/jpeg">
+</head>
 
 
     <!-- Tailwind CSS CDN -->
