@@ -16,215 +16,778 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot Integration</title>
+    <title>Shakeel AI Chatbot</title>
     <style>
-        /* Simple Chatbot Styles */
-        .chatbot-container {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        /* Chat Toggle Button */
+        .chat-toggle {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 350px;
-            height: 500px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            bottom: 24px;
+            right: 24px;
+            width: 68px;
+            height: 68px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.2s ease;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        .chat-toggle img {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Notification Dot */
+        .notification-dot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+            display: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Tooltip Message */
+        .tooltip {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            background: #333;
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            max-width: 220px;
+            z-index: 999;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Chat Container */
+        .chat-container {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 380px;
+            height: 520px;
+            background: #2a2a2a;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             display: none;
             flex-direction: column;
-            z-index: 1000;
+            z-index: 1001;
+            overflow: hidden;
+            border: 1px solid #3a3a3a;
         }
 
-        .chatbot-header {
-            background: #007bff;
-            color: white;
-            padding: 15px;
-            border-radius: 15px 15px 0 0;
+        .chat-container.active {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            animation: slideUp 0.3s ease-out;
         }
 
-        .chatbot-messages {
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Chat Header */
+        .chat-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #3a3a3a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #333333;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .header-text p {
+            font-size: 12px;
+            color: #b0b0b0;
+            margin: 0;
+        }
+
+        /* Updated Header Buttons with Icon Styling */
+        .header-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .header-btn {
+            background: none;
+            border: 1px solid #555555;
+            color: #b0b0b0;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+        }
+
+        .header-btn:hover {
+            background: #444444;
+            color: #ffffff;
+            border-color: #666666;
+        }
+
+        .header-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+        }
+
+        /* Chat Messages */
+        .chat-messages {
             flex: 1;
-            padding: 15px;
+            padding: 20px 24px;
             overflow-y: auto;
-            max-height: 350px;
+            background: #2a2a2a;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #555555;
+            border-radius: 2px;
         }
 
         .message {
-            margin-bottom: 10px;
-            padding: 8px 12px;
-            border-radius: 12px;
-            max-width: 80%;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: messageAppear 0.3s ease-out forwards;
         }
 
-        .user-message {
-            background: #007bff;
-            color: white;
-            align-self: flex-end;
-            margin-left: auto;
+        @keyframes messageAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .bot-message {
-            background: #f1f3f4;
-            color: #333;
-            align-self: flex-start;
-        }
-
-        .chatbot-input {
-            padding: 15px;
-            border-top: 1px solid #eee;
+        .message.user {
             display: flex;
-            gap: 10px;
+            justify-content: flex-end;
         }
 
-        .chatbot-input input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            outline: none;
+        .message.bot {
+            display: flex;
+            justify-content: flex-start;
         }
 
-        .chatbot-input button {
-            padding: 10px 15px;
-            background: #007bff;
+        .message-content {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+
+        .message.user .message-content {
+            background: #444444;
             color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
+            border-bottom-right-radius: 4px;
         }
 
-        .chat-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background: #007bff;
-            border-radius: 50%;
+        .message.bot .message-content {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            border: 1px solid #3a3a3a;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: none;
+            padding: 12px 24px;
+            color: #b0b0b0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        /* Chat Input */
+        .chat-input {
+            padding: 20px 24px;
+            border-top: 1px solid #3a3a3a;
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+            background: #333333;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .chat-input input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #3a3a3a;
+            border-radius: 24px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        .chat-input input:focus {
+            border-color: #666666;
+        }
+
+        .chat-input input::placeholder {
+            color: #888888;
+        }
+
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            background: #444444;
             border: none;
+            border-radius: 50%;
             color: white;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            z-index: 999;
+            transition: background 0.2s;
         }
 
-        .typing-indicator {
-            display: none;
-            padding: 10px;
-            font-style: italic;
-            color: #666;
+        .send-btn:hover {
+            background: #555555;
         }
 
-        .typing-indicator.show {
-            display: block;
+        .send-btn:disabled {
+            background: #666666;
+            cursor: not-allowed;
+        }
+
+        .send-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+        }
+
+        /* Welcome Message */
+        .welcome-message {
+            text-align: center;
+            padding: 20px;
+            color: #b0b0b0;
+        }
+
+        .welcome-message h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+        }
+
+        .welcome-message p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .chat-container {
+                width: calc(100vw - 24px);
+                height: calc(100vh - 120px);
+                right: 12px;
+                bottom: 88px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Chat Toggle Button -->
-    <button class="chat-toggle" id="chatToggle">Hi</button>
+    <!-- Tooltip Message -->
+    <div class="tooltip" id="tooltipMessage"></div>
 
-    <!-- Chatbot Container -->
-    <div class="chatbot-container" id="chatbotContainer">
-        <div class="chatbot-header">
-            <h4>Ask About Shakeel</h4>
-            <button onclick="closeChat()" style="background:none;border:none;color:white;font-size:20px;cursor:pointer;">×</button>
-        </div>
-        
-        <div class="chatbot-messages" id="chatMessages">
-            <div class="message bot-message">
-                Hi! I'm Shakeel's AI assistant. Ask me about his experience, skills, or projects!
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigCoN68E8XpwaNCVWnJBF1eOWJXQwR0bu8Q&s" alt="SA">
+        <div class="notification-dot" id="notificationDot"></div>
+    </button>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="header-info">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigCoN68E8XpwaNCVWnJBF1eOWJXQwR0bu8Q&s" 
+                     alt="SA" class="header-logo">
+                <div class="header-text">
+                    <h3>Shakeel AI</h3>
+                    <p>Online now</p>
+                </div>
+            </div>
+            <!-- Updated Header Buttons with Lucide Icons -->
+            <div class="header-buttons">
+                <button class="header-btn" id="deleteBtn" title="Delete last message">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
+                </button>
+                <button class="header-btn" id="newConvBtn" title="Start new conversation">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </button>
+                <button class="header-btn" id="minimizeBtn" title="Minimize chat">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
             </div>
         </div>
-        
-        <div class="typing-indicator" id="typingIndicator">
-            AI is typing...
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <h4 id="greetingText">Hi! I'm Shakeel AI</h4>
+                <p>Ask me anything about technology, programming, or Shakeel's experience!</p>
+            </div>
         </div>
-        
-        <div class="chatbot-input">
-            <input type="text" id="userInput" placeholder="Ask me anything..." maxlength="500">
-            <button onclick="sendMessage()">Send</button>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator">AI is typing...</div>
+
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="Type your message..." maxlength="1000">
+            </div>
+            <button class="send-btn" id="sendBtn" disabled>
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                </svg>
+            </button>
         </div>
     </div>
 
     <script>
-        // Simple AI Chatbot Implementation
-        class SimpleChatbot {
+        class ShakeelAI {
             constructor() {
-                this.apiKey = 'YOUR_GEMINI_API_KEY'; // Replace with your actual API key
-                this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
-                this.context = `You are Shakeel Ahamed's portfolio assistant. Answer questions about his data analytics experience, skills in Python, SQL, Power BI, machine learning projects, and contact information. Be helpful and professional.`;
+                this.apiKey = 'AIzaSyCKUwTm3_bCqZ4AtpzqZQrAC34RRkeaLNM';
+                this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
+                this.isOpen = false;
+                this.isTyping = false;
+                this.messages = [];
+                
+                // NEW: Tooltip messages array
+this.tooltipMessages = [
+    'Hey there! Need any help?',
+    'Hi! Shakeel AI is ready.',
+    'Got a question? Ask me!',
+    'Your assistant is here for you!',
+    'Click to start chatting!',
+    'I can help you anytime!',
+    'Ask me anything!',
+    'Need info? I’ve got you.',
+    'Looking for answers?',
+    'Shakeel AI is always ready.',
+    'I’m here to help!',
+    'Tap me to chat!',
+    'Your AI buddy is here.',
+    'Say hi to Shakeel AI!',
+    'Let’s solve this together!',
+    'Stuck? I’ll help!',
+    'I’m ready to chat!',
+    'Your questions, answered.',
+    'Got doubts? Ask now!',
+    'Here to assist you!',
+    'Need quick help?',
+    'I’m one click away.',
+    'Shakeel AI is listening.',
+    'Ask your question here.',
+    'Want fast answers?',
+    'Get help instantly!',
+    'Curious? Let’s chat!',
+    'I’m here to guide you!',
+    'Your personal chatbot.',
+    'Click me to talk!',
+    'Looking for support?',
+    'Ask me anything you like.',
+    'Need quick solutions?',
+    'Help is right here!',
+    'Your friendly AI helper.',
+    'Tap to start a chat!',
+    'Instant help is here.',
+    'Ready to answer you!',
+    'Chat with me anytime.',
+    'Hi! Let’s chat now!',
+    'Looking for something?',
+    'Shakeel AI can help!',
+    'I’m here 24/7 for you.',
+    'Have a question?',
+    'Need a quick tip?',
+    'Click me for help.',
+    'I’m ready when you are.',
+    'Want to know something?',
+    'Your assistant awaits.',
+    'Help is one click away.'
+];
+
+                
+                this.greetingMessages = [
+    "Hi, I'm Shakeel AI, here to help!",
+    "Skip the scrolling, I've got your answers.",
+    "Your AI buddy is ready!",
+    "Ready to assist you anytime!",
+    "Ask me anything about Shakeel.",
+    "Let's get started!",
+    "Hello! How can I help you?",
+    "Your assistant awaits.",
+    "Feel free to ask me anything.",
+    "Let's chat!",
+    "I'm here to make things easier!",
+    "Ready when you are!",
+    "Questions? I have answers!",
+    "Hi there! Need a hand?",
+    "Your virtual assistant is here.",
+    "Looking for answers? I'm ready.",
+    "Hey! Let's solve this together.",
+    "Want help? I’m here for you.",
+    "I can make this easier for you!",
+    "What can I do for you today?",
+    "Let's talk, I’ve got ideas.",
+    "Here to answer your questions.",
+    "Need instant support? I’m ready!",
+    "Hello! Shakeel AI at your service.",
+    "Your friendly chatbot is here!",
+    "Looking for quick info?",
+    "Let me guide you step by step!",
+    "Hi! What’s on your mind?",
+    "Shakeel AI is here to assist!",
+    "Ready to chat when you are.",
+    "I’m your personal assistant.",
+    "Want some quick answers?",
+    "Hi! How can I make your day better?",
+    "Your questions, my solutions!",
+    "Need a solution? Ask me!",
+    "Hi, I’m your AI guide today.",
+    "Let’s get your answers fast!",
+    "Shakeel AI loves questions!",
+    "I’m just a click away.",
+    "Need me? I’m here to help!",
+    "Hi there! Let’s get started.",
+    "I’ll help you figure it out.",
+    "Your AI friend is awake!",
+    "Let’s make things simple.",
+    "Ask away, I’m listening!",
+    "Here to support you always.",
+    "No worries, I got this!",
+    "I’m your AI problem solver.",
+    "Let’s chat! I’m excited!",
+    "Ask me something new today!"
+];
+
+                
                 this.init();
             }
 
             init() {
-                // Bind Enter key to send message
-                document.getElementById('userInput').addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
+                this.cacheElements();
+                this.bindEvents();
+                this.showNotificationDot();
+                this.showTooltip();
+            }
+
+            cacheElements() {
+                this.toggleBtn = document.getElementById('chatToggle');
+                this.container = document.getElementById('chatContainer');
+                this.messageInput = document.getElementById('messageInput');
+                this.sendBtn = document.getElementById('sendBtn');
+                this.messagesContainer = document.getElementById('chatMessages');
+                this.typingIndicator = document.getElementById('typingIndicator');
+                this.notificationDot = document.getElementById('notificationDot');
+                this.greetingText = document.getElementById('greetingText');
+                this.tooltipMessage = document.getElementById('tooltipMessage');
+                this.deleteBtn = document.getElementById('deleteBtn');
+                this.newConvBtn = document.getElementById('newConvBtn');
+                this.minimizeBtn = document.getElementById('minimizeBtn');
+            }
+
+            bindEvents() {
+                this.toggleBtn.addEventListener('click', () => this.toggleChat());
+                this.sendBtn.addEventListener('click', () => this.sendMessage());
+                
+                this.deleteBtn.addEventListener('click', () => this.deleteLastMessage());
+                
+                this.newConvBtn.addEventListener('click', () => {
+                    const existingDescription = this.messagesContainer.querySelector('.description-message');
+                    if (existingDescription) {
+                        existingDescription.remove();
+                    }
+                    
+                    const randomIndex = Math.floor(Math.random() * this.descriptions.length);
+                    const randomDescription = this.descriptions[randomIndex];
+                    
+                    const descriptionDiv = document.createElement('div');
+                    descriptionDiv.className = 'message bot description-message';
+                    
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'message-content';
+                    contentDiv.textContent = randomDescription;
+                    
+                    descriptionDiv.appendChild(contentDiv);
+                    this.messagesContainer.appendChild(descriptionDiv);
+                    this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                });
+                
+                this.minimizeBtn.addEventListener('click', () => this.closeChat());
+                
+                this.messageInput.addEventListener('input', () => {
+                    this.sendBtn.disabled = this.messageInput.value.trim().length === 0;
+                });
+
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !this.sendBtn.disabled) {
                         this.sendMessage();
                     }
                 });
+            }
 
-                // Toggle chat visibility
-                document.getElementById('chatToggle').addEventListener('click', () => {
-                    this.toggleChat();
-                });
+            showNotificationDot() {
+                if (!localStorage.getItem('chatVisited')) {
+                    this.notificationDot.style.display = 'block';
+                }
+            }
+
+            hideNotificationDot() {
+                this.notificationDot.style.display = 'none';
+                localStorage.setItem('chatVisited', 'true');
+            }
+
+            showTooltip() {
+                const randomIndex = Math.floor(Math.random() * this.tooltipMessages.length);
+                const randomMessage = this.tooltipMessages[randomIndex];
+                this.tooltipMessage.textContent = randomMessage;
+                this.tooltipMessage.classList.add('show');
+                
+                setTimeout(() => {
+                    this.hideTooltip();
+                }, 5000);
+            }
+
+            hideTooltip() {
+                this.tooltipMessage.classList.remove('show');
             }
 
             toggleChat() {
-                const container = document.getElementById('chatbotContainer');
-                const toggle = document.getElementById('chatToggle');
-                
-                if (container.style.display === 'none' || !container.style.display) {
-                    container.style.display = 'flex';
-                    toggle.innerHTML = '✕';
+                if (this.isOpen) {
+                    this.closeChat();
                 } else {
-                    container.style.display = 'none';
-                    toggle.innerHTML = 'Hi';
+                    this.openChat();
+                }
+            }
+
+            openChat() {
+                this.isOpen = true;
+                this.container.classList.add('active');
+                this.hideNotificationDot();
+                this.hideTooltip();
+                setTimeout(() => this.messageInput.focus(), 300);
+            }
+
+            closeChat() {
+                this.isOpen = false;
+                this.container.classList.remove('active');
+            }
+
+            deleteLastMessage() {
+                const messages = this.messagesContainer.querySelectorAll('.message:not(.welcome-message)');
+                if (messages.length > 0) {
+                    const lastMessage = messages[messages.length - 1];
+                    lastMessage.remove();
+                    this.messages.pop();
                 }
             }
 
             async sendMessage() {
-                const input = document.getElementById('userInput');
-                const message = input.value.trim();
-                
-                if (!message) return;
+                const message = this.messageInput.value.trim();
+                if (!message || this.isTyping) return;
 
-                // Display user message
                 this.addMessage(message, 'user');
-                input.value = '';
+                this.messageInput.value = '';
+                this.sendBtn.disabled = true;
 
-                // Show typing indicator
                 this.showTyping(true);
 
                 try {
-                    // Get AI response
                     const response = await this.getAIResponse(message);
                     this.showTyping(false);
                     this.addMessage(response, 'bot');
                 } catch (error) {
                     this.showTyping(false);
-                    this.addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+                    this.addMessage('Sorry, I encountered an error. Please check if your API key is valid or try again later.', 'bot');
                     console.error('Chat error:', error);
                 }
             }
 
             async getAIResponse(userMessage) {
+                if (!this.apiKey || this.apiKey === 'YOUR_GEMINI_API_KEY') {
+                    throw new Error('API key not configured');
+                }
+
                 const requestBody = {
                     contents: [{
                         parts: [{
-                            text: `${this.context}\n\nUser question: ${userMessage}`
+                            text: `You are Shakeel AI, a helpful assistant created for Shakeel Ahamed. You can answer questions about:
+
+Eveything about Shakeel Ahamed including:
+1.  Introduction
+Shakeel Ahamed is a Data Analyst and aspiring Data Scientist with a strong foundation in Python, SQL, BigQuery, and Machine Learning. He has a passion for leveraging data to drive insights and support decision-making processes.
+
+2. Personal interests:
+- Technology and programming
+- AI and Machine Learning
+- Data visualization
+- Cloud computing
+- Continuous learning and professional development
+- Reading tech blogs and articles
+- Exploring new tools and technologies in the data space
+- Networking with professionals in the data community
+- Volunteering and giving back to the community
+- Fitness and outdoor activities
+- Traveling and exploring new cultures
+
+3. Personal Info:
+- Location: Chennai, India
+- Languages: English, Tamil, Hindi
+- Mother tongue: Tamil
+- Mother name: Ariba Begum K: She is a homemaker. She is a very kind hearted person. She always encourages me to do better in my life. She is my role model. She is my best friend. She is my everything. She is my strength. She is my support system. She is my everything.
+- Father name: Kactchu Mohamed P
+- Brother name: Mohamed Shabeer K
+- Friend: Hazzath Nalifa. She is curently running succesful Henna products business. Teaching me how to do henna designs, maek henna cones and more to others. She is very talented and hardworking. She is participating in many competitions and won many prizes. she is inspiring to others.
+
+- Contact: Shakeelahamed6618@gmail.com
+- LinkedIn: https://www.linkedin.com/in/shakeel-data/
+- Portfolio: https://shakeel-data.github.io/
+- GitHub: https://github.com/shakeel-data
+
+1. Work experience
+Power BI Trainer at Don Bosco Valikhatti Tech Mahindra Foundation Smart Broadway (DBVTMF) | Chennai, India. and AR Process Analyst at Omega Healthcare | Chennai, India.
+2. Educational background :
+- MBA in Business Data Analytics from University of Madras [IDE] | Chennai, India and B.Com from The New College | Chennai, India
+- professional certifications (Google AI Essentials, IBM Machine Learning, Meta Data base Engineer, Microsoft Power BI Data Analyst)
+- Volunteer work (Agaram Foundation | Chennai, India | Since:2023)
+- Vision & personal motto (legacy-focused mindset)
+- Portfolio: (https://shakeel-data.github.io/) & GitHub projects overview: (https://github.com/shakeel-data?tab=repositories)
+
+2. His Core Technical Skills:
+- Python (pandas, NumPy, matplotlib, scikit-learn, PyTorch)
+- SQL (PostgreSQL, MySQL, BigQuery, query optimization)
+- Business Intelligence tools (Power BI, Tableau, Looker Studio)
+- Cloud platforms (AWS, Google Cloud basics)
+- Machine Learning (TensorFlow, Prophet, PyTorch, XGBoost, LightGBM, Random Forest, Neural Networks, etc)
+- Data engineering (Kafka, Debezium, MSK, CDC pipelines)
+- Data visualization and storytelling
+
+3. Top AI & Data Projects:
+- Amazon Sales Forecasting (Python, BigQuery, ML), 
+- YouTube Sentiment Analysis (Gemini API, TensorFlow, YouTube API, Hugging Face Transformers),
+- AWS data streaming pipeline (Apache Kafa, RDS, S3), 
+- Breast Cancer Prediction (Neural netwoks, Pytorch),
+- Credit Card Fraud Detection (XGBoost, LightGBM, Python),
+- Customer Segmentation (KMeans Clustering, PCA),
+- Visit https://github.com/shakeel-data/ for more details.
+
+4. General Knowledge & Support
+- Tech trends and news
+- Personal development and productivity tips
+- Soft skills for data professionals
+- Guidance on study plans, certifications, and projects
+
+5. General technology, programming, and AI topics
+6. Any other questions users might have
+
+Always be helpful, professional, and informative.
+
+User question: ${userMessage}
+
+Please provide a helpful response:`
                         }]
                     }],
                     generationConfig: {
                         temperature: 0.7,
                         topK: 40,
                         topP: 0.95,
-                        maxOutputTokens: 1000
+                        maxOutputTokens: 500,
+                        candidateCount: 1
                     }
                 };
 
@@ -237,51 +800,76 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error(`API request failed: ${response.status}`);
+                    const errorText = await response.text();
+                    console.error('API Error Response:', errorText);
+                    
+                    switch (response.status) {
+                        case 400:
+                            throw new Error('Invalid request. Please check your message.');
+                        case 403:
+                            throw new Error('API key is invalid or access denied.');
+                        case 429:
+                            throw new Error('Too many requests. Please wait a moment.');
+                        case 500:
+                            throw new Error('Server error. Please try again later.');
+                        default:
+                            throw new Error(`API request failed with status ${response.status}`);
+                    }
                 }
 
                 const data = await response.json();
                 
-                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0]) {
                     return data.candidates[0].content.parts[0].text;
+                } else if (data.candidates && data.candidates[0] && data.candidates[0].finishReason === 'SAFETY') {
+                    return 'I apologize, but I cannot provide a response to that message due to safety guidelines. Please try rephrasing your question.';
                 } else {
-                    return 'I apologize, but I couldn\'t generate a response right now.';
+                    console.error('Unexpected API response:', data);
+                    throw new Error('Unexpected response format from API');
                 }
             }
 
             addMessage(text, sender) {
-                const messagesContainer = document.getElementById('chatMessages');
                 const messageDiv = document.createElement('div');
-                messageDiv.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
-                messageDiv.textContent = text;
+                messageDiv.className = `message ${sender}`;
                 
-                messagesContainer.appendChild(messageDiv);
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.textContent = text;
+                
+                messageDiv.appendChild(contentDiv);
+                
+                if (sender === 'user' && this.messages.length === 0) {
+                    const welcomeMsg = this.messagesContainer.querySelector('.welcome-message');
+                    if (welcomeMsg) {
+                        welcomeMsg.remove();
+                    }
+                }
+                
+                this.messagesContainer.appendChild(messageDiv);
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                
+                this.messages.push({ text, sender, timestamp: Date.now() });
             }
 
             showTyping(show) {
-                const typingIndicator = document.getElementById('typingIndicator');
-                typingIndicator.className = show ? 'typing-indicator show' : 'typing-indicator';
+                this.isTyping = show;
+                this.typingIndicator.classList.toggle('active', show);
+                
+                if (show) {
+                    this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                }
             }
         }
 
-        // Initialize chatbot when page loads
         document.addEventListener('DOMContentLoaded', () => {
-            window.chatbot = new SimpleChatbot();
+            window.shakeelAI = new ShakeelAI();
         });
-
-        // Legacy functions for backward compatibility
-        function sendMessage() {
-            window.chatbot.sendMessage();
-        }
-
-        function closeChat() {
-            document.getElementById('chatbotContainer').style.display = 'none';
-            document.getElementById('chatToggle').innerHTML = 'Hi';
-        }
     </script>
 </body>
 </html>
+
+
 
 
     <!-- Tailwind CSS CDN -->
@@ -3303,6 +3891,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
 </script>
 </body>
 </html>
+
