@@ -3487,96 +3487,112 @@ class ResumeDownloader {
     }
 
     validateName() {
-        const name = document.getElementById('user-name').value;
-        const trimmedName = name.trim();
+    const name = document.getElementById('user-name').value;
+    const trimmedName = name.trim();
 
-        // Check if blank
-        if (!trimmedName) {
-            this.showFieldError('name-error', 'Name is required');
-            return false;
-        }
-
-        // Check for starting/ending spaces
-        if (name !== trimmedName) {
-            this.showFieldError('name-error', 'Name cannot start or end with spaces');
-            return false;
-        }
-
-        // Check for starting/ending with numbers
-        if (/^[0-9]/.test(trimmedName) || /[0-9]$/.test(trimmedName)) {
-            this.showFieldError('name-error', 'Name cannot start or end with numbers');
-            return false;
-        }
-
-        // Check for special characters (only letters and spaces allowed)
-        if (!/^[a-zA-Z\s]+$/.test(trimmedName)) {
-            this.showFieldError('name-error', 'Name can only contain letters and spaces');
-            return false;
-        }
-
-        // Check for code patterns
-        const codePatterns = [
-            /<[^>]*>/, // HTML tags
-            /function\s*\(/, // JavaScript functions
-            /\{[\s\S]*\}/, // Code blocks
-            /class\s+\w+/, // Class definitions
-            /import\s+/, // Import statements
-            /console\./, // Console commands
-            /document\./, // DOM manipulation
-            /window\./, // Window object
-            /\$\(/, // jQuery
-            /SELECT|INSERT|UPDATE|DELETE/i // SQL commands
-        ];
-
-        for (let pattern of codePatterns) {
-            if (pattern.test(trimmedName)) {
-                this.showFieldError('name-error', 'Name cannot contain code or scripts');
-                return false;
-            }
-        }
-
-        // Check for URLs/links
-        const urlPattern = /(https?:\/\/[^\s]+|www\.[^\s]+|[^\s]+\.(com|net|org|edu|gov|mil|int|co|uk|ca|au|de|jp|fr|us|ru|ch|it|nl|se|no|es))/i;
-        if (urlPattern.test(trimmedName)) {
-            this.showFieldError('name-error', 'Name cannot contain links or URLs');
-            return false;
-        }
-
-        return true;
+    // Check if blank
+    if (!trimmedName) {
+        this.showFieldError('name-error', 'Name is required');
+        return false;
     }
 
-    validateEmail() {
-        const email = document.getElementById('user-email').value.trim();
+    // NEW: Check minimum 3 characters
+    if (trimmedName.length < 3) {
+        this.showFieldError('name-error', 'Name must be at least 3 characters long');
+        return false;
+    }
 
-        if (!email) {
-            this.showFieldError('email-error', 'Email is required');
+    // Check for starting/ending spaces
+    if (name !== trimmedName) {
+        this.showFieldError('name-error', 'Name cannot start or end with spaces');
+        return false;
+    }
+
+    // Check for starting/ending with numbers
+    if (/^[0-9]/.test(trimmedName) || /[0-9]$/.test(trimmedName)) {
+        this.showFieldError('name-error', 'Name cannot start or end with numbers');
+        return false;
+    }
+
+    // Check for special characters (only letters and spaces allowed)
+    if (!/^[a-zA-Z\s]+$/.test(trimmedName)) {
+        this.showFieldError('name-error', 'Name can only contain letters and spaces');
+        return false;
+    }
+
+    // Check for code patterns
+    const codePatterns = [
+        /<[^>]*>/, // HTML tags
+        /function\s*\(/, // JavaScript functions
+        /\{[\s\S]*\}/, // Code blocks
+        /class\s+\w+/, // Class definitions
+        /import\s+/, // Import statements
+        /console\./, // Console commands
+        /document\./, // DOM manipulation
+        /window\./, // Window object
+        /\$\(/, // jQuery
+        /SELECT|INSERT|UPDATE|DELETE/i // SQL commands
+    ];
+
+    for (let pattern of codePatterns) {
+        if (pattern.test(trimmedName)) {
+            this.showFieldError('name-error', 'Name cannot contain code or scripts');
             return false;
         }
+    }
 
-        // Enhanced email validation
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailRegex.test(email)) {
+    // Check for URLs/links
+    const urlPattern = /(https?:\/\/[^\s]+|www\.[^\s]+|[^\s]+\.(com|net|org|edu|gov|mil|int|co|uk|ca|au|de|jp|fr|us|ru|ch|it|nl|se|no|es))/i;
+    if (urlPattern.test(trimmedName)) {
+        this.showFieldError('name-error', 'Name cannot contain links or URLs');
+        return false;
+    }
+
+    return true;
+}
+
+
+    validateEmail() {
+    const emailInput = document.getElementById('user-email');
+    const email = emailInput.value;
+    const trimmedEmail = email.trim();
+
+    if (!email) {
+        this.showFieldError('email-error', 'Email is required');
+        return false;
+    }
+
+    // NEW: Check for starting/ending spaces
+    if (email !== trimmedEmail) {
+        this.showFieldError('email-error', 'Email cannot start or end with spaces');
+        return false;
+    }
+
+    // Enhanced email validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(trimmedEmail)) {
+        this.showFieldError('email-error', 'Please enter a valid email address');
+        return false;
+    }
+
+    // Check for suspicious patterns
+    const suspiciousPatterns = [
+        /\.{2,}/, // Multiple dots
+        /@.*@/, // Multiple @ signs
+        /^\./, // Starting with dot
+        /\.$/, // Ending with dot
+    ];
+
+    for (let pattern of suspiciousPatterns) {
+        if (pattern.test(trimmedEmail)) {
             this.showFieldError('email-error', 'Please enter a valid email address');
             return false;
         }
-
-        // Check for suspicious patterns
-        const suspiciousPatterns = [
-            /\.{2,}/, // Multiple dots
-            /@.*@/, // Multiple @ signs
-            /^\./, // Starting with dot
-            /\.$/, // Ending with dot
-        ];
-
-        for (let pattern of suspiciousPatterns) {
-            if (pattern.test(email)) {
-                this.showFieldError('email-error', 'Please enter a valid email address');
-                return false;
-            }
-        }
-
-        return true;
     }
+
+    return true;
+}
+
 
     validateReason() {
         const reason = document.getElementById('download-reason').value;
