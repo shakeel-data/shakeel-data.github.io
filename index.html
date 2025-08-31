@@ -510,10 +510,7 @@
             <div class="header-info">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigCoN68E8XpwaNCVWnJBF1eOWJXQwR0bu8Q&s" 
                      alt="SA" class="header-logo">
-                <div class="header-text">
-                    <h3>Shakeel AI</h3>
-                    <p>Online now</p>
-                </div>
+                
             </div>
             <div class="header-buttons">
                 <button class="header-btn" id="deleteBtn" title="Delete last message">
@@ -550,7 +547,7 @@
             <div class="input-wrapper">
                 <input type="text" id="messageInput" placeholder="Type your message..." maxlength="1000">
             </div>
-            <button class="send-btn" id="sendBtn" disabled>→</button>
+            <button class="send-btn" id="sendBtn" disabled>➜</button>
         </div>
     </div>
 
@@ -563,21 +560,75 @@
                 this.isTyping = false;
                 this.messages = [];
                 
-                this.tooltipMessages = [
-                    'Hey there! Need any help?',
-                    'Hi! Shakeel AI is ready.',
-                    'Got a question? Ask me!',
-                    'Your assistant is here for you!',
-                    'Click to start chatting!'
-                ];
+                // NEW: Tooltip messages array
+this.tooltipMessages = [
+    'Hey there! Need any help?',
+    'Hi! Shakeel AI is ready.',
+    'Got a question? Ask me!',
+    'Your assistant is here for you!',
+    'Click to start chatting!',
+    'I can help you anytime!',
+    'Ask me anything!',
+    'Need info? I’ve got you.',
+    'Looking for answers?',
+    'Shakeel AI is always ready.',
+    'I’m here to help!',
+    'Tap me to chat!',
+    'Your AI buddy is here.',
+    'Say hi to Shakeel AI!',
+    'Let’s solve this together!',
+    'Stuck? I’ll help!',
+    'I’m ready to chat!',
+    'Your questions, answered.',
+    'Got doubts? Ask now!',
+    'Here to assist you!',
+    'Need quick help?',
+    'I’m one click away.',
+    'Shakeel AI is listening.',
+    'Ask your question here.',
+    'Want fast answers?',
+    'Get help instantly!',
+    'Curious? Let’s chat!',
+    'I’m here to guide you!',
+    'Your personal chatbot.',
+    'Click me to talk!',
+    'Looking for support?',
+    'Ask me anything you like.',
+    'Need quick solutions?',
+    'Help is right here!',
+    'Your friendly AI helper.',
+    'Tap to start a chat!',
+    'Instant help is here.',
+    'Ready to answer you!',
+    'Chat with me anytime.',
+    'Hi! Let’s chat now!',
+    'Looking for something?',
+    'Shakeel AI can help!',
+    'I’m here 24/7 for you.',
+    'Have a question?',
+    'Need a quick tip?',
+    'Click me for help.',
+    'I’m ready when you are.',
+    'Want to know something?',
+    'Your assistant awaits.',
+    'Help is one click away.'
+];
+
                 
                 this.descriptions = [
-                    "I'm your AI assistant, ready to help!",
-                    "Ask me anything about technology or Shakeel!",
-                    "Let's solve problems together!",
-                    "Your questions, my answers - let's chat!",
-                    "Ready to assist you with anything!"
-                ];
+  "Shakeel: The data wizard who turns numbers into stories!",
+  "Your go-to guy for AI, analytics, and awesome dashboards!",
+  "Power BI trainer leveling up data skills across the globe!",
+  "Python, SQL, BigQuery – Shakeel speaks data fluently!",
+  "Built AI tools that predict, analyze, and wow!",
+  "Making business decisions smarter with data science!",
+  "From AR Analyst to AI Innovator – Shakeel’s journey rocks!",
+  "Always learning, always building, always ahead!",
+  "The guy who makes machine learning feel magical!",
+  "Chasing legacy, not trends – Shakeel’s vision is clear!"
+];
+
+
                 
                 this.init();
             }
@@ -736,49 +787,48 @@ About Shakeel:
 - Full Name: Shakeel Ahamed
 - Age: 21
 - Location: Chennai, India
-- Role: Data Scientist, Analyst, Educator, and Aspiring AI Entrepreneur
+- Role: Data Analyst, Business Analyst, Data Scientist, Educator, and Aspiring AI Entrepreneur
 - Personality: Focused, disciplined, ambitious, and passionate about technology, education, and building a legacy.
 - Motto: “I don’t wish to be a page in history; I aim to be history itself.”
 
 Education:
-- Pursuing MBA in Business Data Analytics (2024–2026)
-- Bachelor of Commerce @ New collge (Business, Analytics, Computer Systems)
+- Pursuing MBA in Business Data Analytics @ University of Madras, IDE, Chennai (2024–2026)
+- Bachelor of Commerce @ New collge, Chennai (2021–2024)
 - Completed multiple industry certifications in Machine Learning, Databases, AI, and BI tools.
 
 Experience:
-- **Power BI Trainer** at DBV TMF Smart-Broadway (training professionals in BI and analytics)
-- **AR Process Analyst** at Omega Healthcare (business process workflows & analytics)
-- **Tutor** for high school/college students in Python, Math, Data Science, and CS
+- Current: **Power BI Trainer** @ DBV TMF Smart-Broadway, Chennai (March 2025–Present)
+- Previous: **AR Process Analyst** @ Omega Healthcare (September 2024–March 2025)
+- **Tutor** for high school/college students in Math, Data Science, Commerce, Economics, and Statistics
 - **Volunteer** at Agaram Foundation, supporting education initiatives
 
-Skills (Medium-Level Overview):
+Skills (Overview):
 - **Programming:** Python, SQL, BigQuery
 - **Data Visualization:** Power BI, Tableau, Looker Studio
 - **Machine Learning:** Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM
-- **Data Engineering & Cloud:** ETL, Kafka, Debezium, AWS basics
-- **Other:** Excel, GitHub, Business Analysis, Dashboard Design
+- **Data Engineering & Cloud:** ETL/ELT, AWS, GCP
+- **Other:** Excel, Git, GitHub, Docker, Business Analysis, Dashboard Design
 
 Key Projects:
-1. **Amazon Sales Forecasting & Insights** – Predicting revenue trends with ML & BigQuery
-2. **YouTube Comment Sentiment Analysis** – AI-powered NLP sentiment engine
+1. **Amazon Sales Forecasting & Insights** – Predicting revenue trends with ML & BigQuery, XGBoost, Prophet, Linear Regression etc.
+2. **YouTube Comment Sentiment Analysis** – AI-powered NLP sentiment engine with TesnorFlow, Gemini API, Youtube API, Huggingface
 3. **AWS Data Streaming Pipeline** – Real-time data flow with Kafka & Debezium
 4. **Credit Card Fraud Detection** – Handling imbalanced data with XGBoost & LightGBM
 5. **Customer Segmentation & Retail Analytics** – KMeans clustering & PCA
-6. **Educational & Career Outcomes Analysis** – Analyzing student data for insights
-7. **BI Dashboards** – Built interactive dashboards in Power BI, Tableau, and Excel
+6. **BI Dashboards** – Built interactive dashboards in Power BI, Tableau, and Excel
 
 Certifications:
 - Google AI Essentials (Aug 2025)
 - IBM Machine Learning Professional (May 2025)
 - Meta Database Engineer Professional (Apr 2025)
-- Microsoft Power BI Data Analyst Professional (May 2025)
+- Microsoft Power BI Data Analyst Professional (Feb 2025)
 
 Personal Interests:
 - Artificial Intelligence, Data Science, and Education Technology
-- Building AI-powered startups (NextLearn AI, TamilGPT, ProjectGPT)
+- Building AI-powered startups (NextLearn AI, LocalGPT, ProjectGPT)
 - Teaching, mentoring, and sharing knowledge
 - Business, investing, and tech trends
-- Cars, gaming, and exploring new tools
+- Super Cars, and exploring new tools
 
 Response Style:
 - Clear, structured, and friendly
@@ -788,8 +838,7 @@ Response Style:
 
 General technology, programming, and AI topics
 Any other questions users might have
-
-Always be helpful, professional, and informative.
+** Always be helpful, professional, and informative. **
 
 User question: ${userMessage}
 
@@ -1135,6 +1184,75 @@ html.loaded {
 document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.classList.add('loaded');
 });
+
+// Navigation scroll detection and active link highlighting
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links and sections
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    // Function to update active link
+    function updateActiveLink() {
+        let currentSection = '';
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Check which section is currently in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Offset for navbar height
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                currentSection = sectionId;
+            }
+        });
+        
+        // Update active class on nav links
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            
+            if (linkHref === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Listen for scroll events
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        // Debounce for performance
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveLink, 10);
+    });
+    
+    // Set initial active state
+    updateActiveLink();
+    
+    // Handle navigation clicks with smooth scrolling
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Smooth scroll to section
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80, // Account for navbar height
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+});
 </script>
 
 </head>
@@ -1376,8 +1494,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="px-6 py-5 border-b border-gray-100">
                 <div class="flex items-center justify-between">
                     <h3 class="text-lg font-semibold text-gray-900">View Resume</h3>
-                    <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-md hover:bg-gray-100">
-                    </button>
+                       
                 </div>
             </div>
 
@@ -1413,10 +1530,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <!-- Purpose Field -->
                 <div>
-                    <label for="download-reason" class="block text-sm font-medium text-gray-700 mb-2">Purpose (optional)</label>
+                    <label for="download-reason" class="block text-sm font-medium text-gray-700 mb-2">Purpose (required)</label>
                     <select 
                         id="download-reason" 
                         name="reason" 
+                        required
                         class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                     >
                         <option value="">Select purpose</option>
@@ -1426,6 +1544,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <option value="networking">Networking</option>
                         <option value="other">Other</option>
                     </select>
+                    <div id="reason-error" class="text-red-600 text-xs mt-1 hidden"></div>
                 </div>
 
                 <!-- Tech Tip -->
@@ -1466,6 +1585,26 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </div>
+
+<!-- Add this toast div anywhere in your body -->
+<div id="download-toast" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+">
+  ✓ Download Successful!
+</div>
+
 
 
 
@@ -3199,8 +3338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-/// Resume Download Modal Functionality
+/// Enhanced Resume Download Modal Functionality with Advanced Validation
 class ResumeDownloader {
     constructor() {
         this.modal = document.getElementById('resume-modal');
@@ -3260,7 +3398,7 @@ class ResumeDownloader {
         }
         
         // Close modal events
-        document.getElementById('close-modal').addEventListener('click', () => this.closeModal());
+
         document.getElementById('cancel-btn').addEventListener('click', () => this.closeModal());
         
         this.modal.addEventListener('click', (e) => {
@@ -3308,7 +3446,15 @@ class ResumeDownloader {
     async handleSubmit(e) {
         e.preventDefault();
         
-        if (!this.validateForm()) return;
+        // Clear previous errors
+        this.clearErrors();
+        
+        // Validate form
+        if (!this.validateForm()) {
+            // Focus first error field
+            this.focusFirstErrorField();
+            return;
+        }
 
         const formData = new FormData(this.form);
         const userData = {
@@ -3319,6 +3465,223 @@ class ResumeDownloader {
         };
 
         await this.processDownload(userData);
+    }
+
+    // ENHANCED VALIDATION LOGIC
+    validateForm() {
+        let isValid = true;
+
+        // Validate Name
+        const nameValid = this.validateName();
+        if (!nameValid) isValid = false;
+
+        // Validate Email
+        const emailValid = this.validateEmail();
+        if (!emailValid) isValid = false;
+
+        // Validate Purpose
+        const reasonValid = this.validateReason();
+        if (!reasonValid) isValid = false;
+
+        return isValid;
+    }
+
+    validateName() {
+        const name = document.getElementById('user-name').value;
+        const trimmedName = name.trim();
+
+        // Check if blank
+        if (!trimmedName) {
+            this.showFieldError('name-error', 'Name is required');
+            return false;
+        }
+
+        // Check for starting/ending spaces
+        if (name !== trimmedName) {
+            this.showFieldError('name-error', 'Name cannot start or end with spaces');
+            return false;
+        }
+
+        // Check for starting/ending with numbers
+        if (/^[0-9]/.test(trimmedName) || /[0-9]$/.test(trimmedName)) {
+            this.showFieldError('name-error', 'Name cannot start or end with numbers');
+            return false;
+        }
+
+        // Check for special characters (only letters and spaces allowed)
+        if (!/^[a-zA-Z\s]+$/.test(trimmedName)) {
+            this.showFieldError('name-error', 'Name can only contain letters and spaces');
+            return false;
+        }
+
+        // Check for code patterns
+        const codePatterns = [
+            /<[^>]*>/, // HTML tags
+            /function\s*\(/, // JavaScript functions
+            /\{[\s\S]*\}/, // Code blocks
+            /class\s+\w+/, // Class definitions
+            /import\s+/, // Import statements
+            /console\./, // Console commands
+            /document\./, // DOM manipulation
+            /window\./, // Window object
+            /\$\(/, // jQuery
+            /SELECT|INSERT|UPDATE|DELETE/i // SQL commands
+        ];
+
+        for (let pattern of codePatterns) {
+            if (pattern.test(trimmedName)) {
+                this.showFieldError('name-error', 'Name cannot contain code or scripts');
+                return false;
+            }
+        }
+
+        // Check for URLs/links
+        const urlPattern = /(https?:\/\/[^\s]+|www\.[^\s]+|[^\s]+\.(com|net|org|edu|gov|mil|int|co|uk|ca|au|de|jp|fr|us|ru|ch|it|nl|se|no|es))/i;
+        if (urlPattern.test(trimmedName)) {
+            this.showFieldError('name-error', 'Name cannot contain links or URLs');
+            return false;
+        }
+
+        return true;
+    }
+
+    validateEmail() {
+        const email = document.getElementById('user-email').value.trim();
+
+        if (!email) {
+            this.showFieldError('email-error', 'Email is required');
+            return false;
+        }
+
+        // Enhanced email validation
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            this.showFieldError('email-error', 'Please enter a valid email address');
+            return false;
+        }
+
+        // Check for suspicious patterns
+        const suspiciousPatterns = [
+            /\.{2,}/, // Multiple dots
+            /@.*@/, // Multiple @ signs
+            /^\./, // Starting with dot
+            /\.$/, // Ending with dot
+        ];
+
+        for (let pattern of suspiciousPatterns) {
+            if (pattern.test(email)) {
+                this.showFieldError('email-error', 'Please enter a valid email address');
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    validateReason() {
+        const reason = document.getElementById('download-reason').value;
+
+        if (!reason || reason === '') {
+            this.showFieldError('reason-error', 'Please select a purpose for downloading');
+            return false;
+        }
+
+        return true;
+    }
+
+    showFieldError(errorId, message) {
+        const errorElement = document.getElementById(errorId);
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+            
+            // Add red border to input field
+            const inputField = errorElement.previousElementSibling;
+            if (inputField) {
+                inputField.classList.add('border-red-500');
+                inputField.classList.remove('border-gray-300');
+            }
+        }
+    }
+
+    clearErrors() {
+        // Clear all error messages
+        document.querySelectorAll('[id$="-error"]').forEach(error => {
+            error.classList.add('hidden');
+            error.textContent = '';
+        });
+
+        // Remove red borders from input fields
+        document.querySelectorAll('input, select').forEach(field => {
+            field.classList.remove('border-red-500');
+            field.classList.add('border-gray-300');
+        });
+    }
+
+    focusFirstErrorField() {
+        const firstError = document.querySelector('[id$="-error"]:not(.hidden)');
+        if (firstError) {
+            const fieldName = firstError.id.replace('-error', '');
+            let inputField;
+            
+            if (fieldName === 'name') {
+                inputField = document.getElementById('user-name');
+            } else if (fieldName === 'email') {
+                inputField = document.getElementById('user-email');
+            } else if (fieldName === 'reason') {
+                inputField = document.getElementById('download-reason');
+            }
+            
+            if (inputField) {
+                inputField.focus();
+            }
+        }
+    }
+
+    setupValidation() {
+        // Real-time validation on input
+        const nameField = document.getElementById('user-name');
+        const emailField = document.getElementById('user-email');
+        const reasonField = document.getElementById('download-reason');
+
+        if (nameField) {
+            nameField.addEventListener('input', () => {
+                if (nameField.value.trim()) {
+                    this.clearFieldError('name-error');
+                }
+            });
+        }
+
+        if (emailField) {
+            emailField.addEventListener('input', () => {
+                if (emailField.value.trim()) {
+                    this.clearFieldError('email-error');
+                }
+            });
+        }
+
+        if (reasonField) {
+            reasonField.addEventListener('change', () => {
+                if (reasonField.value) {
+                    this.clearFieldError('reason-error');
+                }
+            });
+        }
+    }
+
+    clearFieldError(errorId) {
+        const errorElement = document.getElementById(errorId);
+        if (errorElement) {
+            errorElement.classList.add('hidden');
+            errorElement.textContent = '';
+            
+            // Remove red border
+            const inputField = errorElement.previousElementSibling;
+            if (inputField) {
+                inputField.classList.remove('border-red-500');
+                inputField.classList.add('border-gray-300');
+            }
+        }
     }
 
     async processDownload(userData) {
@@ -3361,54 +3724,39 @@ class ResumeDownloader {
     }
 
     downloadFile() {
-        // Create a hidden link and trigger download
-        const link = document.createElement('a');
-        link.href = this.resumeUrl;
-        link.download = 'ShakeelAhamed_Resume.pdf';
-        link.style.display = 'none';
-        
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
-    validateForm() {
-        this.clearErrors();
-        let isValid = true;
-
-        const name = document.getElementById('user-name').value.trim();
-        const email = document.getElementById('user-email').value.trim();
-
-        if (!name) {
-            this.showFieldError('name-error', 'Name is required');
-            isValid = false;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email) {
-            this.showFieldError('email-error', 'Email is required');
-            isValid = false;
-        } else if (!emailRegex.test(email)) {
-            this.showFieldError('email-error', 'Please enter a valid email');
-            isValid = false;
-        }
-
-        return isValid;
-    }
-
-    showFieldError(errorId, message) {
-        const errorElement = document.getElementById(errorId);
-        if (errorElement) {
-            errorElement.textContent = message;
-            errorElement.classList.remove('hidden');
-        }
-    }
-
-    clearErrors() {
-        document.querySelectorAll('[id$="-error"]').forEach(error => {
-            error.classList.add('hidden');
-        });
-    }
+    // Show simple alert-style toast
+    const toast = document.createElement('div');
+    toast.innerHTML = '✓ Download Successful!';
+    toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #28a745;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        z-index: 10000;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    document.body.appendChild(toast);
+    
+    // Fade in
+    setTimeout(() => toast.style.opacity = '1', 100);
+    
+    // Open PDF after toast shows
+    setTimeout(() => {
+        window.open(this.resumeUrl, '_blank');
+    }, 500);
+    
+    // Remove toast after 3 seconds
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(toast), 300);
+    }, 3000);
+}
 
     resetButton() {
         const downloadBtn = document.getElementById('download-btn');
@@ -3420,131 +3768,41 @@ class ResumeDownloader {
         spinner.classList.add('hidden');
     }
 
-    setupValidation() {
-        // Clear errors on input
-        ['user-name', 'user-email'].forEach(id => {
-            const element = document.getElementById(id);
-            if (element) {
-                element.addEventListener('input', () => {
-                    const errorElement = document.getElementById(id.replace('user-', '') + '-error');
-                    if (errorElement) {
-                        errorElement.classList.add('hidden');
-                    }
-                });
-            }
-        });
-    }
-
     delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 }
-
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
     new ResumeDownloader();
 });
 
-
-
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-mobileMenuButton.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-  
-  // Animate button icon
-  const svg = mobileMenuButton.querySelector('svg');
-  if (mobileMenu.classList.contains('hidden')) {
-    svg.style.transform = 'rotate(0deg)';
-  } else {
-    svg.style.transform = 'rotate(180deg)';
-  }
-});
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // Animate button icon
+      const svg = mobileMenuButton.querySelector('svg');
+      if (mobileMenu.classList.contains('hidden')) {
+        svg.style.transform = 'rotate(0deg)';
+      } else {
+        svg.style.transform = 'rotate(180deg)';
+      }
+    });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-    mobileMenu.classList.add('hidden');
-    mobileMenuButton.querySelector('svg').style.transform = 'rotate(0deg)';
-  }
-});
-
-// link detection and smooth scrolling
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-function updateActiveLink() {
-  // Get current scroll position
-  let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-  
-  // header height
-  const headerOffset = 80;
-  
-  // Find which section is currently visible
-  let currentSection = '';
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - headerOffset;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute('id');
-    
-    // Check if scroll position is within this section
-    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-      currentSection = sectionId;
-    }
-  });
-  
-  // Update active class on nav links
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    const linkHref = link.getAttribute('href');
-    if (linkHref === `#${currentSection}`) {
-      link.classList.add('active');
-    }
-  });
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.querySelector('svg').style.transform = 'rotate(0deg)';
+      }
+    });
 }
-
-// Listen for scroll events
-window.addEventListener('scroll', updateActiveLink);
-
-// Initial call when page loads
-updateActiveLink();
-
-// Handle navigation clicks with smooth scrolling
-navLinks.forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    // Get target section
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    
-    if (targetSection) {
-      // Calculate scroll position accounting for header
-      const headerOffset = 80;
-      const targetPosition = targetSection.offsetTop - headerOffset;
-      
-      // Remove active class from all links
-      navLinks.forEach(navLink => navLink.classList.remove('active'));
-      
-      // Add active class to clicked link
-      this.classList.add('active');
-      
-      // Smooth scroll to target
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-      
-      // Close mobile menu if open
-      mobileMenu.classList.add('hidden');
-      mobileMenuButton.querySelector('svg').style.transform = 'rotate(0deg)';
-    }
-  });
-});
 
 
 
@@ -3925,4 +4183,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
