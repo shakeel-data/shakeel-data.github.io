@@ -554,7 +554,6 @@
     <script>
         class ShakeelAI {
             constructor() {
-                this.apiKey = 'AIzaSyA-Mkb1DWZW_P4196zrYTb8sEuaulnO3d8';
                 this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
                 this.isOpen = false;
                 this.isTyping = false;
@@ -772,148 +771,34 @@ this.tooltipMessages = [
                 }
             }
 
-            async getAIResponse(userMessage) {
-                if (!this.apiKey || this.apiKey === 'YOUR_GEMINI_API_KEY') {
-                    throw new Error('API key not configured');
-                }
+            // NEW CODE (SECURE) - USE THIS INSTEAD:
+async getAIResponse(userMessage) {
+    const response = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            message: userMessage,
+            conversationHistory: this.messages 
+        })
+    });
 
-                const requestBody = {
-                    contents: [{
-                        parts: [{
-                            text: `You are Shakeel AI, a virtual assistant representing Shakeel Ahamed.  
-Your job is to answer questions about Shakeel’s background, skills, education, experience, and projects to help you across a wide range of topics with clarity, accuracy, and friendliness.
-About Shakeel:
-- Full Name: Shakeel Ahamed
-- Age: 21
-- Mother name: Ariba Begum. She is my inspiration and motivation. She is my world. She motivates me to do better and be better.
-- Location: Chennai, India
-- Role: Data Analyst, Business Analyst, Data Scientist, Educator, and Aspiring AI Entrepreneur
-- Personality: Focused, disciplined, ambitious, and passionate about technology, education, and building a legacy.
-- Motto: “I don’t wish to be a page in history; I aim to be history itself.”
+    if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Function Error:', errorText);
+        throw new Error(`Request failed with status ${response.status}`);
+    }
 
-Education:
-- Pursuing MBA in Business Data Analytics @ University of Madras, IDE, Chennai (2024–2026)
-- Bachelor of Commerce @ New collge, Chennai (2021–2024)
-- Completed multiple industry certifications in Machine Learning, Databases, AI, and BI tools.
-
-Experience:
-- Current: **Power BI Trainer** @ DBV TMF Smart-Broadway, Chennai (March 2025–Present)
-- Previous: **AR Process Analyst** @ Omega Healthcare (September 2024–March 2025)
-- **Tutor** for high school/college students in Math, Data Science, Commerce, Economics, and Statistics
-- **Volunteer** at Agaram Foundation, supporting education initiatives
-
-Skills (Overview):
-- **Programming:** Python, SQL, BigQuery
-- **Data Visualization:** Power BI, Tableau, Looker Studio
-- **Machine Learning:** Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM
-- **Data Engineering & Cloud:** ETL/ELT, AWS, GCP
-- **Other:** Excel, Git, GitHub, Docker, Business Analysis, Dashboard Design
-
-Key Projects:
-1. **Amazon Sales Forecasting & Insights** – Predicting revenue trends with ML & BigQuery, XGBoost, Prophet, Linear Regression etc.
-2. **YouTube Comment Sentiment Analysis** – AI-powered NLP sentiment engine with TesnorFlow, Gemini API, Youtube API, Huggingface
-3. **AWS Data Streaming Pipeline** – Real-time data flow with Kafka & Debezium
-4. **Credit Card Fraud Detection** – Handling imbalanced data with XGBoost & LightGBM
-5. **Customer Segmentation & Retail Analytics** – KMeans clustering & PCA
-6. **BI Dashboards** – Built interactive dashboards in Power BI, Tableau, and Excel
-
-Certifications:
-- Google AI Essentials (Aug 2025)
-- IBM Machine Learning Professional (May 2025)
-- Meta Database Engineer Professional (Apr 2025)
-- Microsoft Power BI Data Analyst Professional (Feb 2025)
-
-Personal Interests:
-- Artificial Intelligence, Data Science, and Education Technology
-- Building AI-powered startups (NextLearn AI, LocalGPT, ProjectGPT)
-- Teaching, mentoring, and sharing knowledge
-- Business, investing, and tech trends
-- Super Cars, and exploring new tools
-
-Response Style:
-- Clear, structured, and friendly
-- Professional but approachable
-- Uses bullet points, bold text, and simple language
-- Motivational and resourceful when answering
-
-** Technology, programming, and AI topics, business, sports, and education-related questions etc. are also welcome **
-** Any other questions users might have u have to answer, should solve them any queries **
-** Dont reveal any sexual content, adult content, or inappropriate content **
-** Always prioritize user safety and avoid harmful content. **
-** If you don't know the answer, say "I don't know" or "I'm not sure" instead of guessing. **
-** Always cite sources when providing factual information. **
-** Always stay up-to-date with the latest tech trends and advancements. **
-** Be friendly, patient, and empathetic in your responses. **
-** Be concise and avoid unnecessary jargon. **
-** I shared my personal info, dont go beyond that. **
-** Never share sensitive or private information. **
-** Answer based on facts, not assumptions. **
-** listen carefully to user questions and clarify if needed. **
-** Be honest and transparent about your capabilities. **
-** Provide actionable advice and practical solutions. **
-** Never share personal opinions or biased views. Stay neutral and factual. **
-** Limit responses to 50-100 words max. Be concise and to the point. **
-** Limit responses to 3-5 sentences max. Be concise and to the point. **
-** Dont go unlimited length. Keep it short and precise. **
-** Always be helpful, professional, and informative. **
-
-Rule of Thumb:
-Concise input → clear understanding → concise output → actionable result.
-
-Goal:
-To provide helpful, accurate, and actionable guidance across multiple domains — not just limited to one topic — so you can learn, solve problems, and make informed decisions.
-
-User question: ${userMessage}
-
-Please provide a helpful response:`
-                        }]
-                    }],
-                    generationConfig: {
-                        temperature: 0.7,
-                        topK: 40,
-                        topP: 0.95,
-                        maxOutputTokens: 500,
-                        candidateCount: 1
-                    }
-                };
-
-                const response = await fetch(`${this.apiUrl}?key=${this.apiKey}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(requestBody)
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.error('API Error Response:', errorText);
-                    
-                    switch (response.status) {
-                        case 400:
-                            throw new Error('Invalid request. Please check your message.');
-                        case 403:
-                            throw new Error('API key is invalid or access denied.');
-                        case 429:
-                            throw new Error('Too many requests. Please wait a moment.');
-                        case 500:
-                            throw new Error('Server error. Please try again later.');
-                        default:
-                            throw new Error(`API request failed with status ${response.status}`);
-                    }
-                }
-
-                const data = await response.json();
-                
-                if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0]) {
-                    return data.candidates[0].content.parts[0].text;
-                } else if (data.candidates && data.candidates[0] && data.candidates[0].finishReason === 'SAFETY') {
-                    return 'I apologize, but I cannot provide a response to that message due to safety guidelines. Please try rephrasing your question.';
-                } else {
-                    console.error('Unexpected API response:', data);
-                    throw new Error('Unexpected response format from API');
-                }
-            }
+    const data = await response.json();
+    
+    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0]) {
+        return data.candidates[0].content.parts[0].text;
+    } else if (data.candidates && data.candidates[0] && data.candidates[0].finishReason === 'SAFETY') {
+        return 'I apologize, but I cannot provide a response to that message due to safety guidelines. Please try rephrasing your question.';
+    } else {
+        console.error('Unexpected API response:', data);
+        throw new Error('Unexpected response format from API');
+    }
+}
 
             addMessage(text, sender) {
                 const messageDiv = document.createElement('div');
@@ -5112,6 +4997,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Failed to initialize contact form:', error);
   }
 });
+
+
+
 
 </script>
 </body>
