@@ -786,6 +786,7 @@ Your job is to answer questions about Shakeel’s background, skills, education,
 About Shakeel:
 - Full Name: Shakeel Ahamed
 - Age: 21
+- Mother name: Ariba Begum. She is my inspiration and motivation. She is my world. She motivates me to do better and be better.
 - Location: Chennai, India
 - Role: Data Analyst, Business Analyst, Data Scientist, Educator, and Aspiring AI Entrepreneur
 - Personality: Focused, disciplined, ambitious, and passionate about technology, education, and building a legacy.
@@ -1411,6 +1412,45 @@ document.addEventListener('DOMContentLoaded', function() {
         overflow-x: hidden;
     }
 }
+
+/* Reduce excessive vertical spacing in hero section */
+#home h1 {
+    margin-bottom: 1.5rem !important; /* Reduce from default 1.5rem to bring role closer to name */
+}
+
+.mb-8 {
+    margin-bottom: 1.5rem !important; /* Reduce typing animation container spacing */
+}
+
+#home .mb-12 {
+    margin-bottom: 2rem !important; /* Reduce description bottom spacing */
+}
+
+/* Fine-tune the typing text container height for better balance */
+.h-16 {
+    height: 3rem !important;
+}
+
+@media (min-width: 640px) {
+    .sm\\:h-20 {
+        height: 3.5rem !important;
+    }
+}
+
+/* Ensure consistent spacing on mobile */
+@media (max-width: 639px) {
+    #home h1 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .mb-8 {
+        margin-bottom: 1rem !important;
+    }
+    
+    #home .mb-12 {
+        margin-bottom: 1.5rem !important;
+    }
+}
 </style>
 
 <script>
@@ -1629,8 +1669,8 @@ document.addEventListener('DOMContentLoaded', function() {
         About Me
       </h2>
       <p class="text-lg sm:text-xl text-gray-700 leading-relaxed font-light">
-        Detail-oriented data and business analyst with hands-on experience in SQL, Python, and BigQuery. Proven ability to build end-to-end analytics pipelines, develop machine learning models with up to 87% accuracy, and deliver actionable insights through data visualization. 
-        Eager to apply analytical problem-solving skills to support business growth and innovation in a dynamic, technology-driven company.
+       Detail-oriented professional with hands-on experience in SQL, Python, and BigQuery. Skilled in building end-to-end analytics pipelines, developing machine learning models with up to <strong>87% accuracy</strong>,and delivering actionable insights through data visualization. 
+       Eager to apply analytical problem-solving skills to support business growth and innovation in a dynamic, technology-driven environment.
       </p>
     </div>
 
@@ -1686,7 +1726,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Skills & Technologies
             </h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Technical expertise across the full data science and analytics stack
+                Experience with data analysis, visualization, and machine learning tools
             </p>
         </div>
         
@@ -2102,7 +2142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Featured Projects
             </h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Data analytics and machine learning projects demonstrating end-to-end problem-solving capabilities
+                Built and delivered data analytics and ML projects from start to finish, focusing on solving real-world problems
             </p>
         </div>
         
@@ -2132,21 +2172,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Python</span>
                         <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Prophet</span>
                         <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-md">LightGBM</span>
+                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-md">Linear Regression</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-md">KMeans</span>
+
                     </div>
                     
                     <div class="flex items-center justify-between mt-auto">
-                        <a href="https://github.com/shakeel-data/amazon-sales-forecasting-python-bigquery-ml" 
-                           target="_blank" 
-                           class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                        <button class="project-link text-blue-600 hover:text-blue-800 font-medium text-sm" 
+                                data-url="https://github.com/shakeel-data/amazon-sales-forecasting-python-bigquery-ml">
                             View Project →
-                        </a>
-                        <a href="https://github.com/shakeel-data/amazon-sales-forecasting-python-bigquery-ml" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
+                        </button>
+                       
                     </div>
                 </div>
             </div>
@@ -2174,27 +2210,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-md">Gemini API</span>
                         <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">TensorFlow</span>
                         <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">YouTube API</span>
-                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">BERT</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Huggingface</span>
                     </div>
                     
                     <div class="flex items-center justify-between mt-auto">
-                        <a href="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini" 
-                           target="_blank" 
-                           class="text-green-600 hover:text-green-800 font-medium text-sm">
+                        <button class="project-link text-green-600 hover:text-green-800 font-medium text-sm" 
+                                data-url="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini">
                             View Project →
-                        </a>
-                        <a href="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
+                        </button>
+                        <button class="project-link text-gray-400 hover:text-gray-600" 
+                                data-url="https://github.com/shakeel-data/youtube-sentiment-analysis-tensorflow-gemini">
+                            
+                        </button>
                     </div>
                 </div>
             </div>
             
-            <!-- Project 3: AWS Data Pipeline (FIXED ALIGNMENT) -->
+            <!-- Project 3: AWS Data Pipeline -->
             <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                 <div class="aspect-video bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
                     <div class="text-center">
@@ -2221,18 +2253,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     
                     <div class="flex items-center justify-between mt-auto">
-                        <a href="https://github.com/shakeel-data/AWS-data-streaming-pipeline" 
-                           target="_blank" 
-                           class="text-orange-600 hover:text-orange-800 font-medium text-sm">
+                        <button class="project-link text-orange-600 hover:text-orange-800 font-medium text-sm" 
+                                data-url="https://github.com/shakeel-data/AWS-data-streaming-pipeline">
                             View Project →
-                        </a>
-                        <a href="https://github.com/shakeel-data/AWS-data-streaming-pipeline" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
+                        </button>
+                        
                     </div>
                 </div>
             </div>
@@ -2264,18 +2289,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     
                     <div class="flex items-center justify-between mt-auto">
-                        <a href="https://github.com/shakeel-data/breast-cancer-prediction-neural-network-pytorch" 
-                           target="_blank" 
-                           class="text-pink-600 hover:text-pink-800 font-medium text-sm">
+                        <button class="project-link text-pink-600 hover:text-pink-800 font-medium text-sm" 
+                                data-url="https://github.com/shakeel-data/breast-cancer-prediction-neural-network-pytorch">
                             View Project →
-                        </a>
-                        <a href="https://github.com/shakeel-data/breast-cancer-prediction-neural-network-pytorch" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
+                        </button>
+                       
                     </div>
                 </div>
             </div>
@@ -2293,7 +2311,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <div class="p-5 sm:p-6 flex flex-col flex-grow">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
-                        Customer Churn Analysis
+                        Customer Churn & Retention
                     </h3>
                     <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
                         Interactive Power BI dashboard with 85% accuracy Random Forest model for customer retention strategies
@@ -2307,20 +2325,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     
                     <div class="flex items-center justify-between mt-auto">
-                        <a href="https://github.com/shakeel-data/customer-churn-prediction-dashboard" 
-                           target="_blank" 
-                           class="text-purple-600 hover:text-purple-800 font-medium text-sm">
+                        <button class="project-link text-purple-600 hover:text-purple-800 font-medium text-sm" 
+                                data-url="https://github.com/shakeel-data/customer-churn-prediction-dashboard">
                             View Project →
-                        </a>
-                        <a href="https://github.com/shakeel-data/customer-churn-prediction-dashboard" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
+                        </button>
+                        
                     </div>
-                </div>
+                </div>   
             </div>
             
             <!-- Project 6: Revenue Dashboard -->
@@ -2350,34 +2361,921 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     
                     <div class="flex items-center justify-between mt-auto">
-                        <a href="https://github.com/shakeel-data/revenue-trends-analysis-dashboard" 
-                           target="_blank" 
-                           class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">
+                        <button class="project-link text-indigo-600 hover:text-indigo-800 font-medium text-sm" 
+                                data-url="https://github.com/shakeel-data/revenue-trends-analysis-dashboard">
                             View Project →
-                        </a>
-                        <a href="https://github.com/shakeel-data/revenue-trends-analysis-dashboard" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
+                        </button>
+                        
                     </div>
                 </div>
             </div>
             
+          <!-- LOCKED PROJECT 7: Credit Card Fraud Detection -->
+<div class="locked-project bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative">
+    <div class="aspect-video bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center relative">
+        <div class="text-center z-10">
+            <svg class="w-12 h-12 text-yellow-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <p class="text-sm text-yellow-700 font-medium">Fraud Detection System</p>
+        </div>
+    </div>
+    
+    <div class="locked-content p-5 sm:p-6 flex flex-col flex-grow relative">
+        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+            Credit Card Fraud Detection
+        </h3>
+        <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+            ML models to detect fraudulent transactions on imbalanced datasets with high accuracy
+        </p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-md">XGBoost</span>
+            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">LightGBM</span>
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">Scikit-learn</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Jupyter</span>
+        </div>
+    </div>
+    
+    <!-- Single Centered Unlock Overlay -->
+    <div class="lock-overlay">
+        <button id="unlock-project-7" class="unlock-project-btn">
+            🔒 Unlock Project
+        </button>
+    </div>
+</div>
+
+<!-- LOCKED PROJECT 8: Customer Segmentation -->
+<div class="locked-project bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative">
+    <div class="aspect-video bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center relative">
+        <div class="text-center z-10">
+            <svg class="w-12 h-12 text-teal-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <p class="text-sm text-teal-700 font-medium">Unsupervised ML clustering</p>
+        </div>
+    </div>
+    
+    <div class="locked-content p-5 sm:p-6 flex flex-col flex-grow relative">
+        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+            Customer Segmentation Clustering
+        </h3>
+        <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+            Grouped customers using K-Means and PCA to identify key segments for targeted strategies
+        </p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2 py-1 bg-teal-100 text-teal-800 text-xs font-medium rounded-md">KMeans</span>
+            <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-md">PCA</span>
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">Yellowbrick</span>
+            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Scikit-learn</span>
+        </div>
+    </div>
+    
+    <!-- Single Centered Unlock Overlay -->
+    <div class="lock-overlay">
+        <button id="unlock-project-8" class="unlock-project-btn">
+            🔒 Unlock Project
+        </button>
+    </div>
+</div>
+
+<!-- LOCKED PROJECT 9: Walmart Sales Analysis -->
+<div class="locked-project bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative">
+    <div class="aspect-video bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center relative">
+        <div class="text-center z-10">
+            <svg class="w-12 h-12 text-red-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+            <p class="text-sm text-red-700 font-medium">Retail Sales Analysis</p>
+        </div>
+    </div>
+    
+    <div class="locked-content p-5 sm:p-6 flex flex-col flex-grow relative">
+        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+            Walmart Sales Analysis
+        </h3>
+        <p class="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base flex-grow">
+            Analyzed sales trends and patterns to uncover key factors driving store performance
+        </p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-md">Kaggle</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Python</span>
+            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-md">Seaborn</span>
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">PostgreSQL</span>
+        </div>
+    </div>
+    
+    <!-- Single Centered Unlock Overlay -->
+    <div class="lock-overlay">
+        <button id="unlock-project-9" class="unlock-project-btn">
+            🔒 Unlock Project
+        </button>
+    </div>
+</div>            
         </div>
         
         <!-- More Projects Button -->
         <div class="text-center mt-12">
-            <a href="https://github.com/shakeel-data?tab=repositories" 
-               target="_blank"
-               class="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">
+            <button id="explore-more-btn" 
+                    class="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors" 
+                    data-url="https://github.com/shakeel-data?tab=repositories">
                 Explore More Projects →
-            </a>
+            </button>
         </div>
     </div>
 </section>
+
+
+
+<!-- Project Access Form Modal -->
+<div id="project-form-modal" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-all duration-300"></div>
+    <div class="fixed inset-0 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl transform transition-all duration-300" onclick="event.stopPropagation()">
+            <div class="px-6 py-5 border-b border-gray-100">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-gray-900">Explore Project Details</h3>
+                    
+                </div>
+            </div>
+
+            <form id="project-access-form" class="p-6 space-y-5">
+                <!-- Username Field -->
+                <div>
+                    <label for="project-username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                    <input 
+                        type="text" 
+                        id="project-username" 
+                        name="username" 
+                        required 
+                        autocomplete="off"
+                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                        placeholder="Your username (min 3 letters)"
+                    >
+                    <div id="username-error" class="text-red-600 text-xs mt-1 hidden"></div>
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label for="project-email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input 
+                        type="email" 
+                        id="project-email" 
+                        name="email" 
+                        required 
+                        autocomplete="off"
+                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                        placeholder="your@email.com"
+                    >
+                    <div id="project-email-error" class="text-red-600 text-xs mt-1 hidden"></div>
+                </div>
+
+                <!-- Purpose Field -->
+                <div>
+                    <label for="project-purpose" class="block text-sm font-medium text-gray-700 mb-2">Purpose of Visit</label>
+                    <select 
+                        id="project-purpose" 
+                        name="purpose" 
+                        required
+                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                    >
+                        <option value="">Select purpose</option>
+                        <option value="hiring">Hiring & Recruitment</option>
+                        <option value="learning">Learning & Education</option>
+                        <option value="collaboration">Collaboration Opportunity</option>
+                        <option value="research">Research & Analysis</option>
+                        <option value="feedback">Feedback & Review</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div id="project-purpose-error" class="text-red-600 text-xs mt-1 hidden"></div>
+                </div>
+
+                <!-- Info Tip -->
+                <div class="bg-blue-50/80 border border-blue-100 p-4 rounded-lg">
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0">
+                            <svg class="w-4 h-4 text-blue-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-blue-800 mb-1">Quick Access</p>
+                            <p class="text-xs text-blue-700 leading-relaxed">Unlock the full project by sharing a few quick details.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end space-x-3 pt-4">
+                    <button 
+                        type="button" 
+                        id="cancel-form-btn"
+                        class="px-4 py-2.5 text-sm font-medium text-red-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500/20 transition-all"
+                    >
+                        Cancel
+                    </button>
+                    <button 
+                        type="submit" 
+                        id="access-project-btn"
+                        class="px-6 py-2.5 text-sm font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:opacity-50 transition-all"
+                    >
+                        Access Project
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Style Success Modal -->
+<div id="success-modal" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/40 backdrop-blur-md"></div>
+    <div class="fixed inset-0 flex items-center justify-center p-4">
+        <div class="success-modal-content bg-white rounded-3xl p-8 max-w-xs w-full shadow-2xl text-center transform transition-all duration-500">
+            <!-- Success Animation Container -->
+            <div class="success-animation-container mb-6">
+                <!-- Animated Circle Background -->
+                <div class="success-circle-bg"></div>
+                
+                <!-- Main Success Icon -->
+                <div class="success-icon-wrapper">
+                    <svg class="success-checkmark" viewBox="0 0 100 100" width="80" height="80">
+                        <!-- Animated Circle -->
+                        <circle class="success-circle" cx="50" cy="50" r="45" fill="none" stroke="#22c55e" stroke-width="4"/>
+                        <!-- Animated Checkmark -->
+                        <path class="success-path" d="M30 50 L43 63 L70 36" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                
+                <!-- Floating particles -->
+                <div class="floating-particles">
+                    <div class="particle particle-1">✓</div>
+                    <div class="particle particle-2">✓</div>
+                    <div class="particle particle-3">✓</div>
+                    <div class="particle particle-4">✓</div>
+                </div>
+            </div>
+            
+            <h3 class="success-title text-2xl font-bold text-gray-900 mb-2">Success!</h3>
+<p class="success-subtitle text-gray-600 mb-4">
+  Thank you for submitting your details. You now have access to view this project.  
+</p>
+<p class="text-sm text-gray-500">
+  Redirecting to GitHub...
+</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+
+/* Locked Project Card Styles */
+.locked-project {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Blur the content below SVG icon */
+.locked-project .locked-content {
+    filter: blur(3px);
+    opacity: 0.6;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Base unlock overlay styling */
+.lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Base unlock button styling */
+.unlock-project-btn {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px 32px;
+    border: 2px solid;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* PROJECT 7: Credit Card Fraud Detection - YELLOW/GOLD THEME */
+#unlock-project-7 {
+    background: rgba(255, 255, 255, 0.95);
+    color: #f59e0b;
+    border-color: #f59e0b;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25);
+}
+
+#unlock-project-7:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #d97706;
+    border-color: #d97706;
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+}
+
+/* PROJECT 8: Customer Segmentation - TEAL/CYAN THEME */
+#unlock-project-8 {
+    background: rgba(255, 255, 255, 0.95);
+    color: #14b8a6;
+    border-color: #14b8a6;
+    box-shadow: 0 8px 25px rgba(20, 184, 166, 0.25);
+}
+
+#unlock-project-8:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #0f766e;
+    border-color: #0f766e;
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(20, 184, 166, 0.4);
+}
+
+/* PROJECT 9: Walmart Sales Analysis - RED THEME */
+#unlock-project-9 {
+    background: rgba(255, 255, 255, 0.95);
+    color: #ef4444;
+    border-color: #ef4444;
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.25);
+}
+
+#unlock-project-9:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #dc2626;
+    border-color: #dc2626;
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(239, 68, 68, 0.4);
+}
+
+/* Card-specific overlay hover effects */
+.locked-project:nth-child(7):hover .lock-overlay {
+    background: rgba(255, 248, 220, 0.15); /* Light yellow tint */
+}
+
+.locked-project:nth-child(8):hover .lock-overlay {
+    background: rgba(240, 253, 250, 0.15); /* Light teal tint */
+}
+
+.locked-project:nth-child(9):hover .lock-overlay {
+    background: rgba(254, 242, 242, 0.15); /* Light red tint */
+}
+
+/* Remove old duplicate unlock buttons */
+.locked-project .unlock-btn {
+    display: none !important;
+}
+
+/* Keep SVG icon area unblurred */
+.locked-project .aspect-video {
+    filter: none !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Ensure modals are fully visible */
+#project-form-modal, #success-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#project-form-modal.show, #success-modal.show {
+    display: flex !important;
+}
+
+/* Remove any gray overlay effects */
+#project-form-modal .bg-white,
+#success-modal .bg-white {
+    opacity: 1 !important;
+    filter: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Ensure form fields are fully interactive */
+#project-form-modal input,
+#project-form-modal select,
+#project-form-modal button {
+    pointer-events: auto !important;
+    user-select: auto !important;
+    opacity: 1 !important;
+    z-index: 100000 !important;
+}
+
+/* Page blur when modal is open */
+body.modal-open > *:not(#project-form-modal):not(#success-modal) {
+    filter: blur(5px);
+    pointer-events: none;
+    transition: filter 0.3s ease;
+}
+
+/* GPay/IndMoney Style Success Modal */
+.success-modal-content {
+    animation: modalSlideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.success-animation-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+/* Animated background glow */
+.success-circle-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+.success-icon-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Circle draw animation */
+.success-circle {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    animation: drawCircle 1s ease-out forwards;
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
+}
+
+/* Checkmark draw animation */
+.success-path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: drawPath 0.6s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Floating particles */
+.floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    color: #22c55e;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    animation: floatUp 2.5s ease-out infinite;
+}
+
+.particle-1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 1.5s;
+}
+
+.particle-2 {
+    top: 25%;
+    right: 20%;
+    animation-delay: 1.8s;
+}
+
+.particle-3 {
+    bottom: 30%;
+    left: 25%;
+    animation-delay: 2.1s;
+}
+
+.particle-4 {
+    bottom: 25%;
+    right: 15%;
+    animation-delay: 2.4s;
+}
+
+/* Success title and subtitle animations */
+.success-title {
+    animation: fadeInUp 0.8s ease-out;
+    animation-delay: 1.6s;
+    animation-fill-mode: both;
+    color: #22c55e;
+}
+
+.success-subtitle {
+    animation: fadeInUp 0.8s ease-out;
+    animation-delay: 1.9s;
+    animation-fill-mode: both;
+}
+
+/* Keyframe Animations */
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes drawCircle {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawPath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8) rotate(180deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page blur when modal is open */
+body.modal-open > *:not(#success-modal):not(#project-form-modal) {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .success-modal-content {
+        margin: 20px;
+        padding: 2rem 1.5rem;
+    }
+    
+    .success-animation-container {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .success-circle-bg {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .success-checkmark {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+</style>
+
+<script>
+class ProjectAccessManager {
+    constructor() {
+        this.currentProjectUrl = null;
+        this.formModal = document.getElementById('project-form-modal');
+        this.successModal = document.getElementById('success-modal');
+        this.projectForm = document.getElementById('project-access-form');
+        
+        // Project URLs mapping
+        this.projectUrls = {
+            'project-7': 'https://github.com/shakeel-data/credit-card-fraud-detection-predictive-models',
+            'project-8': 'https://github.com/shakeel-data/customer-segmentation-clustering',
+            'project-9': 'https://github.com/shakeel-data/walmart-analysis-sql-python'
+        };
+        
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+        this.setupValidation();
+    }
+
+    bindEvents() {
+        // Project 7 - Credit Card Fraud Detection
+        document.getElementById('unlock-project-7').addEventListener('click', (e) => {
+            e.preventDefault();
+            this.currentProjectUrl = this.projectUrls['project-7'];
+            this.openFormModal();
+        });
+
+        // Project 8 - Customer Segmentation
+        document.getElementById('unlock-project-8').addEventListener('click', (e) => {
+            e.preventDefault();
+            this.currentProjectUrl = this.projectUrls['project-8'];
+            this.openFormModal();
+        });
+
+        // Project 9 - Walmart Analysis
+        document.getElementById('unlock-project-9').addEventListener('click', (e) => {
+            e.preventDefault();
+            this.currentProjectUrl = this.projectUrls['project-9'];
+            this.openFormModal();
+        });
+
+        // Existing project links
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.currentProjectUrl = link.dataset.url;
+                this.openFormModal();
+            });
+        });
+
+        // Explore more button
+        const exploreBtn = document.getElementById('explore-more-btn');
+        if (exploreBtn) {
+            exploreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.currentProjectUrl = e.target.dataset.url;
+                this.openFormModal();
+            });
+        }
+
+        // Modal close events
+        document.getElementById('cancel-form-btn').addEventListener('click', () => this.closeFormModal());
+        
+        // Form submission
+        this.projectForm.addEventListener('submit', (e) => this.handleFormSubmit(e));
+
+        // Escape key to close modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeFormModal();
+                this.closeSuccessModal();
+            }
+        });
+    }
+
+    setupValidation() {
+        const fields = ['project-username', 'project-email', 'project-purpose'];
+        fields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.addEventListener('input', () => this.clearFieldError(fieldId));
+                field.addEventListener('blur', () => this.validateField(fieldId));
+            }
+        });
+    }
+
+    openFormModal() {
+        document.body.classList.add('modal-open');
+        this.formModal.classList.remove('hidden');
+        this.formModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            const usernameField = document.getElementById('project-username');
+            if (usernameField) {
+                usernameField.focus();
+            }
+        }, 150);
+    }
+
+    closeFormModal() {
+        document.body.classList.remove('modal-open');
+        this.formModal.classList.add('hidden');
+        this.formModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+        this.projectForm.reset();
+        this.clearAllErrors();
+    }
+
+    openSuccessModal() {
+        document.body.classList.add('modal-open');
+        this.successModal.classList.remove('hidden');
+        this.successModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeSuccessModal() {
+        document.body.classList.remove('modal-open');
+        this.successModal.classList.add('hidden');
+        this.successModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    async handleFormSubmit(e) {
+        e.preventDefault();
+        
+        this.clearAllErrors();
+        
+        if (!this.validateAllFields()) {
+            this.focusFirstErrorField();
+            return;
+        }
+
+        const formData = new FormData(this.projectForm);
+        const userData = {
+            username: formData.get('username'),
+            email: formData.get('email'),
+            purpose: formData.get('purpose'),
+            projectUrl: this.currentProjectUrl,
+            timestamp: new Date().toISOString()
+        };
+
+        this.logProjectAccess(userData);
+        this.closeFormModal();
+        this.openSuccessModal();
+
+        // Redirect after 3 seconds (GPay style timing)
+        setTimeout(() => {
+            this.closeSuccessModal();
+            if (this.currentProjectUrl) {
+                window.open(this.currentProjectUrl, '_blank');
+            }
+        }, 3000);
+    }
+
+    validateAllFields() {
+        const usernameValid = this.validateField('project-username');
+        const emailValid = this.validateField('project-email');
+        const purposeValid = this.validateField('project-purpose');
+        
+        return usernameValid && emailValid && purposeValid;
+    }
+
+    validateField(fieldId) {
+        const field = document.getElementById(fieldId);
+        const value = field.value.trim();
+        let isValid = true;
+        let errorMessage = '';
+
+        switch (fieldId) {
+            case 'project-username':
+                if (!value) {
+                    errorMessage = 'Username is required';
+                    isValid = false;
+                } else if (value.length < 3) {
+                    errorMessage = 'Username must be at least 3 characters long';
+                    isValid = false;
+                } else if (field.value !== value) {
+                    errorMessage = 'Username cannot start or end with spaces';
+                    isValid = false;
+                } else if (/^[0-9]/.test(value) || /[0-9]$/.test(value)) {
+                    errorMessage = 'Username cannot start or end with numbers';
+                    isValid = false;
+                } else if (!/^[a-zA-Z0-9\s]+$/.test(value)) {
+                    errorMessage = 'Username can only contain letters, numbers, and spaces';
+                    isValid = false;
+                }
+                break;
+
+            case 'project-email':
+                if (!value) {
+                    errorMessage = 'Email is required';
+                    isValid = false;
+                } else if (field.value !== value) {
+                    errorMessage = 'Email cannot start or end with spaces';
+                    isValid = false;
+                } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
+                    errorMessage = 'Please enter a valid email address';
+                    isValid = false;
+                }
+                break;
+
+            case 'project-purpose':
+                if (!value) {
+                    errorMessage = 'Please select a purpose for your visit';
+                    isValid = false;
+                }
+                break;
+        }
+
+        if (!isValid) {
+            this.showFieldError(fieldId, errorMessage);
+        } else {
+            this.clearFieldError(fieldId);
+        }
+
+        return isValid;
+    }
+
+    showFieldError(fieldId, message) {
+        const field = document.getElementById(fieldId);
+        const errorId = fieldId.replace('project-', '') + '-error';
+        const errorElement = document.getElementById(errorId);
+        
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+            field.classList.add('error-field');
+        }
+    }
+
+    clearFieldError(fieldId) {
+        const field = document.getElementById(fieldId);
+        const errorId = fieldId.replace('project-', '') + '-error';
+        const errorElement = document.getElementById(errorId);
+        
+        if (errorElement) {
+            errorElement.textContent = '';
+            errorElement.classList.add('hidden');
+            field.classList.remove('error-field');
+        }
+    }
+
+    clearAllErrors() {
+        ['project-username', 'project-email', 'project-purpose'].forEach(fieldId => {
+            this.clearFieldError(fieldId);
+        });
+    }
+
+    focusFirstErrorField() {
+        const firstErrorField = document.querySelector('.error-field');
+        if (firstErrorField) {
+            firstErrorField.focus();
+        }
+    }
+
+    logProjectAccess(userData) {
+        const accessLog = JSON.parse(localStorage.getItem('project_access_log') || '[]');
+        accessLog.push(userData);
+        localStorage.setItem('project_access_log', JSON.stringify(accessLog));
+        console.log('Project access logged:', userData);
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new ProjectAccessManager();
+});
+</script>
+
+
+
+
 
 
 <!-- Education Section - Perfect Sizing & Mobile Optimized -->
@@ -2460,7 +3358,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Certifications
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Industry-recognized credentials in data analytics, machine learning, and cloud platforms
+        Industry-recognized credentials in analytics, Business Intelligence, and machine learning
       </p>
     </div>
     
@@ -4199,3 +5097,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
