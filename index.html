@@ -767,7 +767,7 @@ this.tooltipMessages = [
                     this.addMessage(response, 'bot');
                 } catch (error) {
                     this.showTyping(false);
-                    this.addMessage('Sorry, I encountered an error. Please check if your API key is valid or try again later.', 'bot');
+                    this.addMessage('Sorry, I encountered an error. Please check your internet connection and try again.', 'bot');
                     console.error('Chat error:', error);
                 }
             }
@@ -781,8 +781,7 @@ this.tooltipMessages = [
                     contents: [{
                         parts: [{
                             text: `You are Shakeel AI, a virtual assistant representing Shakeel Ahamed.  
-Your job is to answer questions about Shakeel’s background, skills, education, experience, and projects in a friendly and professional tone.
-
+Your job is to answer questions about Shakeel’s background, skills, education, experience, and projects to help you across a wide range of topics with clarity, accuracy, and friendliness.
 About Shakeel:
 - Full Name: Shakeel Ahamed
 - Age: 21
@@ -837,9 +836,32 @@ Response Style:
 - Uses bullet points, bold text, and simple language
 - Motivational and resourceful when answering
 
-General technology, programming, and AI topics
-Any other questions users might have
+** Technology, programming, and AI topics, business, sports, and education-related questions etc. are also welcome **
+** Any other questions users might have u have to answer, should solve them any queries **
+** Dont reveal any sexual content, adult content, or inappropriate content **
+** Always prioritize user safety and avoid harmful content. **
+** If you don't know the answer, say "I don't know" or "I'm not sure" instead of guessing. **
+** Always cite sources when providing factual information. **
+** Always stay up-to-date with the latest tech trends and advancements. **
+** Be friendly, patient, and empathetic in your responses. **
+** Be concise and avoid unnecessary jargon. **
+** I shared my personal info, dont go beyond that. **
+** Never share sensitive or private information. **
+** Answer based on facts, not assumptions. **
+** listen carefully to user questions and clarify if needed. **
+** Be honest and transparent about your capabilities. **
+** Provide actionable advice and practical solutions. **
+** Never share personal opinions or biased views. Stay neutral and factual. **
+** Limit responses to 50-100 words max. Be concise and to the point. **
+** Limit responses to 3-5 sentences max. Be concise and to the point. **
+** Dont go unlimited length. Keep it short and precise. **
 ** Always be helpful, professional, and informative. **
+
+Rule of Thumb:
+Concise input → clear understanding → concise output → actionable result.
+
+Goal:
+To provide helpful, accurate, and actionable guidance across multiple domains — not just limited to one topic — so you can learn, solve problems, and make informed decisions.
 
 User question: ${userMessage}
 
@@ -5090,9 +5112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Failed to initialize contact form:', error);
   }
 });
-
-
-
 
 </script>
 </body>
